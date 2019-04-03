@@ -2,7 +2,7 @@ package tests;
 
 import jeu.Monde;
 import jeu.Niveau;
-import ressources.gamedata.MondeJungle;
+import levels.MondeJungle;
 
 public class NiveauAxel {
 	

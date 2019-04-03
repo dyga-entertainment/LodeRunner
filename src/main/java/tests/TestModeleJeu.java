@@ -2,13 +2,8 @@ package tests;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JFrame;
-
 import IHM.TestVue;
-import IHM.VueJeu;
-import audio.SoundSystem;
-import controleur.ControleurJeu;
 import jeu.ModeleJeu;
 
 public class TestModeleJeu {
@@ -22,7 +17,7 @@ public class TestModeleJeu {
 		//Jukebox pistes = new Jukebox();
 		//pistes.ajouterPiste(-1, "/ressources/Musiques/spooky_scary_skeletons.wav");
 
-		/* Creation du modele a partir du Niveau */
+		/* Creation du modele a partir du jeu.Niveau */
 		ModeleJeu modele = new ModeleJeu();
 		modele.chargerNiveau(0, 0);
 		/* Creation de la vue */

@@ -2,12 +2,12 @@ package tests;
 
 import jeu.Coordonnees;
 import jeu.Niveau;
+import bloc.BlocBrique;
+import bloc.BlocEchelle;
+import bloc.BlocGlu;
+import item.Lingot;
+import item.PetiteBombe;
 import jeu.bloc.Bloc;
-import jeu.bloc.BlocBrique;
-import jeu.bloc.BlocEchelle;
-import jeu.bloc.BlocGlu;
-import jeu.item.Lingot;
-import jeu.item.PetiteBombe;
 
 public class NiveauDamien {
 	
