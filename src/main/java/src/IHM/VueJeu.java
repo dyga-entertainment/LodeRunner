@@ -40,7 +40,7 @@ public class VueJeu extends JPanel implements Observer {
         this.heightJeu = 640;
         this.widthHud = 960;
         this.heightHud = 63;
-        this.image = i.get(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png");
+        this.image = i.getImageFromPath(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png");
 
         //this.addSprite("Images/mini1.png", 80, 100);
         this.gr = this.image.createGraphics() ;
@@ -108,7 +108,7 @@ public class VueJeu extends JPanel implements Observer {
                     cour.getSprite().addObserver(this);
                 }
                 helper.Images i = new helper.Images();
-                this.image = i.get((String)arg);
+                this.image = i.getImageFromPath((String)arg);
                 this.modele.startThread();
                 this.repaint(0, this.widthJeu, this.heightJeu, this.widthJeu, this.heightJeu);
             }

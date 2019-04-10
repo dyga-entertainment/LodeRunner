@@ -196,7 +196,7 @@ public class ModeleJeu extends Observable {
 	 * actuellement charge
 	 */
 	public void startThread() {
-		LodeRunner.start();
+		//LodeRunner.start();
 		/* mise en route de MadMonks */
 		this.activerMadMonk();
 	}

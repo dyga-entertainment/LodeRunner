@@ -1,5 +1,8 @@
 package IHM;
 
+import helper.Images;
+import helper.ResourcesPaths;
+
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -24,18 +27,15 @@ public class IHMCredit extends JPanel {
 		this.add(jpa);
 		this.setLayout(new BorderLayout());
 		this.pa = new JLabel();
+
+		// Useful ?
 		//this.pa.setIcon(new ImageIcon("SW.jpg"));
 		//this.add(this.pa, BorderLayout.CENTER);
-		try {
-            URL url = getClass().getResource("/ressources/Images/credits.png");
-			bg = ImageIO.read(url);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
+
+		this.bg = Images.getImageFromPath(ResourcesPaths.SPRITE_UI_PATH + "credits.png");
 	}
-	public void paint(Graphics g) { 
-	    	g.drawImage(bg,0,0,getSize().width, getSize().height, this);
+
+	public void paint(Graphics g) {
+		g.drawImage(bg,0,0,getSize().width, getSize().height, this);
 	}
 }

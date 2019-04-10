@@ -1,5 +1,8 @@
 package IHM;
 
+import helper.Images;
+import helper.ResourcesPaths;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -62,15 +65,7 @@ public class IHMMenu extends JPanel {
     }
 
     public IHMMenu() {
-        try {
-            //URL url = getClass().getResource("/ressources/Images/background_menu.png");
-            File imageFile = new File("ressources/Images/background_menu.png");
-            FileInputStream fis = new FileInputStream(imageFile);
-            this.bg = ImageIO.read(fis);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        this.bg = Images.getImageFromPath(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_menu.png");
         this.setPreferredSize(new Dimension(960, 667));
         this.setLayout(new BorderLayout());
 
@@ -137,6 +132,8 @@ public class IHMMenu extends JPanel {
 
         this.panelBoutons.add(jpa1);
         this.panelBoutons.add(jpa2);
+
+        this.setVisible(true);
     }
 	
     public void paint(Graphics g) { 

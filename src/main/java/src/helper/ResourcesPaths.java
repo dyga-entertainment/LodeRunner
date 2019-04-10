@@ -39,7 +39,7 @@ public class ResourcesPaths {
     public static String SPRITE_BLOCS_GROUND_PATH = "Images/Sprites/Blocs/Ground/";
     public static String SPRITE_BLOCS_SPECIALS_PATH = "Images/Sprites/Blocs/Specials/";
 
-    public static String SPRITE_ICONS_PATH = "Images/Sprites/Icons/";
+    public static String SPRITE_ICONS_PATH = "Images/Sprites/UI/Icons/";
 
     public static String SPRITE_ITEMS_GOLD_PATH = "Images/Sprites/Items/Gold/";
     public static String SPRITE_ITEMS_WEAPONS_PATH = "Images/Sprites/Items/Weapons/";
@@ -47,6 +47,7 @@ public class ResourcesPaths {
     public static String SPRITE_PLAYER_PATH = "Images/Sprites/Player/";
 
     public static String SPRITE_UI_PATH = "Images/Sprites/UI/";
+    public static String SPRITE_UI_ICON_PATH = "Images/Sprites/UI/Icons/";
     public static String SPRITE_UI_BUTTONS_PATH = "Images/Sprites/UI/Buttons/";
     public static String SPRITE_UI_BUTTONS_SELECTED_PATH = "Images/Sprites/UI/Buttons/Selected/";
 

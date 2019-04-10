@@ -1,5 +1,7 @@
 package IHM;
 
+import helper.ResourcesPaths;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
@@ -11,7 +13,7 @@ public class JPButton extends JButton{
     public JPButton(String text, String image1, String image2) {
         this.texte = text;
         this.repaint();
-        this.setIcon(new ImageIcon(this.getClass().getResource("/ressources/Images/"+image1)));
+        this.setIcon(new ImageIcon(Thread.currentThread().getContextClassLoader().getResource(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + image1)));
         this.setVisible(true);
         this.setBorder(null);
         //this.repaint();
@@ -22,7 +24,7 @@ public class JPButton extends JButton{
             public void mouseClicked(MouseEvent e) {
             }
             public void mousePressed(MouseEvent e) {
-                setIcon(new ImageIcon(this.getClass().getResource("/ressources/Images/"+image2)));
+                setIcon(new ImageIcon(Thread.currentThread().getContextClassLoader().getResource(ResourcesPaths.SPRITE_UI_BUTTONS_SELECTED_PATH + image2)));
                 /*try {
                         bg = ImageIO.read(new File("./ressources/Images/"+image2));
                 } catch (IOException e1) {
@@ -31,7 +33,7 @@ public class JPButton extends JButton{
                 }*/
             }
             public void mouseReleased(MouseEvent e) {
-                setIcon(new ImageIcon(this.getClass().getResource("/ressources/Images/"+image1)));
+                setIcon(new ImageIcon(Thread.currentThread().getContextClassLoader().getResource(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + image1)));
                 /*try {
                         bg = ImageIO.read(new File("./ressources/Images/"+image1));
                 } catch (IOException e1) {

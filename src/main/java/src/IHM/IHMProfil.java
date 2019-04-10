@@ -1,5 +1,8 @@
 package IHM;
 
+import helper.Images;
+import helper.ResourcesPaths;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -20,12 +23,12 @@ public class IHMProfil extends JPanel {
 	private JLabel apercu;
 	private int imageChoisie;
 	private int diffChoisie;
-	private String[] imagesB;
+	private String[] avatarIcons;
 	
 	public IHMProfil() {
 		
 		String[] images = {"image 1", "image 2", "image 3","image 4"};
-		this.imagesB = new String[] {"avatar_axel.png","avatar_yann.png","avatar_damien.png","avatar_greg.png"};
+		this.avatarIcons = new String[] {"avatar_axel.png","avatar_yann.png","avatar_damien.png","avatar_greg.png"};
 		String[] difficultes = {"Debutant", "Intermediaire", "Expert"};
 		
 		GridLayout g = new GridLayout(6,1,0,0);
@@ -55,25 +58,28 @@ public class IHMProfil extends JPanel {
 		JPanel p2 = new JPanel();
 		//p2.setLayout(new GridLayout());
 		p2.add(new JLabel("Image"));
-		JComboBox<String> comboim = new JComboBox<String>(images);
-		comboim.setPreferredSize(new Dimension(150, 30));
-		comboim.addItemListener(new ItemListener(){
+		JComboBox<String> comboBoxImages = new JComboBox<String>(images);
+		comboBoxImages.setPreferredSize(new Dimension(150, 30));
+		comboBoxImages.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent e)
 			{
-				imageChoisie = comboim.getSelectedIndex();
-				apercu.setIcon(new ImageIcon(this.getClass().getResource("/ressources/Images/"+imagesB[imageChoisie])));
+				imageChoisie = comboBoxImages.getSelectedIndex();
+				ImageIcon imageIcon = new ImageIcon(this.getClass().getResource(ResourcesPaths.SPRITE_UI_ICON_PATH + avatarIcons[imageChoisie]));
+				apercu.setIcon(imageIcon);
 				apercu.repaint();
 				System.out.println("Image n�"+imageChoisie);
 			}
 		});
 	    //combo.setForeground(Color.blue);
-		p2.add(comboim);
+		p2.add(comboBoxImages);
 		
 		JPanel p3 = new JPanel();
 		p3.setLayout(new GridLayout(1,4,0,0));
 		p3.add(new JLabel(""));
 		p3.add(new JLabel("Apercu"));
-		this.apercu = new JLabel(new ImageIcon(this.getClass().getResource("/ressources/Images/"+imagesB[this.imageChoisie])));
+		this.apercu = new JLabel();
+		ImageIcon imageIcon = new ImageIcon(Images.getImageFromPath(ResourcesPaths.SPRITE_UI_ICON_PATH + avatarIcons[this.imageChoisie]));
+		this.apercu.setIcon(imageIcon);
 		p3.add(this.apercu);
 		p3.add(new JLabel(""));
 		p3.validate();
@@ -86,7 +92,7 @@ public class IHMProfil extends JPanel {
 			public void itemStateChanged(ItemEvent e)
 			{
 				diffChoisie = combodiff.getSelectedIndex();
-				System.out.println("Difficult� : "+diffChoisie);
+				System.out.println("Difficulty : " + diffChoisie);
 			}
 		});
 		p4.add(combodiff);
@@ -102,7 +108,7 @@ public class IHMProfil extends JPanel {
 	}
 	
 	public String getImageChoisie() {
-		return this.imagesB[this.imageChoisie];
+		return this.avatarIcons[this.imageChoisie];
 	}
 	
 	public int getDiffChoisie() {

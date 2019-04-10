@@ -3,6 +3,8 @@ package IHM;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -15,14 +17,14 @@ import javax.swing.JPanel;
 import audio.SoundSystem;
 import controleur.ControleurJeu;
 import controleur.ControleurMenus;
+import jeu.Joueur;
 import jeu.ModeleJeu;
 
 public class VueMenus extends JPanel  {
 	
     private JPanel[] IHMaffichage;
     private Bandeau[] IHMBouton;
-    private int longueur;
-    private TestVue IHMCourante;
+    private IHMMenu IHMCourante;
     private levels.ProfilData profils;
     private ControleurMenus controleur;
     private int numIHMCourante;
@@ -66,152 +68,151 @@ public class VueMenus extends JPanel  {
 	    }
         this.profils = new levels.ProfilData(ligneLue.split(" "));
     }
-    
+
+
 	public VueMenus(FenetrePrincipale fenetre) {
+        // Not right now.
         //launchJukebox();
 
+        // Useful later
         //loadProfil();
-
-        //this.longueur = 8;
-        //this.IHMaffichage = new JPanel[this.longueur];
-        //this.IHMBouton = new Bandeau[this.longueur];
 
         //pistes.retirerPiste(numeroPisteAmbiance)
 
-        ModeleJeu modele = new ModeleJeu();
-        modele.chargerNiveau(0, 0);
+        // AFTER
+        //ModeleJeu modele = new ModeleJeu();
+        //modele.chargerNiveau(0, 0);
 
-        this.IHMCourante = new TestVue(modele);
-        this.setLayout(new BorderLayout());
-        this.add(this.IHMCourante, BorderLayout.CENTER);
-        modele.addObserver(this.IHMCourante);
-        ControleurJeu c = new ControleurJeu(this.IHMCourante, modele);
-        fenetre.setControleur(c);
-        jouerJeu(this.IHMCourante);
+        //this.IHMCourante = new TestVue(modele);
+        //this.setLayout(new BorderLayout());
+        //this.add(this.IHMCourante, BorderLayout.CENTER);
+        //modele.addObserver(this.IHMCourante);
+        //ControleurJeu c = new ControleurJeu(this.IHMCourante, modele);
+        //fenetre.setControleur(c);
+        //jouerJeu(this.IHMCourante);
 
         //this.removeAll();
-        validate();
-        repaint();
-        this.setOpaque(false);
+        //validate();
+        //repaint();
+        //this.setOpaque(false);
 
-/*
         // COUPLER CHAQUE ACTIONS AVEC SA CLASSE.. VU QUE LES CLASSES EXISTENT DEJA jeu.bloc.C EST WORTH
-            this.IHMaffichage = new JPanel[] {new IHMMenu(), new IHMCredit(), new IHMProfil(), new IHMOption(), new IHMMonde()};
-            this.IHMBouton = new Bandeau[] {new IHMB2(), new IHMB3(), new IHMB4(), new IHMB5(), new IHMB6(), new IHMB7(), new IHMB8(), new IHMB9()};
-            for(int i = 0 ; i < this.longueur; i++) {
-                    //this.IHMaffichage[i].add(this.IHMBouton[i], BorderLayout.SOUTH);
-                    for(int j = 0 ; j < this.IHMBouton[i].getNbButton(); j++) {
-                            JPButton currentJButton = this.IHMBouton[i].getButton(j);
-                            currentJButton.addActionListener(new ActionListener() {
-                                    int panelNumber;
-                                    public void actionPerformed(ActionEvent e) {
+        this.IHMaffichage = new JPanel[] {new IHMMenu(), new IHMCredit(), new IHMProfil(), new IHMOption(), new IHMMonde()};
+        this.IHMBouton = new Bandeau[] {new IHMB2(), new IHMB3(), new IHMB4(), new IHMB5(), new IHMB6(), new IHMB7(), new IHMB8(), new IHMB9()};
 
-                                            IHMProfil ihm4 = (IHMProfil) IHMaffichage[3];
-                                            IHM6 ihm6 = (IHM6) IHMaffichage[5];
-                                            IHMB6 ihmb6 = (IHMB6) IHMBouton[5];
-                                            IHMMonde ihm7 = (IHMMonde) IHMaffichage[6];
+        for(int i = 0 ; i < this.IHMBouton.length; i++) {
+            //this.IHMaffichage[i].add(this.IHMBouton[i], BorderLayout.SOUTH);
+            for(int j = 0 ; j < this.IHMBouton[i].getNbButton(); j++) {
+                JPButton currentJButton = this.IHMBouton[i].getButton(j);
+                currentJButton.addActionListener(new ActionListener() {
+                    int panelNumber;
 
-                                            switch(currentJButton.getTextO()) {
-                                            case "Solo" :
-                                                    if (profils.getNbJ() == 0) {
-                                                        panelNumber = 3;
-                                                    } else {
-                                                        panelNumber = 5;
-                                                    }
-                                                    break;
-                                            case "Coop" :
-                                                    if (profils.getNbJ() == 0) {
-                                                        panelNumber = 3;
-                                                    } else {
-                                                        panelNumber = 5;
-                                                    }
-                                                    break;
-                                            case "Editeur" :
-                                                    // Editeur
-                                                    break;
-                                            case "Options" :
-                                                panelNumber = 4;
-                                                    break;
-                                            case "Credits" :
-                                                panelNumber = 2;
-                                                    break;
-                                            case "Retour" :
-                                                panelNumber = retourIHM();
-                                                    break;
-                                            case "Appliquer" :
-                                                panelNumber = retourIHM();
-                                                    break;
-                                            case "Valider Profil" :
-                                                    ihm7.setProfilCourant(profils.getJ(ihm6.getProfilChoisi()));
-                                                    ihm7.majIHM(profils.getJ(ihm6.getProfilChoisi()));
-                                                    ihmb6.majIHM(profils);
-                                                panelNumber = 6;
-                                                    break;
-                                            case "Supprimer Profil" :
-                                                    if ( profils.getNbJ() == 1){
-                                                        panelNumber = 3;
-                                                    } else {
-                                                        panelNumber = 5;
-                                                    }
-                                                    profils.supprJ(ihm6.getProfilChoisi());
-                                                    System.out.println("Profil numero "+(ihm6.getProfilChoisi()+1)+" suprime");
-                                                    majFichierProfils(profils);
-                                                    ihm6.majIHM(profils);
-                                                    ihmb6.majIHM(profils);
-                                                    break;
-                                            case "Creer Profil" :
-                                                panelNumber = 3;
-                                                    break;
-                                            case "Valider jeu.Monde" :
-                                                panelNumber = 7;
-                                                    break;
-                                            case "Jouer" :
-                                                    pistes.retirerPiste(numeroPisteAmbiance);
-                                                    // Creation du modele a partir du jeu.Niveau
+                    public void actionPerformed(ActionEvent e) {
+                        IHMProfil ihm4 = (IHMProfil) IHMaffichage[3];
+                        IHM6 ihm6 = (IHM6) IHMaffichage[5];
+                        IHMB6 ihmb6 = (IHMB6) IHMBouton[5];
+                        IHMMonde ihm7 = (IHMMonde) IHMaffichage[6];
 
-                                                    jeu.ModeleJeu modele = new jeu.ModeleJeu();
-                                                    modele.chargerNiveau(0, 0);
-                                                    // Creation de la vue
+                        switch(currentJButton.getTextO()) {
+                        case "Solo" :
+                                if (profils.getNbJ() == 0) {
+                                    panelNumber = 3;
+                                } else {
+                                    panelNumber = 5;
+                                }
+                                break;
+                        case "Coop" :
+                                if (profils.getNbJ() == 0) {
+                                    panelNumber = 3;
+                                } else {
+                                    panelNumber = 5;
+                                }
+                                break;
+                        case "Editeur" :
+                                // Editeur
+                                break;
+                        case "Options" :
+                            panelNumber = 4;
+                                break;
+                        case "Credits" :
+                            panelNumber = 2;
+                                break;
+                        case "Retour" :
+                            panelNumber = retourIHM();
+                                break;
+                        case "Appliquer" :
+                            panelNumber = retourIHM();
+                                break;
+                        case "Valider Profil" :
+                                ihm7.setProfilCourant(profils.getJ(ihm6.getProfilChoisi()));
+                                ihm7.majIHM(profils.getJ(ihm6.getProfilChoisi()));
+                                ihmb6.majIHM(profils);
+                            panelNumber = 6;
+                                break;
+                        case "Supprimer Profil" :
+                                if ( profils.getNbJ() == 1){
+                                    panelNumber = 3;
+                                } else {
+                                    panelNumber = 5;
+                                }
+                                profils.supprJ(ihm6.getProfilChoisi());
+                                System.out.println("Profil numero "+(ihm6.getProfilChoisi()+1)+" suprime");
+                                majFichierProfils(profils);
+                                ihm6.majIHM(profils);
+                                ihmb6.majIHM(profils);
+                                break;
+                        case "Creer Profil" :
+                            panelNumber = 3;
+                                break;
+                        case "Valider jeu.Monde" :
+                            panelNumber = 7;
+                                break;
+                        case "Jouer" :
+                                //pistes.retirerPiste(numeroPisteAmbiance);
+                                // Creation du modele a partir du jeu.Niveau
 
-                                                    TestVue vue = new TestVue(modele);
-                                                    modele.addObserver(vue);
-                                                    ControleurJeu c = new ControleurJeu(vue, modele);
-                                                    fenetre.setControleur(c);
-                                                    jouerJeu(vue);						
-                                                    break;
-                                            case "Valider Creation" :
-                                                    profils.addJ(new Joueur(ihm4.getNomChoisi(), ihm4.getImageChoisie()));
-                                                    System.out.println("Nouveau profil cree");
-                                                    majFichierProfils(profils);
-                                                    ihm7.setProfilCourant(profils.getJ(profils.getNbJ()-1));
-                                                    ihm7.majIHM(profils.getJ(profils.getNbJ()-1));
-                                                    ihmb6.majIHM(profils);
-                                                    ihm6.majIHM(profils);
-                                                panelNumber = 6;
-                                                    break;
-                                            default :// case "Configuration des touches" :
-                                                panelNumber = 8;
-                                                    break;
-                                            }
-                                            if(currentJButton.getTextO() != "Jouer") {
-                                                    modifierIHM(IHMaffichage[panelNumber]);
+                                jeu.ModeleJeu modele = new jeu.ModeleJeu();
+                                modele.chargerNiveau(0, 0);
+                                // Creation de la vue
 
-                                            }
-                                            validate();
-                                            repaint();	
-                                    }
-                            });
-                    };
+                                TestVue vue = new TestVue(modele);
+                                modele.addObserver(vue);
+                                ControleurJeu c = new ControleurJeu(vue, modele);
+                                fenetre.setControleur(c);
+                                jouerJeu(vue);
+                                break;
+                        case "Valider Creation" :
+                                profils.addJ(new Joueur(ihm4.getNomChoisi(), ihm4.getImageChoisie()));
+                                System.out.println("Nouveau profil cree");
+                                majFichierProfils(profils);
+                                ihm7.setProfilCourant(profils.getJ(profils.getNbJ()-1));
+                                ihm7.majIHM(profils.getJ(profils.getNbJ()-1));
+                                ihmb6.majIHM(profils);
+                                ihm6.majIHM(profils);
+                            panelNumber = 6;
+                                break;
+                        default :// case "Configuration des touches" :
+                            panelNumber = 8;
+                                break;
+                        }
+                        if(currentJButton.getTextO() != "Jouer") {
+                            modifierIHM(IHMaffichage[panelNumber]);
+                        }
+                        validate();
+                        repaint();
+                    }
+                });
+            };
 
-            }
-            this.setLayout(new BorderLayout());
-            //this.IHMBouton[0].repaint();
-            this.IHMCourante = new IHMMenu();
-            this.add(IHMCourante, BorderLayout.CENTER);
-            */
-            //this.add(new IHMB1(), BorderLayout.SOUTH);
-            //this.repaint();
-            //this.setOpaque(false);
+        }
+        this.setLayout(new BorderLayout());
+        this.IHMBouton[0].repaint();
+        this.IHMCourante = new IHMMenu();
+        this.add(IHMCourante, BorderLayout.CENTER);
+
+        this.add(new IHMB2(), BorderLayout.SOUTH);
+        this.repaint();
+        this.setOpaque(false);
 	}
 	
 	public Bandeau recupererIHMB(int numero) {

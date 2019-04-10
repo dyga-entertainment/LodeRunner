@@ -11,12 +11,16 @@ import tests.TestModeleJeu;
 public class FenetrePrincipale extends JFrame {
 
 	public FenetrePrincipale() {
-		this.setTitle("Lode Runner");
+		setupWindows();
+		// Set the View of the game
 		VueMenus vue = new VueMenus(this);
 		this.setContentPane(vue);
-		this.setSize(960, 667);
+	}
+
+	public void setupWindows() {
+		this.setTitle("Lode Runner");
+		this.setSize(980, 720);
 		//this.setResizable(false);
-		this.pack();
 		this.setVisible(true);
 		this.addWindowListener(new WindowAdapter() {
 			public void windowOpened(WindowEvent e) {
@@ -25,10 +29,11 @@ public class FenetrePrincipale extends JFrame {
 		});
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
+
 	public void setControleur(ControleurJeu c) {
 		this.addKeyListener(c);
 		requestFocus();
 		this.setSize(960, 730);
+		this.repaint();
 	}
 }
