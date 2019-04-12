@@ -1,4 +1,4 @@
-package IHM;
+package IHM.Views;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,10 +19,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import IHM.Views.View;
+import controleur.VueManager;
 import jeu.Joueur;
 import jeu.ModeleJeu;
 
-public class IHMMonde extends JPanel {
+public class WorldsView extends View {
 	
 	private JLabel pa;
 	private JLabel apercu;
@@ -37,7 +39,9 @@ public class IHMMonde extends JPanel {
 	private Joueur profilCourant;
 	private Image bg;
 	
-	public IHMMonde() {
+	public WorldsView(VueManager vueManager) {
+		super(vueManager);
+
 		this.setLayout(new GridLayout(1,1,0,20));
 		
 		this.mondes = new JButton[] {new JButton("Personnalise"), new JButton("Jungle"), new JButton("Glace"), new JButton("Magma"), new JButton("Enfer")};
@@ -155,7 +159,8 @@ public class IHMMonde extends JPanel {
 	
 	/** Surcharge de la fonction paint() pour afficher notre image */ 
     public void paint(Graphics g) { 
-    	g.drawImage(bg,0,0,getSize().width, getSize().height, this); 
+    	g.drawImage(bg,0,0,getSize().width, getSize().height, this);
+
     	for ( int i = 0; i < nbMondes; i++){
     		this.mondes[i].repaint();
     	}

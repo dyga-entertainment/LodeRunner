@@ -23,13 +23,11 @@ public class Images {
         BufferedImage bufferedImage = null;
         try {
             // Read from a file
-            System.out.println(imgfile);
             URL url = Thread.currentThread().getContextClassLoader().getResource(imgfile);
-            System.out.println(url);
             bufferedImage = ImageIO.read(url);
         } catch (IOException e) {
             System.err.println("Le fichier " + imgfile + " est introuvable.") ;
-            System.exit(1);
+            //System.exit(1);
         }
         return bufferedImage;
     }

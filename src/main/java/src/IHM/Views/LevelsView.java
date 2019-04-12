@@ -1,5 +1,7 @@
-package IHM;
+package IHM.Views;
 
+import IHM.IHM2;
+import controleur.VueManager;
 import jeu.Monde;
 
 import java.awt.BorderLayout;
@@ -10,11 +12,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class IHMNiveau extends JPanel {
+public class LevelsView extends View {
 
 	private JLabel pa;
-	
-	public IHMNiveau(Monde m) {
+
+    public LevelsView(VueManager vueManager) {
+            this(vueManager, new Monde("dd", null));
+    }
+
+	public LevelsView(VueManager vueManager, Monde m) {
+            super(vueManager);
             int niveauChoisi = 1;
             this.setLayout(new BorderLayout());
             this.pa = new JLabel("Veuillez selectionner votre niveau");

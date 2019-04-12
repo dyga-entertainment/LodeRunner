@@ -1,12 +1,9 @@
-package IHM;
+package IHM.Views;
 
+import controleur.VueManager;
 import helper.Images;
 import helper.ResourcesPaths;
-
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.ImageIcon;
@@ -16,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.CaretListener;
 
-public class IHMProfil extends JPanel {
+public class ProfilsView extends View {
 	
 	private JLabel pa;
 	private String nomChoisi;
@@ -25,14 +22,15 @@ public class IHMProfil extends JPanel {
 	private int diffChoisie;
 	private String[] avatarIcons;
 	
-	public IHMProfil() {
-		
+	public ProfilsView(VueManager vueManager) {
+		super(vueManager);
+
 		String[] images = {"image 1", "image 2", "image 3","image 4"};
 		this.avatarIcons = new String[] {"avatar_axel.png","avatar_yann.png","avatar_damien.png","avatar_greg.png"};
 		String[] difficultes = {"Debutant", "Intermediaire", "Expert"};
-		
-		GridLayout g = new GridLayout(6,1,0,0);
-		this.setLayout(g);
+
+		this.setLayout(new GridLayout(6,1,0,0));
+
 		this.pa = new JLabel("Veuillez creer votre profil");
 		Font pf = pa.getFont();
 		pa.setFont(new Font(pf.getName(), Font.PLAIN, 22));
@@ -47,7 +45,7 @@ public class IHMProfil extends JPanel {
             public void caretUpdate(javax.swing.event.CaretEvent e) {
                 JTextField text = (JTextField)e.getSource();
                 nomChoisi = text.getText();
-                System.out.println("Nom : "+nomChoisi);
+                System.out.println("Nom : " + nomChoisi);
             }
         });
         
@@ -64,10 +62,10 @@ public class IHMProfil extends JPanel {
 			public void itemStateChanged(ItemEvent e)
 			{
 				imageChoisie = comboBoxImages.getSelectedIndex();
-				ImageIcon imageIcon = new ImageIcon(this.getClass().getResource(ResourcesPaths.SPRITE_UI_ICON_PATH + avatarIcons[imageChoisie]));
+				ImageIcon imageIcon = new ImageIcon(Images.getImageFromPath(ResourcesPaths.SPRITE_UI_ICON_PATH + avatarIcons[imageChoisie]));
 				apercu.setIcon(imageIcon);
 				apercu.repaint();
-				System.out.println("Image n�"+imageChoisie);
+				System.out.println("Image number " + imageChoisie);
 			}
 		});
 	    //combo.setForeground(Color.blue);
@@ -101,6 +99,16 @@ public class IHMProfil extends JPanel {
 		this.add(p2);
 		this.add(p3);
 		this.add(p4);
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+
+		g.drawImage(this.backgroundImage,0,0,getSize().width, getSize().height, this);
+		for(int i = 0; i < buttons.length; i++) {
+			this.buttons[i].repaint();
+		}
 	}
 	
 	public String getNomChoisi() {

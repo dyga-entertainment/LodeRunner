@@ -6,20 +6,31 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
 import controleur.ControleurJeu;
-import tests.TestModeleJeu;
+import controleur.VueManager;
 
 public class FenetrePrincipale extends JFrame {
 
+	public static final int WINDOW_WIDTH = 950;
+	public static final int WINDOW_HEIGHT = 800;
+
+	public static final int CONTENT_PANEL_WIDTH = 800;
+	public static final int CONTENT_PANEL_HEIGHT = 800;
+
 	public FenetrePrincipale() {
-		setupWindows();
+		setupWindow();
+
 		// Set the View of the game
-		VueMenus vue = new VueMenus(this);
-		this.setContentPane(vue);
+		new VueManager(this);
+
+		launchWindow();
 	}
 
-	public void setupWindows() {
+	public void setupWindow() {
 		this.setTitle("Lode Runner");
-		this.setSize(980, 720);
+		this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	}
+
+	public void launchWindow() {
 		//this.setResizable(false);
 		this.setVisible(true);
 		this.addWindowListener(new WindowAdapter() {
