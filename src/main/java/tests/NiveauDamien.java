@@ -1,13 +1,13 @@
 package tests;
 
-import jeu.Coordonnees;
-import jeu.Niveau;
-import bloc.BlocBrique;
-import bloc.BlocEchelle;
-import bloc.BlocGlu;
-import item.Lingot;
-import item.PetiteBombe;
-import jeu.bloc.Bloc;
+import Model.jeu.Coordonnees;
+import Model.jeu.Niveau;
+import Model.bloc.BlocBrique;
+import Model.bloc.BlocEchelle;
+import Model.bloc.BlocGlu;
+import Model.item.Lingot;
+import Model.item.PetiteBombe;
+import Model.bloc.Bloc;
 
 public class NiveauDamien {
 	

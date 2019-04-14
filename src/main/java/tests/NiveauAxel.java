@@ -1,8 +1,8 @@
 package tests;
 
-import jeu.Monde;
-import jeu.Niveau;
-import levels.MondeJungle;
+import Model.jeu.Monde;
+import Model.jeu.Niveau;
+import Data.levels.MondeJungle;
 
 public class NiveauAxel {
 	

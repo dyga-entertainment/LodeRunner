@@ -3,8 +3,8 @@ package tests;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
-import IHM.GameViews.GameView;
-import jeu.ModeleJeu;
+import View.GameViews.GameView;
+import Model.jeu.ModeleJeu;
 
 public class TestModeleJeu {
 	
@@ -17,14 +17,14 @@ public class TestModeleJeu {
 		//Jukebox pistes = new Jukebox();
 		//pistes.ajouterPiste(-1, "/ressources/Musiques/spooky_scary_skeletons.wav");
 
-		/* Creation du modele a partir du jeu.Niveau */
+		/* Creation du modele a partir du Niveau */
 		ModeleJeu modele = new ModeleJeu();
 		modele.chargerNiveau(0, 0);
 		/* Creation de la vue */
 		GameView vue = new GameView(modele);
 		
 		modele.addObserver(vue);
-		/* Creation du controleur */
+		/* Creation du Controler */
 		//ControleurJeu c = new ControleurJeu(vue, modele);
 		
 		f.setContentPane(vue);

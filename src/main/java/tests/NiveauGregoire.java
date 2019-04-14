@@ -1,13 +1,13 @@
 package tests;
 
-import jeu.Coordonnees;
-import jeu.Niveau;
-import bloc.BlocBarreTraversee;
-import bloc.BlocEchelle;
-import bloc.BlocPortailFinNiveau;
-import item.Lingot;
-import jeu.bloc.Bloc;
-import jeu.bloc.BlocTerre;
+import Model.jeu.Coordonnees;
+import Model.jeu.Niveau;
+import Model.bloc.BlocBarreTraversee;
+import Model.bloc.BlocEchelle;
+import Model.bloc.BlocPortailFinNiveau;
+import Model.item.Lingot;
+import Model.bloc.Bloc;
+import Model.bloc.BlocTerre;
 
 public class NiveauGregoire {
 	

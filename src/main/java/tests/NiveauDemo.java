@@ -1,9 +1,9 @@
 package tests;
 
-import jeu.Coordonnees;
-import jeu.Niveau;
-import jeu.bloc.Bloc;
-import jeu.bloc.BlocTerre;
+import Model.jeu.Coordonnees;
+import Model.jeu.Niveau;
+import Model.bloc.Bloc;
+import Model.bloc.BlocTerre;
 
 public class NiveauDemo {
 	
