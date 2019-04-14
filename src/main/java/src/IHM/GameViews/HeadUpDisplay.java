@@ -1,4 +1,4 @@
-package IHM;
+package IHM.GameViews;
 
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;

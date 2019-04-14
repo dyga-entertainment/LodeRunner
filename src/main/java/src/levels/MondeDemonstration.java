@@ -15,7 +15,7 @@ public class MondeDemonstration {
 	
 	private static Monde demo;
 	
-	public static Monde Demo() {
+	public static Monde LoadDemoWorld() {
 		demo = new Monde("Jungle", "/ressources/Images/background_fire.png");
 		/** Creation des niveaux */
 		MondeDemonstration.creerLvl1(demo);
@@ -61,6 +61,7 @@ public class MondeDemonstration {
 		//nouv.setMusiqueAmbiance("/ressources/Musiques/what_is_love.wav");
 		nouv.setMusiqueAmbiance(ResourcesPaths.SONGS_ROOT_PATH + "song.wav");
 		nouv.setTheme(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png");
+		nouv.setImageUrl(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_custom.png");
 		/* on ajoute le niveau au monde */
 		courant.addNiveauTemp(nouv);
 	}
@@ -97,6 +98,7 @@ public class MondeDemonstration {
 		nouv.remplirNiveau(n);
 		nouv.setMusiqueAmbiance("/ressources/Musiques/radioactive.wav");
 		nouv.setTheme("/ressources/Images/background_fire.png");
+		nouv.setImageUrl(ResourcesPaths.SPRITE_UI_ICON_PATH + "avatar_axel.png");
 		/* on ajoute le niveau au monde */
 		courant.addNiveauTemp(nouv);
 	}
@@ -128,6 +130,8 @@ public class MondeDemonstration {
 		nouv.remplirNiveau(n);
 		nouv.setMusiqueAmbiance("/ressources/Musiques/spooky_scary_skeletons.wav");
 		nouv.setTheme("/ressources/Images/background_hell.png");
+
+		nouv.setImageUrl(ResourcesPaths.SPRITE_UI_ICON_PATH + "avatar_greg.png");
 		/* on ajoute le niveau au monde */
 		courant.addNiveauTemp(nouv);
 	}
@@ -159,6 +163,8 @@ public class MondeDemonstration {
 		nouv.remplirNiveau(n);
 		nouv.setMusiqueAmbiance("/ressources/Musiques/let_it_go.wav");
 		nouv.setTheme("/ressources/Images/background_snow.png");
+
+		nouv.setImageUrl(ResourcesPaths.SPRITE_UI_ICON_PATH + "avatar_damien.png");
 		/* on ajoute le niveau au monde */
 		courant.addNiveauTemp(nouv);
 	}

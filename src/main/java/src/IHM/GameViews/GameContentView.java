@@ -1,4 +1,4 @@
-package IHM;
+package IHM.GameViews;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,7 +15,7 @@ import jeu.bloc.Bloc;
 import personnage.Heros;
 import personnage.Personnage;
 
-public class VueJeu extends JPanel implements Observer {
+public class GameContentView extends JPanel implements Observer {
 	
     private final ModeleJeu modele;
     private BufferedImage image;
@@ -27,7 +27,7 @@ public class VueJeu extends JPanel implements Observer {
     private final int widthHud;
     private final int heightHud;
 	
-    public VueJeu(ModeleJeu m) {
+    public GameContentView(ModeleJeu m) {
         this.modele = m;
         this.ecranJeu = new JPanel();
         this.hud = new JPanel();

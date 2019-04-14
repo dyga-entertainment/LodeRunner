@@ -1,30 +1,35 @@
-package IHM;
+package IHM.GameViews;
 
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
+
 import jeu.ModeleJeu;
 import jeu.bloc.Bloc;
 import personnage.Personnage;
 
-public class TestVue extends JPanel implements Observer {
+public class GameView extends JPanel implements Observer {
 
-    private VueJeu vue;
+    private GameContentView vue;
     private HeadUpDisplay hud;
 
-    public TestVue(ModeleJeu m) {
-        this.vue = new VueJeu(m);
-        this.hud = new HeadUpDisplay("MDR", 10, 0);
-        //this.hud.setLayout(new GridLayout(1,2));
+    public GameView(ModeleJeu m) {
+        // Initialize the game vue
+        this.vue = new GameContentView(m);
+
+        // Initialize the HUD
+        this.hud = new HeadUpDisplay("This is a name", 10, 0);
+        //this.hud.setLayout(new GridLayout(1,2));  // ???
 
         this.setLayout(new BorderLayout());
 
         /* Laisons des objets entre eux */
-        for(Bloc[] h : m.AccesNiveau()) {
-            for(Bloc b : h) {
+        for(Bloc[] blocs : m.AccesNiveau()) {
+            for(Bloc b : blocs) {
                 if(b != null) {
+                    // Two observers ?
                     b.addObserver(this);
                     b.getSprite().addObserver(this);
                 }
@@ -47,9 +52,8 @@ public class TestVue extends JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-            this.hud.update(o, arg);
-            this.vue.update(o, arg);
-
+        this.hud.update(o, arg);
+        this.vue.update(o, arg);
     }
 	
 }

@@ -41,6 +41,7 @@ public class FenetrePrincipale extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	// hummmmm....
 	public void setControleur(ControleurJeu c) {
 		this.addKeyListener(c);
 		requestFocus();

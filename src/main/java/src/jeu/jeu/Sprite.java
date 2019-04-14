@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.Observable;
 import javax.imageio.ImageIO;
 import java.net.URL;
-import IHM.VueJeu;
+
+import IHM.GameViews.GameContentView;
 
 /**
  *   Un sprite est une image qui a vocation a se deplacer.
@@ -20,7 +21,7 @@ public class Sprite extends Observable {
     public BufferedImage image ;
 
     // ImagePanel ou se trouve le sprite
-    //private VueJeu vue;
+    //private GameContentView vue;
 
     // Animation du robot : sequence d'images
     private BufferedImage[] seq ;
@@ -80,11 +81,11 @@ public class Sprite extends Observable {
 	this.repeat = repeat ;
     }
 
-    public void dessine(Graphics g, VueJeu im) {
+    public void dessine(Graphics g, GameContentView im) {
     	g.drawImage(this.image, this.position.getX(), this.position.getY(), im) ;
     }
 
-	public void jouerAnimation(Graphics g, VueJeu im, int length) {
+	public void jouerAnimation(Graphics g, GameContentView im, int length) {
 		if (this.indexSeq >= 0 && this.indexSeq < this.seq.length) {
 		    this.image = this.seq[this.indexSeq] ;
 

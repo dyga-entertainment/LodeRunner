@@ -68,7 +68,7 @@ public class ModeleJeu extends Observable {
 
 		// On remplit la liste de monde
 		// this.mondes.add(MondeSnow.Snow());
-		this.mondes.add(levels.MondeDemonstration.Demo());
+		this.mondes.add(levels.MondeDemonstration.LoadDemoWorld());
 		//this.mondes.add(MondeJungle.Jungle());
 		// Création du jukebox
 		this.audioTracks = new SoundSystem();

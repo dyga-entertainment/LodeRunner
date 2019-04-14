@@ -1,4 +1,4 @@
-package IHM.Views;
+package IHM.MenuViews;
 
 import helper.Images;
 
@@ -11,6 +11,8 @@ public class ImagePanel extends JPanel {
     protected Image backgroundImage;
 
     public ImagePanel(String urlImage) {
+        super();
+
         BufferedImage image;
         if((image = Images.getImageFromPath(urlImage)) != null) {
             this.backgroundImage = image;
@@ -20,7 +22,7 @@ public class ImagePanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        System.out.println("[Rendering] PaintComponent call from View");
+        //System.out.println("[Rendering] PaintComponent call from ImagePanel");
 
         g.drawImage(this.backgroundImage,0,0, this.getWidth(), this.getHeight(), this);
     }

@@ -8,36 +8,44 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.Stack;
 import javax.swing.*;
 import IHM.Buttons.ContextTransitionButton;
 import IHM.FenetrePrincipale;
-import IHM.Views.*;
+import IHM.GameViews.GameView;
+import IHM.MenuViews.LoadingView;
+import IHM.MenuViews.*;
 import audio.SoundSystem;
+import jeu.ModeleJeu;
 
 public class VueManager {
 
-    public enum ViewType { None, HomeMenu, Credits, Profils, Settings, WorldSelection, LevelSelection }
+    public enum ViewType { None, HomeMenu, Credits, Profils, Settings, WorldSelection, LevelSelection, Loading }
 
     private JFrame windowFrame;
 
     private static View[] views;
     private static ViewType currentView;
-    private static ViewType lastVisitedView;
+    private static Stack<ViewType> lastVisitedViews;
 
 	public VueManager(FenetrePrincipale fenetre) {
         this.windowFrame = fenetre;
 
         // Create and store all the possible views in the array
         this.views = new View[] {
-                null,
-                new HomeMenuView(this),
-                new CreditView(this),
-                new ProfilsView(this),
-                new SettingsView(this),
-                new WorldsView(this),
-                new LevelsView(this),
+            null,
+            new HomeMenuView(this),
+            new CreditView(this),
+            new ProfilsView(this),
+            new SettingsView(this),
+            new WorldSelectionView(this),
+            new LevelSelectionView(this),
+            new LoadingView(this),
         };
         this.currentView = ViewType.None;
+        this.lastVisitedViews = new Stack<>();
 
         ChangeView(ViewType.HomeMenu);
 
@@ -51,24 +59,6 @@ public class VueManager {
         //loadProfil();
 
         //pistes.retirerPiste(numeroPisteAmbiance)
-
-        // AFTER
-        //ModeleJeu modele = new ModeleJeu();
-        //modele.chargerNiveau(0, 0);
-
-        //this.IHMCourante = new TestVue(modele);
-        //this.setLayout(new BorderLayout());
-        //this.add(this.IHMCourante, BorderLayout.CENTER);
-        //modele.addObserver(this.IHMCourante);
-        //ControleurJeu c = new ControleurJeu(this.IHMCourante, modele);
-        //fenetre.setControleur(c);
-        //jouerJeu(this.IHMCourante);
-
-        //this.removeAll();
-        //validate();
-        //repaint();
-        //this.setOpaque(false);
-
 	}
 
     public ActionListener getContextTransitionActionListener() {
@@ -82,13 +72,25 @@ public class VueManager {
     }
 
     public void ChangeView(ContextTransitionButton button) {
-        ChangeView(ViewType.values()[button.getNextView()]);
+        ChangeView(ViewType.values()[button.getNextView().ordinal()]);
     }
 
-	public void ChangeView(ViewType newView) {
+    public void ChangeView(ViewType newView) {
+        ChangeView(newView, false);
+    }
+
+	public void ChangeView(ViewType newView, boolean isBackButton) {
         System.out.println("[Context Changement] from " + currentView.toString() + " to " + newView.toString());
 
-        this.lastVisitedView = currentView;
+        // Retrive possible parameters from the current view.
+        Dictionary<String, Object> parameters = new Hashtable<>();
+        if(this.views[currentView.ordinal()] != null) {
+            parameters = this.views[currentView.ordinal()].getParameters();
+        }
+
+        if (!isBackButton) {
+            this.lastVisitedViews.push(currentView);
+        }
         this.currentView = newView;
 
         // Clean up everything
@@ -97,37 +99,56 @@ public class VueManager {
         // Prepare the next view to be printed
         View nextView = getNextView();
 
+
+        // Give the parameters to the next view if needed.
+        nextView.setParameters(parameters);
+
+        // Setup the view to be display
         nextView.setup(FenetrePrincipale.WINDOW_WIDTH, FenetrePrincipale.WINDOW_HEIGHT, FenetrePrincipale.CONTENT_PANEL_WIDTH,
                 FenetrePrincipale.CONTENT_PANEL_HEIGHT);
 
+        //
         // Could make a transition here ?
+        //
 
         // Finally, Add the VueManager to the windows
-        //this.windowFrame.setContentPane(new Container());
-
         this.windowFrame.getContentPane().add(nextView);
         this.windowFrame.repaint();
         this.windowFrame.pack();
     }
 
     public void ReturnLastView() {
-        ChangeView(this.lastVisitedView);
+        ChangeView(this.lastVisitedViews.pop(), true);
     }
 
     public View getNextView() {
         return this.views[currentView.ordinal()];
     }
 
-    /*
-	public void jouerJeu(JPanel vue) {
-		this.repaint();
-		//this.removeAll();  Useful ?
-		
-		this.setLayout(new BorderLayout());
-		this.setLayout(new GridLayout(1,1));
-		this.add(vue);
-	}
-	*/
+    public JFrame getFrame() {
+	    return this.windowFrame;
+    }
+
+    public void launchGame(ModeleJeu modele) {
+        GameView gameVue = new GameView(modele);
+
+        // Should call ChangeView here with the view created... ?
+
+        modele.addObserver(gameVue);
+        ControleurJeu c = new ControleurJeu(gameVue, modele);
+        ((FenetrePrincipale)this.windowFrame).setControleur(c);
+
+        // Clean up everything
+        this.windowFrame.getContentPane().removeAll();
+
+        // Finally add the gameVue to the windows itself
+        this.windowFrame.getContentPane().setLayout(new GridLayout(1,1));
+        this.windowFrame.getContentPane().add(gameVue);
+        this.windowFrame.repaint();
+        this.windowFrame.pack();
+    }
+
+    ///////////////// OLD STUFFS /////////////////
 
 	public void majFichierProfils(levels.ProfilData p) {
 		/** Re-ecriture dans le fichier apres modif */

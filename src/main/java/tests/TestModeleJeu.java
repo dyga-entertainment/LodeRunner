@@ -3,7 +3,7 @@ package tests;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
-import IHM.TestVue;
+import IHM.GameViews.GameView;
 import jeu.ModeleJeu;
 
 public class TestModeleJeu {
@@ -21,7 +21,7 @@ public class TestModeleJeu {
 		ModeleJeu modele = new ModeleJeu();
 		modele.chargerNiveau(0, 0);
 		/* Creation de la vue */
-		TestVue vue = new TestVue(modele);
+		GameView vue = new GameView(modele);
 		
 		modele.addObserver(vue);
 		/* Creation du controleur */

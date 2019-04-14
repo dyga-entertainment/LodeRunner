@@ -1,7 +1,8 @@
 package controleur;
 
-import IHM.TestVue;
+import IHM.GameViews.GameView;
 import exceptions.BlocNonCreusableException;
+import helper.ResourcesPaths;
 import jeu.ModeleJeu;
 
 import java.awt.event.KeyEvent;
@@ -11,11 +12,11 @@ import java.util.logging.Logger;
 
 public class ControleurJeu implements KeyListener {
 
-	private TestVue vue;
+	private GameView vue;
 	private ModeleJeu modele;
 	private boolean actionCreuser;
 
-	public ControleurJeu(TestVue v, ModeleJeu m) {
+	public ControleurJeu(GameView v, ModeleJeu m) {
 		this.vue = v;
 		this.modele = m;
 	}
@@ -80,9 +81,9 @@ public class ControleurJeu implements KeyListener {
 		if (this.modele.getHeros().estVivant()) {
 			this.modele.getHeros().setMouvement(false);
 			if (this.modele.getHeros().isRegardeAGauche()) {
-				this.modele.getHeros().setSprite("/ressources/Images/hero_fry_stop_left.png");
+				this.modele.getHeros().setSprite(ResourcesPaths.ANIM_PLAYER_IDLE_PATH + "hero_fry_stop_left.png");
 			} else {
-				this.modele.getHeros().setSprite("/ressources/Images/hero_fry_stop_right.png");
+				this.modele.getHeros().setSprite(ResourcesPaths.ANIM_PLAYER_IDLE_PATH + "hero_fry_stop_right.png");
 			}
 		}
 		// this.vue.getPerso().getSprite().repaint();

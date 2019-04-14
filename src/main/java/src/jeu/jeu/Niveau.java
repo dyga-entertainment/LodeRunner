@@ -1,9 +1,11 @@
 package jeu;
 
+import IHM.MenuViews.ImagePanel;
 import jeu.bloc.Bloc;
 import jeu.bloc.BlocTerre;
 import jeu.bloc.C;
-import java.awt.*;
+
+import javax.swing.*;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
@@ -35,6 +37,7 @@ public class Niveau {
 	/** chemin de fichier audio */
 	private String cheminFichierAudioAmbiance;
 	// private boolean estEditable;
+	private String imageUrlPreview;
 
 	public Niveau(boolean estEditable) {
 		this.blocs = new LinkedList<Bloc>();
@@ -46,7 +49,11 @@ public class Niveau {
 		// this.Identifiant = 0;
 		// this.estEditable = estEditable;
 	}
-	
+
+	public void setImageUrl(String url) {
+		this.imageUrlPreview = url;
+	}
+
 	public void setMusiqueAmbiance(String cheminNewAudio){
 		this.cheminFichierAudioAmbiance = cheminNewAudio;
 	}
@@ -71,7 +78,7 @@ public class Niveau {
 		return this.theEnd;
 	}
 
-	public void remplirNiveau(C[][] pattern) {
+		public void remplirNiveau(C[][] pattern) {
 		jeu.Coordonnees pos;
 		Bloc bloc;
 		item.Item item;
@@ -163,7 +170,9 @@ public class Niveau {
 		this.items.add(item);
 	}
 
-    public PopupMenu getApercu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public JPanel getApercu() {
+		// Should return a image of the world ?
+		//return new ImagePanel(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_custom.png");
+		return new ImagePanel(this.imageUrlPreview);
     }
 }

@@ -7,79 +7,41 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Dictionary;
 
 import static helper.Images.getImageFromPath;
 
-public class ContextTransitionButton extends JButton {
-
-    /** Basic description of the button */
-    private String name;
-    private String standardImage;
-    private String selectedImage;
+public class ContextTransitionButton extends StandardButton {
 
     /** Interaction field */
-    private int nextView;
+    private VueManager.ViewType nextView;
+
+    /** Fields that will contains useful informations when changing views */
+    private Dictionary<String, Object> parameters;
 
     public ContextTransitionButton(String text, String standardImage, String selectedImage) {
-        this(text, standardImage, selectedImage, true);
+        this(text, standardImage, selectedImage, true, VueManager.ViewType.None);
     }
 
-    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable) {
-        super(text);
+    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable, VueManager.ViewType nextView) {
+        super(text, standardImage, selectedImage, isEnable);
 
-        this.standardImage = standardImage;
-        this.selectedImage = selectedImage;
-
-        this.setBorder(null);
-        this.setEnabled(isEnable);
-        this.setContentAreaFilled(false);
-        this.setIcon(new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage)));
-
-        this.name = text;
-
-        this.addMouseListener(new MouseListener() {
-            public void mouseEntered(MouseEvent e) {
-            }
-            public void mouseClicked(MouseEvent e) {
-            }
-            public void mousePressed(MouseEvent e) {
-                setIcon(new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_SELECTED_PATH + selectedImage)));
-            }
-            public void mouseReleased(MouseEvent e) {
-                setIcon(new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage)));
-            }
-            public void mouseExited(MouseEvent e) {
-            }
-        });
-
-        // Useful ?
-        //this.repaint();
+        this.nextView = nextView;
     }
 
-    public String getNameO() {
-        return this.name;
-    }
-
-    public String getStandardImage() {
-        return this.standardImage;
-    }
-
-    public String getSelectedImage() {
-        return this.selectedImage;
-    }
-
-    public int getNextView() {
+    public VueManager.ViewType getNextView() {
         return this.nextView;
     }
 
     public void setNextView(VueManager.ViewType nextView) {
-        this.nextView = nextView.ordinal();
+        this.nextView = nextView;
     }
 
+    public void setParameters(Dictionary<String, Object> parameters) {
+        this.parameters = parameters;
+    }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        System.out.println("[Rendering] Repaint button " + this.name);
+    public Dictionary<String, Object> getParams() {
+        return parameters;
     }
 }

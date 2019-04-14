@@ -1,6 +1,6 @@
 package personnage;
 
-import IHM.VueJeu;
+import IHM.GameViews.GameContentView;
 import jeu.Coordonnees;
 import jeu.Positionnable;
 
@@ -19,7 +19,7 @@ public abstract class Personnage extends Positionnable {
 	private int moveSpeed;
 	private Coordonnees position;
 	private boolean mouvement;
-	private VueJeu vue;
+	private GameContentView vue;
 	private boolean vivant;
 	private boolean regardeAGauche;
 	/* ***** ***** ********* ***** ***** */
@@ -115,11 +115,11 @@ public abstract class Personnage extends Positionnable {
 		this.mouvement = mouvement;
 	}
 
-	public VueJeu getVue() {
+	public GameContentView getVue() {
 		return vue;
 	}
 
-	public void setVue(VueJeu vue) {
+	public void setVue(GameContentView vue) {
 		this.vue = vue;
 	}
 

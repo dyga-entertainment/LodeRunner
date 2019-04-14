@@ -1,4 +1,4 @@
-package IHM.Views;
+package IHM.MenuViews;
 
 import controleur.VueManager;
 import helper.Images;
