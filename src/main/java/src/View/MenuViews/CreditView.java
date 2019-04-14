@@ -1,11 +1,11 @@
 package View.MenuViews;
 
-import Controler.VueManager;
+import View.ViewManager;
 import Utils.helper.ResourcesPaths;
 
 public class CreditView extends View {
 	
-	public CreditView(VueManager vueManager) {
+	public CreditView(ViewManager vueManager) {
 		super(vueManager, ResourcesPaths.SPRITE_UI_PATH + "credits.png");
 	}
 }

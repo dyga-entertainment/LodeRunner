@@ -1,7 +1,7 @@
 package View.MenuViews;
 
 import View.IHM2;
-import Controler.VueManager;
+import View.ViewManager;
 import Model.jeu.Monde;
 import Data.levels.MondeDemonstration;
 
@@ -21,7 +21,7 @@ public class LevelSelectionView extends View {
 
     private JPanel panelPreview;
 
-	public LevelSelectionView(VueManager vueManager) {
+	public LevelSelectionView(ViewManager vueManager) {
         super(vueManager);
 	}
 
@@ -80,7 +80,7 @@ public class LevelSelectionView extends View {
         this.buttonsPanel.add(selectionButtons, BorderLayout.CENTER);
 
         // Accept button
-        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", VueManager.ViewType.Loading);
+        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", ViewManager.ViewType.Loading);
         this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 

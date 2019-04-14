@@ -1,4 +1,4 @@
-package Controler;
+package View;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -12,15 +12,16 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Stack;
 import javax.swing.*;
+
+import Controler.ControleurJeu;
 import View.Buttons.ContextTransitionButton;
-import View.FenetrePrincipale;
 import View.GameViews.GameView;
 import View.MenuViews.LoadingView;
 import View.MenuViews.*;
 import Data.audio.SoundSystem;
 import Model.jeu.ModeleJeu;
 
-public class VueManager {
+public class ViewManager {
 
     public enum ViewType { None, HomeMenu, Credits, Profils, Settings, WorldSelection, LevelSelection, Loading }
 
@@ -30,7 +31,7 @@ public class VueManager {
     private static ViewType currentView;
     private static Stack<ViewType> lastVisitedViews;
 
-	public VueManager(FenetrePrincipale fenetre) {
+	public ViewManager(FenetrePrincipale fenetre) {
         this.windowFrame = fenetre;
 
         // Create and store all the possible views in the array
@@ -111,7 +112,7 @@ public class VueManager {
         // Could make a transition here ?
         //
 
-        // Finally, Add the VueManager to the windows
+        // Finally, Add the ViewManager to the windows
         this.windowFrame.getContentPane().add(nextView);
         this.windowFrame.repaint();
         this.windowFrame.pack();
@@ -189,7 +190,7 @@ public class VueManager {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        System.out.println("Repaint VueManager called !");
+        System.out.println("Repaint ViewManager called !");
     	//g.drawImage(bg,0,0,getSize().width, getSize().height, this);
     	this.views[this.currentView.ordinal()].repaint();
 

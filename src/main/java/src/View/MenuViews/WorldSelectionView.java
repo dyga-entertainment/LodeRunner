@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import View.Buttons.StandardButton;
-import Controler.VueManager;
+import View.ViewManager;
 import Utils.helper.Images;
 import Utils.helper.ResourcesPaths;
 import Model.jeu.Joueur;
@@ -29,7 +29,7 @@ public class WorldSelectionView extends View {
 	// TODO
 	private Joueur profilCourant;
 
-	public WorldSelectionView(VueManager vueManager) {
+	public WorldSelectionView(ViewManager vueManager) {
 		super(vueManager, ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png");
 
 		selectedWorld = "Jungle";
@@ -133,7 +133,7 @@ public class WorldSelectionView extends View {
     public void setupButtonsPanel() {
         super.setupButtonsPanel();
 
-        JButton acceptButton = NewContextTransitionButton("Back", "bouton_valider1.png", "bouton_valider2.png", VueManager.ViewType.LevelSelection);
+        JButton acceptButton = NewContextTransitionButton("Back", "bouton_valider1.png", "bouton_valider2.png", ViewManager.ViewType.LevelSelection);
         this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 

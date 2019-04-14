@@ -1,6 +1,6 @@
 package View.MenuViews;
 
-import Controler.VueManager;
+import View.ViewManager;
 
 import java.awt.*;
 
@@ -10,7 +10,7 @@ public class SettingsView extends View {
 	
 	private JLabel title;
 
-	public SettingsView(VueManager vueManager) {
+	public SettingsView(ViewManager vueManager) {
 		super(vueManager);
 	}
 

@@ -1,6 +1,6 @@
 package View.MenuViews;
 
-import Controler.VueManager;
+import View.ViewManager;
 import Utils.helper.Images;
 import Utils.helper.ResourcesPaths;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class ProfilsView extends View {
 	private int diffChoisie;
 	private String[] avatarIcons;
 	
-	public ProfilsView(VueManager vueManager) {
+	public ProfilsView(ViewManager vueManager) {
 		super(vueManager);
 
 		String[] images = {"image 1", "image 2", "image 3","image 4"};

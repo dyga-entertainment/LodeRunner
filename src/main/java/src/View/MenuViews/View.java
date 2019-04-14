@@ -1,16 +1,16 @@
 package View.MenuViews;
 
 import View.Buttons.ContextTransitionButton;
-import Controler.VueManager;
 import Utils.helper.ResourcesPaths;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import View.ViewManager;
 
 public abstract class View extends ImagePanel {
 
-    protected VueManager vueManager;
+    protected ViewManager vueManager;
 
     /** JPanel in charge of buttons layout */
     protected JPanel headerPanel;
@@ -23,11 +23,11 @@ public abstract class View extends ImagePanel {
     /** List of object that the previous view gave before handling to the next */
     protected Dictionary<String, Object> parameters;
 
-    public View(VueManager vueManager) {
+    public View(ViewManager vueManager) {
         this(vueManager, "");
     }
 
-    public View(VueManager vueManager, String urlImage) {
+    public View(ViewManager vueManager, String urlImage) {
         super(urlImage);
         this.parameters = new Hashtable<>();
 
@@ -66,19 +66,19 @@ public abstract class View extends ImagePanel {
         this.buttonsPanel.setLayout(new BorderLayout());
 
         // Back button by default
-        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", VueManager.ViewType.HomeMenu, true);
+        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", ViewManager.ViewType.HomeMenu, true);
         this.buttonsPanel.add(backButton, BorderLayout.WEST);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, VueManager.ViewType nextView) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewManager.ViewType nextView) {
         return NewContextTransitionButton(text, standardImage, selectedImage, nextView, true, false);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, VueManager.ViewType nextView, boolean isBackButton) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewManager.ViewType nextView, boolean isBackButton) {
         return NewContextTransitionButton(text, standardImage, selectedImage, nextView, true, isBackButton);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, VueManager.ViewType nextView, boolean isEnable, boolean isBackButton) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewManager.ViewType nextView, boolean isEnable, boolean isBackButton) {
         ContextTransitionButton button = new ContextTransitionButton(text, standardImage, selectedImage, isEnable, nextView);
         if(isBackButton) {
             button.addActionListener(this.vueManager.getReturnContextActionListener());

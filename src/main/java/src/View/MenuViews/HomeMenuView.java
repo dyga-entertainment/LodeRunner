@@ -1,14 +1,13 @@
 package View.MenuViews;
 
-import Controler.VueManager;
+import View.ViewManager;
 import Utils.helper.ResourcesPaths;
 import Utils.WrapLayout;
-
 import javax.swing.*;
 
 public class HomeMenuView extends View {
 
-    public HomeMenuView(VueManager manager) {
+    public HomeMenuView(ViewManager manager) {
         super(manager, ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_menu.png");
     }
 
@@ -19,11 +18,11 @@ public class HomeMenuView extends View {
         this.buttonsPanel.removeAll();
         this.buttonsPanel.validate();
 
-        JButton playButton = NewContextTransitionButton("Solo", "bouton_solo1.png", "bouton_solo2.png", VueManager.ViewType.WorldSelection);
-        JButton multiplayerButton = NewContextTransitionButton("Coop", "bouton_coop1.png", "bouton_coop2.png", VueManager.ViewType.None, false, false);
-        JButton settingsButton = NewContextTransitionButton("Options", "bouton_options1.png", "bouton_options2.png", VueManager.ViewType.Settings);
-        JButton editorButton = NewContextTransitionButton("Editeur", "bouton_editeur1.png", "bouton_editeur2.png", VueManager.ViewType.None, false, false);
-        JButton creditsButton = NewContextTransitionButton("Credits", "bouton_credits1.png", "bouton_credits2.png", VueManager.ViewType.Credits);
+        JButton playButton = NewContextTransitionButton("Solo", "bouton_solo1.png", "bouton_solo2.png", ViewManager.ViewType.WorldSelection);
+        JButton multiplayerButton = NewContextTransitionButton("Coop", "bouton_coop1.png", "bouton_coop2.png", ViewManager.ViewType.None, false, false);
+        JButton settingsButton = NewContextTransitionButton("Options", "bouton_options1.png", "bouton_options2.png", ViewManager.ViewType.Settings);
+        JButton editorButton = NewContextTransitionButton("Editeur", "bouton_editeur1.png", "bouton_editeur2.png", ViewManager.ViewType.None, false, false);
+        JButton creditsButton = NewContextTransitionButton("Credits", "bouton_credits1.png", "bouton_credits2.png", ViewManager.ViewType.Credits);
 
         // Assign all the previously created buttons to the structure
         this.buttons = new JButton[] {

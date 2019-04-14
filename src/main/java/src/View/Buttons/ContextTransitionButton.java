@@ -1,32 +1,32 @@
 package View.Buttons;
 
-import Controler.VueManager;
+import View.ViewManager;
 
 import java.util.Dictionary;
 
 public class ContextTransitionButton extends StandardButton {
 
     /** Interaction field */
-    private VueManager.ViewType nextView;
+    private ViewManager.ViewType nextView;
 
     /** Fields that will contains useful informations when changing views */
     private Dictionary<String, Object> parameters;
 
     public ContextTransitionButton(String text, String standardImage, String selectedImage) {
-        this(text, standardImage, selectedImage, true, VueManager.ViewType.None);
+        this(text, standardImage, selectedImage, true, ViewManager.ViewType.None);
     }
 
-    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable, VueManager.ViewType nextView) {
+    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable, ViewManager.ViewType nextView) {
         super(text, standardImage, selectedImage, isEnable);
 
         this.nextView = nextView;
     }
 
-    public VueManager.ViewType getNextView() {
+    public ViewManager.ViewType getNextView() {
         return this.nextView;
     }
 
-    public void setNextView(VueManager.ViewType nextView) {
+    public void setNextView(ViewManager.ViewType nextView) {
         this.nextView = nextView;
     }
 

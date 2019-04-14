@@ -1,13 +1,13 @@
 package View.MenuViews;
 
-import Controler.VueManager;
+import View.ViewManager;
 import Model.jeu.ModeleJeu;
 
 import java.awt.*;
 
 public class LoadingView extends View {
 
-    public LoadingView(VueManager vueManager) {
+    public LoadingView(ViewManager vueManager) {
         super(vueManager);
 
         this.setBackground(Color.BLACK);

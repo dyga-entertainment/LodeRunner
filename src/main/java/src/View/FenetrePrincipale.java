@@ -5,8 +5,6 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import Controler.VueManager;
-
 public class FenetrePrincipale extends JFrame {
 
 	public static final int WINDOW_WIDTH = 950;
@@ -19,7 +17,7 @@ public class FenetrePrincipale extends JFrame {
 		setupWindow();
 
 		// Set the View of the game
-		new VueManager(this);
+		new ViewManager(this);
 
 		launchWindow();
 	}
