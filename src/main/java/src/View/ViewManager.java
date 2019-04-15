@@ -1,54 +1,48 @@
 package View;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Stack;
 import javax.swing.*;
 
 import Controler.ControleurJeu;
-import View.Buttons.ContextTransitionButton;
+import Model.ViewType;
 import View.GameViews.GameView;
 import View.MenuViews.LoadingView;
 import View.MenuViews.*;
 import Data.audio.SoundSystem;
-import Model.jeu.ModeleJeu;
+import Model.ModeleJeu;
 
 public class ViewManager {
 
-    public enum ViewType { None, HomeMenu, Credits, Profils, Settings, WorldSelection, LevelSelection, Loading }
-
     private JFrame windowFrame;
 
-    private static View[] views;
-    private static ViewType currentView;
-    private static Stack<ViewType> lastVisitedViews;
+    private ModeleJeu model;
 
-	public ViewManager(FenetrePrincipale fenetre) {
+    private static View[] views;
+
+	public ViewManager(FenetrePrincipale fenetre, ModeleJeu model, ControleurJeu gameControler) {
         this.windowFrame = fenetre;
+        this.model = model;
 
         // Create and store all the possible views in the array
         this.views = new View[] {
             null,
-            new HomeMenuView(this),
-            new CreditView(this),
-            new ProfilsView(this),
-            new SettingsView(this),
-            new WorldSelectionView(this),
-            new LevelSelectionView(this),
-            new LoadingView(this),
+            new HomeMenuView(this, gameControler),
+            new CreditView(this, gameControler),
+            new ProfilsView(this, gameControler),
+            new SettingsView(this, gameControler),
+            new WorldSelectionView(this, gameControler),
+            new LevelSelectionView(this, gameControler),
+            new LoadingView(this, gameControler),
         };
-        this.currentView = ViewType.None;
-        this.lastVisitedViews = new Stack<>();
 
-        ChangeView(ViewType.HomeMenu);
+        refreshView();
+        //ChangeView(ViewType.HomeMenu);
 
         // Basic layout
 
@@ -62,6 +56,7 @@ public class ViewManager {
         //pistes.retirerPiste(numeroPisteAmbiance)
 	}
 
+	/*
     public ActionListener getContextTransitionActionListener() {
         // Create an uniform actionListener that will just change the context
         return actionEvent -> ChangeView((ContextTransitionButton) actionEvent.getSource());
@@ -78,35 +73,66 @@ public class ViewManager {
 
     public void ChangeView(ViewType newView) {
         ChangeView(newView, false);
+    }*/
+
+    /*
+    public void ReturnLastView() {
+        ChangeView(this.lastVisitedViews.pop(), true);
     }
 
-	public void ChangeView(ViewType newView, boolean isBackButton) {
-        System.out.println("[Context Changement] from " + currentView.toString() + " to " + newView.toString());
+    public View getNextView() {
+        return this.views[currentView.ordinal()];
+    }*/
+
+    public JFrame getFrame() {
+	    return this.windowFrame;
+    }
+
+    public void launchGame(ModeleJeu modele) {
+        GameView gameVue = new GameView(modele);
+
+        // Should call ChangeView here with the view created... ?
+
+
+
+        // Clean up everything
+        this.windowFrame.getContentPane().removeAll();
+
+        // Finally add the gameVue to the windows itself
+        this.windowFrame.getContentPane().setLayout(new GridLayout(1,1));
+        this.windowFrame.getContentPane().add(gameVue);
+        this.windowFrame.repaint();
+        this.windowFrame.pack();
+    }
+
+
+    /**
+     * This method should be called by the Controller
+     * The View should read the modele an update itself.
+     */
+    public void refreshView() {
+        //System.out.println("[Context Changement] from " + model.GetLastVisitedView().toString()  + " to " + model.GetCurrentView().toString());
 
         // Retrive possible parameters from the current view.
+        // TODO Later
+        /*
         Dictionary<String, Object> parameters = new Hashtable<>();
         if(this.views[currentView.ordinal()] != null) {
             parameters = this.views[currentView.ordinal()].getParameters();
-        }
-
-        if (!isBackButton) {
-            this.lastVisitedViews.push(currentView);
-        }
-        this.currentView = newView;
+        }*/
 
         // Clean up everything
         this.windowFrame.getContentPane().removeAll();
 
         // Prepare the next view to be printed
-        View nextView = getNextView();
-
+        View nextView = this.views[model.GetCurrentView().ordinal()];
 
         // Give the parameters to the next view if needed.
-        nextView.setParameters(parameters);
+        //nextView.setParameters(parameters);
 
         // Setup the view to be display
         nextView.setup(FenetrePrincipale.WINDOW_WIDTH, FenetrePrincipale.WINDOW_HEIGHT, FenetrePrincipale.CONTENT_PANEL_WIDTH,
-                FenetrePrincipale.CONTENT_PANEL_HEIGHT);
+            FenetrePrincipale.CONTENT_PANEL_HEIGHT);
 
         //
         // Could make a transition here ?
@@ -118,38 +144,6 @@ public class ViewManager {
         this.windowFrame.pack();
     }
 
-    public void ReturnLastView() {
-        ChangeView(this.lastVisitedViews.pop(), true);
-    }
-
-    public View getNextView() {
-        return this.views[currentView.ordinal()];
-    }
-
-    public JFrame getFrame() {
-	    return this.windowFrame;
-    }
-
-    public void launchGame(ModeleJeu modele) {
-        GameView gameVue = new GameView(modele);
-
-        // Should call ChangeView here with the view created... ?
-
-        modele.addObserver(gameVue);
-        ControleurJeu c = new ControleurJeu(gameVue, modele);
-
-        this.windowFrame.addKeyListener(c);
-        this.windowFrame.requestFocus(); // Needed ?
-
-        // Clean up everything
-        this.windowFrame.getContentPane().removeAll();
-
-        // Finally add the gameVue to the windows itself
-        this.windowFrame.getContentPane().setLayout(new GridLayout(1,1));
-        this.windowFrame.getContentPane().add(gameVue);
-        this.windowFrame.repaint();
-        this.windowFrame.pack();
-    }
 
     ///////////////// OLD STUFFS /////////////////
 

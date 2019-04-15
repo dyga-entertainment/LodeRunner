@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 import Model.item.Item;
 import Utils.helper.ResourcesPaths;
-import Model.jeu.ModeleJeu;
+import Model.ModeleJeu;
 import Model.jeu.Sprite;
 import Model.bloc.Bloc;
 import Model.personnage.Heros;

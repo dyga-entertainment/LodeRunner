@@ -1,5 +1,8 @@
 package View;
 
+import Controler.ControleurJeu;
+import Model.ModeleJeu;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -16,8 +19,27 @@ public class FenetrePrincipale extends JFrame {
 	public FenetrePrincipale() {
 		setupWindow();
 
-		// Set the View of the game
-		new ViewManager(this);
+		// Init the modele of the game
+		ModeleJeu modele = new ModeleJeu();
+
+		// Init the controller of the game
+		// Init the link Controller -> Model in order to update the model if an input has been made.
+		ControleurJeu gameControler = new ControleurJeu(modele);
+
+		// Add the link View -> Controller when the user use inputs.
+		this.addKeyListener(gameControler);
+		this.addMouseListener(gameControler);
+		this.requestFocus(); // Needed ?
+
+		// Init the view of the game with the windows (??)
+		// and the controller to be able to add him on buttons for example
+		ViewManager gameVue = new ViewManager(this, modele, gameControler);
+
+		// Add the link Controler -> View to notify the view an input as been made and that, maybe the model changed.
+		gameControler.addView(gameVue);
+
+		// useless ??
+		//modele.addObserver(gameVue);
 
 		launchWindow();
 	}

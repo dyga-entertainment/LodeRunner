@@ -1,14 +1,14 @@
 package View.MenuViews;
 
+import Controler.ControleurJeu;
 import View.ViewManager;
-import Model.jeu.ModeleJeu;
 
 import java.awt.*;
 
 public class LoadingView extends View {
 
-    public LoadingView(ViewManager vueManager) {
-        super(vueManager);
+    public LoadingView(ViewManager vueManager, ControleurJeu controler) {
+        super(vueManager, controler);
 
         this.setBackground(Color.BLACK);
     }
@@ -49,14 +49,13 @@ public class LoadingView extends View {
         // Should use worldName instead of hard code.
         //MondeDemonstration.LoadDemoWorld().getNiveau(levelNumber);
 
-        ModeleJeu modele = new ModeleJeu();
-        modele.chargerNiveau(0, levelNumber);
+        //modele.chargerNiveau(0, levelNumber);
 
         // Make some fancy animation here during loading ?
 
         System.out.println("[Loading] Finished loading level.");
 
-        this.vueManager.launchGame(modele);
+        //this.vueManager.launchGame(modele);
 
         System.out.println("[Loading] Finished entire loading.");
     }

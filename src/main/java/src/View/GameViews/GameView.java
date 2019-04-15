@@ -6,7 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 
-import Model.jeu.ModeleJeu;
+import Model.ModeleJeu;
 import Model.bloc.Bloc;
 import Model.personnage.Personnage;
 

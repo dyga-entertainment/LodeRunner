@@ -1,6 +1,7 @@
 package View.Buttons;
 
 import Utils.helper.ResourcesPaths;
+import View.MenuViews.View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,11 +20,11 @@ public class StandardButton extends JButton {
     /** Control the transparancy of the button */
     private float alpha = 1.0f;
 
-    public StandardButton(String text, String standardImage, String selectedImage) {
-        this(text, standardImage, selectedImage, true);
+    public StandardButton(View parentView, String text, String standardImage, String selectedImage) {
+        this(parentView, text, standardImage, selectedImage, true);
     }
 
-    public StandardButton(String text, String standardImage, String selectedImage, boolean isEnable) {
+    public StandardButton(View parentView, String text, String standardImage, String selectedImage, boolean isEnable) {
         super();
 
         this.name = text;
@@ -38,6 +39,9 @@ public class StandardButton extends JButton {
             this.setIcon(new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage)));
         }
 
+        //this.lis
+
+        /*
         this.addMouseListener(new MouseListener() {
             public void mouseEntered(MouseEvent e) {
             }
@@ -56,7 +60,7 @@ public class StandardButton extends JButton {
             }
             public void mouseExited(MouseEvent e) {
             }
-        });
+        });*/
     }
 
     public String getButtonName() {

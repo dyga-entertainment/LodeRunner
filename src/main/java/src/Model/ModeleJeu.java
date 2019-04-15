@@ -1,4 +1,4 @@
-package Model.jeu;
+package Model;
 
 import Data.audio.SoundSystem;
 import Model.bloc.*;
@@ -17,6 +17,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import java.util.Stack;
 
 /**
  * Classe ModeleJeu. Classe qui represente le niveau de Model.jeu actuel. Permet de
@@ -61,6 +62,15 @@ public class ModeleJeu extends Observable {
 	 * mondes et niveaux disponibles.
 	 */
 	public ModeleJeu() {
+
+		//-------- Menu --------
+
+		// For the menu only
+		this.currentView = ViewType.HomeMenu;
+		this.lastVisitedViews = new Stack<>();
+
+		//-------- Game --------
+
 		// initialisation des listes
 		this.personnages = new ArrayList<Personnage>();
 		this.mondes = new ArrayList<Model.jeu.Monde>();
@@ -76,6 +86,72 @@ public class ModeleJeu extends Observable {
 		this.audioTracks = new SoundSystem();
 		// le modele est pret
 	}
+
+	/**####################### Menu Function #######################*/
+
+	private static ViewType currentView;
+	private static Stack<ViewType> lastVisitedViews;
+
+	public void ChangeView(ViewType newView, boolean isBackButton) {
+		System.out.println("ICICICI" + newView + "" + isBackButton);
+		//System.out.println("[Context Changement] from " + currentView.toString() + " to " + newView.toString());
+
+		// Retrive possible parameters from the current view.
+		/*Dictionary<String, Object> parameters = new Hashtable<>();
+		if(this.views[currentView.ordinal()] != null) {
+			parameters = this.views[currentView.ordinal()].getParameters();
+		}*/
+
+		if (!isBackButton) {
+			this.lastVisitedViews.push(currentView);
+		}
+		this.currentView = newView;
+
+		// Clean up everything
+		//this.windowFrame.getContentPane().removeAll();
+
+		// Prepare the next view to be printed
+		//View nextView = getNextView();
+
+
+		// Give the parameters to the next view if needed.
+		//nextView.setParameters(parameters);
+
+		// Setup the view to be display
+		//nextView.setup(FenetrePrincipale.WINDOW_WIDTH, FenetrePrincipale.WINDOW_HEIGHT, FenetrePrincipale.CONTENT_PANEL_WIDTH,
+		//	FenetrePrincipale.CONTENT_PANEL_HEIGHT);
+
+		//
+		// Could make a transition here ?
+		//
+
+		// Finally, Add the ViewManager to the windows
+		//this.windowFrame.getContentPane().add(nextView);
+		//this.windowFrame.repaint();
+		//this.windowFrame.pack();
+	}
+
+	public void ReturnLastView() {
+		ViewType view = null;
+		if(!this.lastVisitedViews.isEmpty()) {
+			view = this.lastVisitedViews.pop();
+		}
+		ChangeView(view, true);
+	}
+
+	public ViewType GetLastVisitedView() {
+		ViewType view = null;
+		if(!this.lastVisitedViews.isEmpty()){
+			view = this.lastVisitedViews.peek();
+		}
+		return view;
+	}
+
+	public ViewType GetCurrentView() {
+		return this.currentView;
+	}
+
+	/**####################### End Menu Function #######################*/
 
 	public void chargerNiveau() {
 		fini = false;
@@ -472,7 +548,7 @@ public class ModeleJeu extends Observable {
 		this.clearChanged();
 	}
 
-	private class ThreadJoueur implements Runnable {
+    private class ThreadJoueur implements Runnable {
 
 		@Override
 		public void run() {

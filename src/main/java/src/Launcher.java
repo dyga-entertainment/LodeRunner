@@ -1,5 +1,3 @@
-package Model.jeu;
-
 import View.FenetrePrincipale;
 
 public class Launcher {

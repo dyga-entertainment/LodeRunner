@@ -1,5 +1,6 @@
 package View.MenuViews;
 
+import Controler.ControleurJeu;
 import View.ViewManager;
 
 import java.awt.*;
@@ -10,8 +11,8 @@ public class SettingsView extends View {
 	
 	private JLabel title;
 
-	public SettingsView(ViewManager vueManager) {
-		super(vueManager);
+	public SettingsView(ViewManager vueManager, ControleurJeu controler) {
+		super(vueManager, controler);
 	}
 
 	@Override

@@ -6,12 +6,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import Controler.ControleurJeu;
+import Model.ViewType;
 import View.Buttons.StandardButton;
 import View.ViewManager;
 import Utils.helper.Images;
 import Utils.helper.ResourcesPaths;
 import Model.jeu.Joueur;
-import Model.jeu.ModeleJeu;
+import Model.ModeleJeu;
 
 public class WorldSelectionView extends View {
 
@@ -29,8 +31,8 @@ public class WorldSelectionView extends View {
 	// TODO
 	private Joueur profilCourant;
 
-	public WorldSelectionView(ViewManager vueManager) {
-		super(vueManager, ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png");
+	public WorldSelectionView(ViewManager vueManager, ControleurJeu controler) {
+		super(vueManager, ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_jungle.png", controler);
 
 		selectedWorld = "Jungle";
 	}
@@ -72,7 +74,7 @@ public class WorldSelectionView extends View {
         worldPanel.setLayout(new GridLayout(1,6,0,0));
 
 		for (int i = 0; i < this.nbMondes; i++) {
-            StandardButton jbutton = new StandardButton(this.nomImages[i].toUpperCase(), "","");
+            StandardButton jbutton = new StandardButton(null, this.nomImages[i].toUpperCase(), "","");
 
             jbutton.addActionListener(new ActionListener() {
                 @Override
@@ -133,7 +135,7 @@ public class WorldSelectionView extends View {
     public void setupButtonsPanel() {
         super.setupButtonsPanel();
 
-        JButton acceptButton = NewContextTransitionButton("Back", "bouton_valider1.png", "bouton_valider2.png", ViewManager.ViewType.LevelSelection);
+        JButton acceptButton = NewContextTransitionButton("Accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.LevelSelection, false);
         this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 
