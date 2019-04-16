@@ -10,22 +10,21 @@ import java.net.URL;
 import javax.swing.*;
 
 import Controler.ControleurJeu;
-import Model.ViewType;
+import Model.MainModel;
 import View.GameViews.GameView;
 import View.MenuViews.LoadingView;
 import View.MenuViews.*;
 import Data.audio.SoundSystem;
-import Model.ModeleJeu;
 
 public class ViewManager {
 
     private JFrame windowFrame;
 
-    private ModeleJeu model;
+    private MainModel model;
 
     private static View[] views;
 
-	public ViewManager(FenetrePrincipale fenetre, ModeleJeu model, ControleurJeu gameControler) {
+	public ViewManager(FenetrePrincipale fenetre, MainModel model, ControleurJeu gameControler) {
         this.windowFrame = fenetre;
         this.model = model;
 
@@ -88,7 +87,7 @@ public class ViewManager {
 	    return this.windowFrame;
     }
 
-    public void launchGame(ModeleJeu modele) {
+    public void launchGame(MainModel modele) {
         GameView gameVue = new GameView(modele);
 
         // Should call ChangeView here with the view created... ?

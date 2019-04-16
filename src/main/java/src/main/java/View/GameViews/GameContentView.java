@@ -8,9 +8,9 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 
+import Model.MainModel;
 import Model.item.Item;
 import Utils.helper.ResourcesPaths;
-import Model.ModeleJeu;
 import Model.jeu.Sprite;
 import Model.bloc.Bloc;
 import Model.personnage.Heros;
@@ -18,7 +18,7 @@ import Model.personnage.Personnage;
 
 public class GameContentView extends JPanel implements Observer {
 	
-    private final ModeleJeu modele;
+    private final MainModel modele;
     private BufferedImage image;
     private final Graphics2D gr ;
     private final JPanel ecranJeu;
@@ -28,7 +28,7 @@ public class GameContentView extends JPanel implements Observer {
     private final int widthHud;
     private final int heightHud;
 	
-    public GameContentView(ModeleJeu m) {
+    public GameContentView(MainModel m) {
         this.modele = m;
         this.ecranJeu = new JPanel();
         this.hud = new JPanel();
@@ -92,7 +92,7 @@ public class GameContentView extends JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        if (o instanceof ModeleJeu) {
+        if (o instanceof MainModel) {
             if(!arg.equals("lingots")) {
                 /* On reecoute les blocs */
                 for(Bloc[] h : this.modele.AccesNiveau()) {

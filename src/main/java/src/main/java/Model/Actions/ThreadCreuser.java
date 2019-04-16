@@ -42,8 +42,8 @@ public class ThreadCreuser extends Thread implements Observer {
     //private BufferedImage[] animation;
     
     public ThreadCreuser() {
-        this.elements = new ArrayList<>();
-        this.animations = new ArrayList<>();
+        this.elements = new ArrayList<Positionnable>();
+        this.animations = new ArrayList<Queue<BufferedImage>>();
         fini = false;
     }
     

@@ -3,8 +3,9 @@ package tests;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+
+import Model.MainModel;
 import View.GameViews.GameView;
-import Model.ModeleJeu;
 
 public class TestModeleJeu {
 	
@@ -18,7 +19,7 @@ public class TestModeleJeu {
 		//pistes.ajouterPiste(-1, "/ressources/Musiques/spooky_scary_skeletons.wav");
 
 		/* Creation du modele a partir du Niveau */
-		ModeleJeu modele = new ModeleJeu();
+		MainModel modele = new MainModel();
 		modele.chargerNiveau(0, 0);
 		/* Creation de la vue */
 		GameView vue = new GameView(modele);

@@ -1,14 +1,17 @@
 package Controler;
 
+import Model.MainModel;
 import Model.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.helper.ResourcesPaths;
-import Model.ModeleJeu;
 import View.Buttons.ContextTransitionButton;
+import View.Buttons.StandardButton;
 import View.ViewManager;
 
+import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,12 +19,12 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 
 	private ViewManager view;		// TODO: Should be a list of Observer !
 
-	private ModeleJeu model;
+	private MainModel model;
 	private boolean actionCreuser;
 
 	private List<ActionListener> actionsListener = new LinkedList<>();
 
-	public ControleurJeu(ModeleJeu m) {
+	public ControleurJeu(MainModel m) {
 		this.model = m;
 	}
 
@@ -165,6 +168,7 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("Called the action Performed of the Controler " + e.toString());
 		test.get(((ContextTransitionButton)e.getSource()).getButtonName()).actionPerformed(e);
 	}
 
@@ -172,15 +176,21 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 
 	private Dictionary<String, ActionListener> test = new Hashtable<>();
 
-	public void addContextTransitionActionListener(ContextTransitionButton button) {
+	public void addContextTransitionActionListener(StandardButton button) {
 		// Add it in a dict
 		test.put(button.getButtonName(), actionEvent -> ChangeView((ContextTransitionButton) actionEvent.getSource()));
 	}
 
-	public void addReturnContextActionListener(ContextTransitionButton button) {
+	public void addReturnContextActionListener(StandardButton button) {
 		// Add it in a dict
 		test.put(button.getButtonName(), actionEvent -> ReturnLastView());
 	}
+
+	public void addActionParamActionListener(StandardButton button) {
+		// Add it in a dict
+		test.put(button.getButtonName(), actionEvent -> HandleActionParams((StandardButton) actionEvent.getSource()));
+	}
+
 
 	public void ChangeView(ContextTransitionButton button) {
 		ChangeView(ViewType.values()[button.getNextView().ordinal()]);
@@ -191,7 +201,7 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 	}
 
 	public void ChangeView(ViewType newView, boolean isBackButton) {
-		System.out.println("[Context transition] NewView = " + newView);
+		System.out.println("[Controller function] Context transition : NewView = " + newView);
 		// Update the model
 		this.model.ChangeView(newView, isBackButton);
 
@@ -200,12 +210,20 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 	}
 
 	public void ReturnLastView() {
-		System.out.println("[Context transition] Return to last view");
+		System.out.println("[Controller function] Context transition : Return to last view");
 		// Update the model
 		this.model.ReturnLastView();
 
 		// Notify the view that it needs to update
 		this.view.refreshView();
+	}
+
+	public void HandleActionParams(StandardButton button) {
+		System.out.println("[Controller function] Action with parameters");
+
+		this.model.Update();
+		button.getStandardImage();
+
 	}
 
 	/**####################### End Menu Function #######################*/

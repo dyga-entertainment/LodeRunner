@@ -9,6 +9,8 @@ import java.awt.*;
 import java.util.Dictionary;
 import java.util.EventListener;
 import java.util.Hashtable;
+
+import View.Buttons.StandardButton;
 import View.ViewManager;
 
 public abstract class View extends ImagePanel implements EventListener {
@@ -41,7 +43,7 @@ public abstract class View extends ImagePanel implements EventListener {
 
         controler = gameControler;
 
-        // Default Settings for most of the menu
+        // Default Settings for most of the Menu
         this.setLayout(new BorderLayout());
 
         // Default initialization
@@ -99,6 +101,18 @@ public abstract class View extends ImagePanel implements EventListener {
             controler.addContextTransitionActionListener(button);
             button.addActionListener(controler);
         }
+        return button;
+    }
+
+    protected StandardButton CreateActionParamsButton(String text, String standardImage, String selectedImage) {
+        return CreateActionParamsButton(text, standardImage, selectedImage, null);
+    }
+
+    protected StandardButton CreateActionParamsButton(String text, String standardImage, String selectedImage, View parentView) {
+        StandardButton button = new StandardButton(parentView, text, standardImage,selectedImage);
+        controler.addContextTransitionActionListener(button);
+        button.addActionListener(controler);
+
         return button;
     }
 

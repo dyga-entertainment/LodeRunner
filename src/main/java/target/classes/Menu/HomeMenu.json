@@ -1,0 +1,64 @@
+{
+  "name": "homeMenu",
+  "backgroundImage": "image.png",
+  "content": {
+    "type": "Panel",
+    "isOpaque": true,
+    "layout": "BorderLayout",
+    "components": [
+      {
+        "type": "Panel",
+        "constraints": "",
+        "isOpaque": false,
+        "layout": "Grid",
+        "components": [],
+        "onclick": "CreateNewDoc()"
+      },
+      {
+        "type": "Panel",
+        "constraints": "BorderLayout.WEST",
+        "isOpaque": false,
+        "layout": "WrapLayout",
+        "components": [
+          {
+            "type": "Button",
+            "text":  "Solo",
+            "image": "bouton_solo1.png",
+            "pressedImage": "bouton_solo2.png",
+            "nextView": "WorldSelection",
+            "isEnable": true,
+            "isBackButton": false
+          },
+          {
+            "type": "Button",
+            "text":  "Options",
+            "image": "bouton_options1.png",
+            "pressedImage": "bouton_options2.png",
+            "nextView": "Settings",
+            "isEnable": true,
+            "isBackButton": false
+          },
+          {
+            "type": "Button",
+            "text":  "Options",
+            "image": "bouton_options1.png",
+            "pressedImage": "bouton_options2.png",
+            "nextView": "Settings",
+            "isEnable": true,
+            "isBackButton": false
+          },
+          {
+            "type": "Button",
+            "text":  "Credits",
+            "image": "bouton_credits1.png",
+            "pressedImage": "bouton_credits2.png",
+            "nextView": "Credits",
+            "isEnable": true,
+            "isBackButton": false
+          }
+        ],
+        "onclick": "CreateNewDoc()"
+      }
+    ]
+  }
+}

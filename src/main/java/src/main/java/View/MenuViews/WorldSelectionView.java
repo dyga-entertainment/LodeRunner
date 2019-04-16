@@ -7,21 +7,21 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import Controler.ControleurJeu;
+import Model.MainModel;
 import Model.ViewType;
 import View.Buttons.StandardButton;
 import View.ViewManager;
 import Utils.helper.Images;
 import Utils.helper.ResourcesPaths;
 import Model.jeu.Joueur;
-import Model.ModeleJeu;
 
 public class WorldSelectionView extends View {
 
     /** title of the selected world */
     private JLabel title;
 
-    /** buttons used to choose between world */
-    private StandardButton[] buttons;
+	/** buttons used to choose between world */
+	private StandardButton[] buttons;
 
     private int nbMondes;		// Should be in a txt file or something...
     private String[] nomImages;     // Should be in a txt filev
@@ -74,7 +74,11 @@ public class WorldSelectionView extends View {
         worldPanel.setLayout(new GridLayout(1,6,0,0));
 
 		for (int i = 0; i < this.nbMondes; i++) {
-            StandardButton jbutton = new StandardButton(null, this.nomImages[i].toUpperCase(), "","");
+
+			StandardButton jbutton = CreateActionParamsButton(this.nomImages[i].toUpperCase(), "","");
+
+
+            //StandardButton jbutton = new StandardButton(null, this.nomImages[i].toUpperCase(), "","");
 
             jbutton.addActionListener(new ActionListener() {
                 @Override
@@ -154,7 +158,7 @@ public class WorldSelectionView extends View {
     }
 
 	public void majIHM(Joueur j) {
-		ModeleJeu m = new ModeleJeu();
+		MainModel m = new MainModel();
 		this.removeAll();
 
 		this.profilCourant = j;

@@ -20,14 +20,14 @@ import java.util.Observable;
 import java.util.Stack;
 
 /**
- * Classe ModeleJeu. Classe qui represente le niveau de Model.jeu actuel. Permet de
+ * Classe MainModel. Classe qui represente le niveau de Model.jeu actuel. Permet de
  * gerer les interactions entre les differentes classes en Model.jeu.
  * @author Gregoire Boiron
  * @author Axel Grau
  * @version 1.8
  *
  */
-public class ModeleJeu extends Observable {
+public class MainModel extends Observable {
 
 	private Model.jeu.Carte matrice;              // matrice de Model.jeu
 
@@ -57,17 +57,15 @@ public class ModeleJeu extends Observable {
 	//private String themeActuel;
 	/* ***** ****** ********* ***** ***** */
 
+	private MenuModel menuModel;
+
 	/**
 	 * Constructeur Permet de construire le Modele du Jeu : initialiser tous les
 	 * mondes et niveaux disponibles.
 	 */
-	public ModeleJeu() {
+	public MainModel() {
 
-		//-------- Menu --------
-
-		// For the menu only
-		this.currentView = ViewType.HomeMenu;
-		this.lastVisitedViews = new Stack<>();
+		this.menuModel = new MenuModel();
 
 		//-------- Game --------
 
@@ -86,72 +84,6 @@ public class ModeleJeu extends Observable {
 		this.audioTracks = new SoundSystem();
 		// le modele est pret
 	}
-
-	/**####################### Menu Function #######################*/
-
-	private static ViewType currentView;
-	private static Stack<ViewType> lastVisitedViews;
-
-	public void ChangeView(ViewType newView, boolean isBackButton) {
-		System.out.println("ICICICI" + newView + "" + isBackButton);
-		//System.out.println("[Context Changement] from " + currentView.toString() + " to " + newView.toString());
-
-		// Retrive possible parameters from the current view.
-		/*Dictionary<String, Object> parameters = new Hashtable<>();
-		if(this.views[currentView.ordinal()] != null) {
-			parameters = this.views[currentView.ordinal()].getParameters();
-		}*/
-
-		if (!isBackButton) {
-			this.lastVisitedViews.push(currentView);
-		}
-		this.currentView = newView;
-
-		// Clean up everything
-		//this.windowFrame.getContentPane().removeAll();
-
-		// Prepare the next view to be printed
-		//View nextView = getNextView();
-
-
-		// Give the parameters to the next view if needed.
-		//nextView.setParameters(parameters);
-
-		// Setup the view to be display
-		//nextView.setup(FenetrePrincipale.WINDOW_WIDTH, FenetrePrincipale.WINDOW_HEIGHT, FenetrePrincipale.CONTENT_PANEL_WIDTH,
-		//	FenetrePrincipale.CONTENT_PANEL_HEIGHT);
-
-		//
-		// Could make a transition here ?
-		//
-
-		// Finally, Add the ViewManager to the windows
-		//this.windowFrame.getContentPane().add(nextView);
-		//this.windowFrame.repaint();
-		//this.windowFrame.pack();
-	}
-
-	public void ReturnLastView() {
-		ViewType view = null;
-		if(!this.lastVisitedViews.isEmpty()) {
-			view = this.lastVisitedViews.pop();
-		}
-		ChangeView(view, true);
-	}
-
-	public ViewType GetLastVisitedView() {
-		ViewType view = null;
-		if(!this.lastVisitedViews.isEmpty()){
-			view = this.lastVisitedViews.peek();
-		}
-		return view;
-	}
-
-	public ViewType GetCurrentView() {
-		return this.currentView;
-	}
-
-	/**####################### End Menu Function #######################*/
 
 	public void chargerNiveau() {
 		fini = false;
@@ -548,7 +480,26 @@ public class ModeleJeu extends Observable {
 		this.clearChanged();
 	}
 
-    private class ThreadJoueur implements Runnable {
+	/** Maybe use a pattern here to know which Model is targetted ?? */
+
+	public ViewType GetCurrentView() {
+		return this.menuModel.GetCurrentView();
+	}
+
+	public void ChangeView(ViewType newView, boolean isBackButton) {
+		this.menuModel.ChangeView(newView, isBackButton);
+	}
+
+	public void ReturnLastView() {
+		this.menuModel.ReturnLastView();
+	}
+
+	public void Update() {
+		//this.menuModel.Update();
+	}
+
+
+	private class ThreadJoueur implements Runnable {
 
 		@Override
 		public void run() {

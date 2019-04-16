@@ -1,7 +1,7 @@
 package View;
 
 import Controler.ControleurJeu;
-import Model.ModeleJeu;
+import Model.MainModel;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -20,7 +20,7 @@ public class FenetrePrincipale extends JFrame {
 		setupWindow();
 
 		// Init the modele of the game
-		ModeleJeu modele = new ModeleJeu();
+		MainModel modele = new MainModel();
 
 		// Init the controller of the game
 		// Init the link Controller -> Model in order to update the model if an input has been made.

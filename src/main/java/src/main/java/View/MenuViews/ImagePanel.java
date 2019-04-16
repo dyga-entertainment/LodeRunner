@@ -1,5 +1,6 @@
 package View.MenuViews;
 
+import Controler.ControleurJeu;
 import Utils.helper.Images;
 
 import javax.swing.*;
@@ -8,6 +9,7 @@ import java.awt.image.BufferedImage;
 
 public class ImagePanel extends JPanel {
 
+    /** Current display background image */
     protected Image backgroundImage;
 
     public ImagePanel(String urlImage) {

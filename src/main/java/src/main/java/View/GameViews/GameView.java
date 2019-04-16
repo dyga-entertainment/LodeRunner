@@ -6,7 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 
-import Model.ModeleJeu;
+import Model.MainModel;
 import Model.bloc.Bloc;
 import Model.personnage.Personnage;
 
@@ -15,7 +15,7 @@ public class GameView extends JPanel implements Observer {
     private GameContentView vue;
     private HeadUpDisplay hud;
 
-    public GameView(ModeleJeu m) {
+    public GameView(MainModel m) {
         // Initialize the game vue
         this.vue = new GameContentView(m);
 
