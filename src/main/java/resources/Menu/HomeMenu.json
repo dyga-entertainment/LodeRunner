@@ -1,32 +1,42 @@
 {
   "name": "homeMenu",
-  "backgroundImage": "image.png",
-  "content": {
+  "view": {
     "type": "Panel",
-    "isOpaque": true,
-    "layout": "BorderLayout",
+    "backgroundImage": "Images/Sprites/Backgrounds/background_custom.png",
+    "options": [
+      {"isOpaque": true},
+      {"layout": "BorderLayout"}
+    ],
     "components": [
       {
         "type": "Panel",
-        "constraints": "",
-        "isOpaque": false,
-        "layout": "Grid",
+        "backgroundImage": "",
+        "options": [
+          {"isOpaque": false},
+          {"layout": "GridLayout"}
+        ],
         "components": [],
-        "onclick": "CreateNewDoc()"
+        "layout_constraints": ""
       },
       {
         "type": "Panel",
-        "constraints": "BorderLayout.WEST",
-        "isOpaque": false,
-        "layout": "WrapLayout",
+        "backgroundImage": "",
+        "options": [
+          {"isOpaque": false},
+          {"layout": "WrapLayout"}
+        ],
+        "layout_constraints": "BorderLayout.WEST",
         "components": [
           {
             "type": "Button",
-            "text":  "Solo",
-            "image": "bouton_solo1.png",
-            "pressedImage": "bouton_solo2.png",
-            "nextView": "WorldSelection",
-            "isEnable": true,
+            "backgroundImage": "bouton_solo1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_solo2.png"},
+              {"nextView": "WorldSelection"}
+            ],
+            "onclick": "createNewDoc()",
             "isBackButton": false
           },
           {
@@ -35,8 +45,10 @@
             "image": "bouton_options1.png",
             "pressedImage": "bouton_options2.png",
             "nextView": "Settings",
-            "isEnable": true,
-            "isBackButton": false
+            "options": [
+              {"isEnable": true}
+            ],
+            "onclick": "back()"
           },
           {
             "type": "Button",
@@ -44,7 +56,9 @@
             "image": "bouton_options1.png",
             "pressedImage": "bouton_options2.png",
             "nextView": "Settings",
-            "isEnable": true,
+            "options": [
+              {"isEnable": true}
+            ],
             "isBackButton": false
           },
           {
@@ -53,7 +67,9 @@
             "image": "bouton_credits1.png",
             "pressedImage": "bouton_credits2.png",
             "nextView": "Credits",
-            "isEnable": true,
+            "options": [
+              {"isEnable": true}
+            ],
             "isBackButton": false
           }
         ],

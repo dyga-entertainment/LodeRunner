@@ -1,6 +1,7 @@
 package Model;
 
 import Model.Menu.ModelView;
+import Utils.helper.MenuLoader;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -44,81 +45,11 @@ public class MenuModel {
         this.lastVisitedViews = new Stack<ViewType>();
 
         try {
-            LoadMenuesModels();
+            MenuLoader.LoadMenuesModels();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
-    }
-
-    private void LoadMenuesModels() throws IOException, ParseException {
-
-        String[] menusJson = new String[] {
-            "HomeMenu.json"
-        };
-
-        JSONParser parser = new JSONParser();
-
-        for (int i = 0; i < menusJson.length; i++) {
-            URL url = Thread.currentThread().getContextClassLoader().getResource("Menu/HomeMenu.json");
-            FileReader jsonFile = new FileReader(url.getPath());
-
-            JSONObject menuObject = (JSONObject) parser.parse(jsonFile);
-
-            System.out.println(menuObject.keySet());
-            String name = (String) menuObject.get("name");
-            System.out.println(name);
-
-            // TODO SOMETHING STYLE HERE
-
-            constructComponent((JSONObject) menuObject.get("content"));
-        }
-    }
-
-    public void constructComponent(JSONObject contentArray) {
-
-        String type = (String) contentArray.get("type");
-        System.out.println(type);
-
-        String layout = (String) contentArray.get("layout");
-        System.out.println(layout);
-
-        // Compute specific parameters
-        switch (type) {
-            case "Panel":
-                System.out.println("ceci est un panel");
-                boolean isOpaque = (boolean) contentArray.get("isOpaque");
-                System.out.println(isOpaque);
-                // TODO
-                break;
-            case "Button":
-                System.out.println("ceci est un button");
-                // TODO
-                break;
-        }
-
-        JSONArray childComponents = (JSONArray)contentArray.get("components");
-        if(childComponents  != null) {
-            for (Object component : childComponents) {
-                constructComponent((JSONObject) component);
-                //JSONObject jsonComponent = (JSONObject) component;
-                //System.out.println(jsonComponent.keySet());
-            }
-        }
-
-
-        /*switch() {
-
-        }
-
-
-        // if it contains components
-        if() {
-            for() {
-
-            }
-        }*/
-
     }
 
     public Image getBackgroundImage() {
