@@ -1,26 +1,20 @@
-package Model.Menu;
+package Model.Menu.Component;
 
-import Utils.helper.Images;
+import Model.Menu.ModelComponent;
+import Model.Menu.ModelLayout;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelPanel extends ModelComponent {
 
-    private Image backgroundImage;
     private ModelLayout layout;
     private List<ModelComponent> components;
 
     // ♥
     public ModelPanel() {
+        super();
         this.components = new ArrayList<>();
-    }
-
-    @Override
-    public void addBackgroundImageUrl(String backgroundImage) {
-        this.backgroundImage = Images.getImageFromPath(backgroundImage);
     }
 
     @Override
@@ -39,17 +33,18 @@ public class ModelPanel extends ModelComponent {
                 System.exit(1); // TODO raise an exception ?
                 break;
         }
-
     }
 
-    @Override
-    public void addText(String text) {
-
+    public ModelLayout getLayout() {
+        return this.layout;
     }
 
-    @Override
     public void add(ModelComponent component) {
         this.components.add(component);
+    }
+
+    public List<ModelComponent> getChildrenComponents() {
+        return this.components;
     }
 
     @Override
@@ -59,7 +54,7 @@ public class ModelPanel extends ModelComponent {
 
     @Override
     public String toString() {
-        return super.toString() + ", Background image = " + this.backgroundImage + ", layout = " + layout +
+        return super.toString() + ", Background image = " + this.backgroundImageUrl + ", layout = " + layout +
             "Children = " + components.toString();
     }
 

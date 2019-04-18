@@ -13,7 +13,7 @@ import java.util.Hashtable;
 import View.Buttons.StandardButton;
 import View.ViewManager;
 
-public abstract class View extends ImagePanel implements EventListener {
+public class View extends ImagePanel implements EventListener {
 
     protected ViewManager vueManager;
 
@@ -31,6 +31,10 @@ public abstract class View extends ImagePanel implements EventListener {
     /** TESTSTSTSTS */
     private ControleurJeu controler;
     /***/
+
+    public View(String urlImage, ControleurJeu gameControler) {
+        this(null, urlImage, gameControler);
+    }
 
     public View(ViewManager vueManager, ControleurJeu gameControler) {
         this(vueManager, "", gameControler);

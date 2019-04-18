@@ -1,35 +1,101 @@
 package Model.Menu;
 
+import Model.ViewType;
+
+import java.awt.*;
+
 public abstract class ModelComponent {
 
-    private boolean isOpaque;
-    private boolean enable;
+    protected String backgroundImageUrl;
+    protected boolean opaque;
+    protected boolean enable;
+
+    /** Layout related */
+    protected int layoutIndex;
+    protected String borderLayoutConstraint;
 
     public ModelComponent() {
-        this.isOpaque = true;
+        this.backgroundImageUrl = "";
+        this.opaque = true;
+        this.enable = true;
+        this.layoutIndex = -1;
+        this.borderLayoutConstraint = "";
     }
 
-    public abstract void addBackgroundImageUrl(String backgroundImage);
+    public void addBackgroundImageUrl(String backgroundImage) {
+        this.backgroundImageUrl = backgroundImage;
+    }
+
+    public String getBackgroundImageUrl(){
+        return this.backgroundImageUrl;
+    }
 
     public void setOpaque(boolean isOpaque) {
-        this.isOpaque = isOpaque;
+        this.opaque = isOpaque;
     }
 
-    public abstract void setLayout(String layoutName);
+    public boolean isOpaque() {
+        return opaque;
+    }
 
     public void setEnable(boolean isEnable) {
         this.enable = isEnable;
     }
 
-    public abstract void addText(String text);
-
-    public abstract void add(ModelComponent component);
-
-    public abstract void addActionListener(String actionName);
+    public boolean isEnable() {
+        return this.enable;
+    }
 
     @Override
     public String toString() {
-        return "isOpaque = " + isOpaque +
+        return "isOpaque = " + opaque +
             ", enable = " + enable;
     }
+
+    public void setLayout(String layout) { }
+
+    public void addText(String text){ }
+
+    public abstract void addActionListener(String actionName);
+
+    public void setNextView(String nextView) {
+    }
+
+    public boolean hasLayoutConstraint() {
+        return !this.borderLayoutConstraint.isEmpty() || this.layoutIndex != -1;
+    }
+
+    public boolean hasBorderLayoutLayoutConstraint() {
+        return !this.borderLayoutConstraint.isEmpty();
+    }
+
+    public int getIndexLayout() {
+        return this.layoutIndex;
+    }
+
+    public void addBorderLayoutConstraints(String borderLayoutConstraints) {
+        switch (borderLayoutConstraints) {
+            case "NORTH":
+                this.borderLayoutConstraint = BorderLayout.NORTH;
+                break;
+            case "WEST":
+                this.borderLayoutConstraint = BorderLayout.WEST;
+                break;
+            case "EAST":
+                this.borderLayoutConstraint = BorderLayout.EAST;
+                break;
+            case "SOUTH":
+                this.borderLayoutConstraint = BorderLayout.SOUTH;
+                break;
+            default:
+                this.borderLayoutConstraint = BorderLayout.CENTER;
+                break;
+        }
+    }
+
+    public String getBorderLayoutContraints() {
+        return this.borderLayoutConstraint;
+    }
+
+    public void addPressedImageUrl(String pressedImage) { }
 }

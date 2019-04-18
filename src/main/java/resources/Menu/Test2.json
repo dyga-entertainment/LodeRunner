@@ -1,0 +1,84 @@
+{
+  "name": "homeMenu",
+  "view": {
+    "type": "Panel",
+    "backgroundImage": "Images/Sprites/Backgrounds/background_custom.png",
+    "options": [
+      {"isOpaque": true},
+      {"layout": "BorderLayout"}
+    ],
+    "components": [
+      {
+        "type": "Panel",
+        "backgroundImage": "",
+        "options": [
+          {"isOpaque": false},
+          {"layout": "GridLayout"}
+        ],
+        "components": [],
+        "borderLayoutConstraints": "NORTH"
+      },
+      {
+        "type": "Panel",
+        "backgroundImage": "",
+        "options": [
+          {"isOpaque": false},
+          {"layout": "WrapLayout"}
+        ],
+        "borderLayoutConstraints": "SOUTH",
+        "components": [
+          {
+            "type": "Button",
+            "backgroundImage": "bouton_solo1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_solo2.png"},
+              {"nextView": "WorldSelection"}
+            ]
+          },
+          {
+            "type": "Button",
+            "backgroundImage": "bouton_options1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_options2.png"},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "backgroundImage": "bouton_options1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_options2.png"},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "backgroundImage": "bouton_options1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_options2.png"},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "backgroundImage": "bouton_options1.png",
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "bouton_options2.png"},
+              {"nextView": "Options"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

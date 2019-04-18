@@ -1,5 +1,7 @@
 package Model.Menu;
 
+import Model.Menu.Component.ModelPanel;
+
 public class ModelView {
 
     private String name;
@@ -25,5 +27,9 @@ public class ModelView {
 
     public void addView(ModelComponent viewContent) {
         this.viewContent = viewContent;
+    }
+
+    public ModelPanel getModelComponent() {
+        return (ModelPanel)this.viewContent;
     }
 }

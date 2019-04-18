@@ -1,4 +1,6 @@
-package Model.Menu;
+package Model.Menu.Component;
+
+import Model.Menu.ModelComponent;
 
 public class ModelLabel extends ModelComponent {
 
@@ -8,23 +10,8 @@ public class ModelLabel extends ModelComponent {
     }
 
     @Override
-    public void setLayout(String layoutName) {
-
-    }
-
-    @Override
-    public void setEnable(boolean isEnable) {
-
-    }
-
-    @Override
     public void addText(String text) {
-
-    }
-
-    @Override
-    public void add(ModelComponent component) {
-
+        // TODO
     }
 
     @Override

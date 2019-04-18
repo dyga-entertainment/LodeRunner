@@ -43,13 +43,6 @@ public class MenuModel {
     public MenuModel() {
         this.currentView = ViewType.HomeMenu;
         this.lastVisitedViews = new Stack<ViewType>();
-
-        try {
-            MenuLoader.LoadMenuesModels();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
     }
 
     public Image getBackgroundImage() {
