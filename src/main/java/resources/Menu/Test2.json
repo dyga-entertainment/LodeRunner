@@ -10,17 +10,26 @@
     "components": [
       {
         "type": "Panel",
-        "backgroundImage": "",
+        "backgroundImage": "Images/Sprites/UI/bandeau_menu.png",
         "options": [
-          {"isOpaque": false},
+          {"isOpaque": true},
           {"layout": "GridLayout"}
         ],
-        "components": [],
+        "components": [
+          {
+            "type": "Label",
+            "options": [
+              {"text": "Lode Runner"},
+              {"fontSize": 22},
+              {"isEnable": true}
+            ]
+          }
+        ],
         "borderLayoutConstraints": "NORTH"
       },
       {
         "type": "Panel",
-        "backgroundImage": "",
+        "backgroundImage": "Images/Sprites/UI/bandeau_menu.png",
         "options": [
           {"isOpaque": false},
           {"layout": "WrapLayout"}

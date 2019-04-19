@@ -6,7 +6,12 @@ import java.awt.*;
 
 public abstract class ModelComponent {
 
+    /** Background image related info **/
     protected String backgroundImageUrl;
+    private Point backgroundImageStartingPoint;
+    private Dimension backgroundImagePreferredSize;
+
+    /** Others settings info **/
     protected boolean opaque;
     protected boolean enable;
 
@@ -91,6 +96,22 @@ public abstract class ModelComponent {
                 this.borderLayoutConstraint = BorderLayout.CENTER;
                 break;
         }
+    }
+
+    public void setBackgroundStartingPoint(int x, int y) {
+        this.backgroundImageStartingPoint = new Point(x, y);
+    }
+
+    public Point getBackgroundStartingPoint() {
+        return this.backgroundImageStartingPoint;
+    }
+
+    public void setBackgroundPreferredSize(int width, int height) {
+        this.backgroundImagePreferredSize = new Dimension(width, height);
+    }
+
+    public Dimension getBackgroundPreferredSize() {
+        return this.backgroundImagePreferredSize;
     }
 
     public String getBorderLayoutContraints() {

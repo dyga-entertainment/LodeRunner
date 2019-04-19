@@ -11,10 +11,11 @@ import java.awt.*;
  */
 public class ModelButton extends ModelComponent {
 
+    private String text;
     private float transparency;
     private String pressedImageUrl;
     private String mouseOverImageUrl;
-    private String text;
+    private Dimension dimension;
 
     private ViewType nextView;
 
@@ -87,6 +88,14 @@ public class ModelButton extends ModelComponent {
     @Override
     public void addPressedImageUrl(String pressedImage) {
         this.pressedImageUrl = pressedImageUrl;
+    }
+
+    public void setPreferredSize(int width, int height) {
+        dimension = new Dimension(width, height);
+    }
+
+    public Dimension getPreferredSize() {
+        return this.dimension;
     }
 
     @Override

@@ -3,6 +3,7 @@ package Model.Menu.Component;
 import Model.Menu.ModelComponent;
 import Model.Menu.ModelLayout;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,5 +58,4 @@ public class ModelPanel extends ModelComponent {
         return super.toString() + ", Background image = " + this.backgroundImageUrl + ", layout = " + layout +
             "Children = " + components.toString();
     }
-
 }

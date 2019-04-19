@@ -15,6 +15,7 @@ public class ViewButton extends JButton {
     private String name;
     private String standardImage;
     private String selectedImage;
+    private Dimension dimension;
 
     /** Control the transparancy of the button */
     private float alpha = 1.0f;
@@ -22,29 +23,50 @@ public class ViewButton extends JButton {
     /** Interaction field */
     private ViewType nextView;
 
+
     public ViewButton() {
         this("",
-            "",
             "",
             true,
             ViewType.None);
     }
 
-    public ViewButton(String text, String standardImage, String selectedImage, boolean isEnable, ViewType nextView) {
+    public ViewButton(String text, String standardImage, boolean isEnable, ViewType nextView) {
         super();
 
         this.name = text;
         this.standardImage = standardImage;
-        this.selectedImage = selectedImage;
         this.nextView = nextView;
 
         this.setBorder(null);
         this.setEnabled(isEnable);
         this.setContentAreaFilled(false);
+    }
 
+    public void setBackgroundImage(String standardImage) {
+        this.selectedImage = selectedImage;
         if(!standardImage.isEmpty()) {
-            this.setIcon(new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage)));
+            // Create the new image
+            ImageIcon image = new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage));
+            // Create a new image scaled
+            Image scaledImage;
+            if(dimension != null) {
+                scaledImage = image.getImage().getScaledInstance(this.dimension.width, this.dimension.height, Image.SCALE_SMOOTH);
+            } else {
+                scaledImage = image.getImage();
+            }
+            // Finally add it to the button
+            this.setIcon(new ImageIcon(scaledImage));
         }
+    }
+
+    @Override
+    public void setPreferredSize(Dimension desiredDimension) {
+        super.setPreferredSize(desiredDimension);
+
+        this.dimension = desiredDimension;
+
+
     }
 
     public String getButtonName() {

@@ -40,7 +40,7 @@ public class MenuLoader {
         JSONParser parser = new JSONParser();
 
         for (int i = 0; i < menusJson.length; i++) {
-            URL url = Thread.currentThread().getContextClassLoader().getResource(menusJson[2]);
+            URL url = Thread.currentThread().getContextClassLoader().getResource(menusJson[0]);
             FileReader jsonFile = new FileReader(url.getPath());
 
             JSONObject menuObject = (JSONObject) parser.parse(jsonFile);
@@ -65,26 +65,25 @@ public class MenuLoader {
 
         // Compute specific parameters
         switch ((String) contentArray.get("type")) {
+            /** Here we add a JPanel to the parent view */
             case "Panel":
                 System.out.println("[DEBUG] Create a Panel");
                 component = new ModelPanel();
+
+                // Options
+                if(contentArray.containsKey("options"))
+                    addOptions((ModelPanel)component, (JSONArray) contentArray.get("options"));
 
                 // children components
                 JSONArray childComponents = (JSONArray)contentArray.get("components");
                 if(childComponents  != null) {
                     for (Object childComponent : childComponents) {
                         ((ModelPanel)component).add(constructComponent((JSONObject) childComponent));
-                        //JSONObject jsonComponent = (JSONObject) component;
-                        //System.out.println(jsonComponent.keySet());
                     }
                 }
 
-                // Options
-                if(contentArray.containsKey("options"))
-                    addOptions((ModelPanel)component, (JSONArray) contentArray.get("options"));
-
                 break;
-
+            /** Here we add a JButton to the parent view */
             case "Button":
                 System.out.println("[DEBUG] Create a button");
                 component = new ModelButton();
@@ -102,19 +101,44 @@ public class MenuLoader {
                 break;
         }
 
-        // Background image
-        if(contentArray.containsKey("backgroundImage"))
-            component.addBackgroundImageUrl((String) contentArray.get("backgroundImage"));
-
-        // Others
-        if(contentArray.containsKey("borderLayoutConstraints"))
-            component.addBorderLayoutConstraints((String) contentArray.get("borderLayoutConstraints"));
+        // Basic setup
+        InitComponent(component, contentArray);
 
         //if(contentArray.containsKey("borderLayoutConstraints"))
         //    component.addBorderLayoutConstraints((String) contentArray.get("borderLayoutConstraints"));
 
         System.out.println("[DEBUG] Component = " + component.toString());
         return component;
+    }
+
+    private static void InitComponent(ModelComponent component, JSONObject contentArray) {
+        // Background image
+        if(contentArray.containsKey("backgroundImage")) {
+            JSONObject jsonImage = (JSONObject)contentArray.get("backgroundImage");
+
+            // Get the url
+            component.addBackgroundImageUrl((String) jsonImage.get("url"));
+
+            // Get the origin point
+            JSONObject originPtsJson = (JSONObject)jsonImage.get("startingCoordinate");
+            if(originPtsJson != null) {
+                component.setBackgroundStartingPoint(Math.toIntExact((long)originPtsJson.get("x")), Math.toIntExact((long)originPtsJson.get("y")));
+            }
+
+            // Get the preferred Size
+            JSONObject dimensionJson = (JSONObject)jsonImage.get("PreferredSize");
+            if(dimensionJson != null) {
+                component.setBackgroundPreferredSize(Math.toIntExact((long)dimensionJson.get("width")), Math.toIntExact((long)dimensionJson.get("height")));
+            }
+
+            // Get additionnal information
+            // TODO ?
+        }
+
+        // Others
+        if(contentArray.containsKey("borderLayoutConstraints"))
+            component.addBorderLayoutConstraints((String) contentArray.get("borderLayoutConstraints"));
+
     }
 
     private static void addOptions(ModelPanel component, JSONArray options) {
@@ -162,6 +186,10 @@ public class MenuLoader {
                     case "nextView":
                         component.setNextView((String)jsonOption.get("nextView"));
                         break;
+                    case "PreferredSize":
+                        JSONObject dimensionJson = (JSONObject)jsonOption.get("PreferredSize");
+                        component.setPreferredSize(Math.toIntExact((long)dimensionJson.get("width")), Math.toIntExact((long)dimensionJson.get("height")));
+                        break;
                 }
                 //finalModelView.add(constructComponent((JSONObject) component));
                 //JSONObject jsonComponent = (JSONObject) component;
@@ -194,8 +222,8 @@ public class MenuLoader {
 
 
         j.getContentPane().add(mainView);
-        j.repaint();
         mainView.repaint();
+        j.repaint();
 
         //j.pack();
         j.setVisible(true);
@@ -205,6 +233,10 @@ public class MenuLoader {
 
     private static ImagePanel createView(ModelPanel mainComponent) {
         ImagePanel currentView = new ImagePanel(mainComponent.getBackgroundImageUrl());
+        if(mainComponent.getBackgroundPreferredSize() != null)
+            currentView.setPreferredSize(mainComponent.getBackgroundPreferredSize().width, mainComponent.getBackgroundPreferredSize().height);
+        if(mainComponent.getBackgroundStartingPoint() != null)
+            currentView.setStartingCoordinate(mainComponent.getBackgroundStartingPoint().x, mainComponent.getBackgroundStartingPoint().y);
 
         switch (mainComponent.getLayout()) {
             case BorderLayout:
@@ -245,11 +277,13 @@ public class MenuLoader {
                 ModelButton childButton = (ModelButton)child;
                 ViewButton button = new ViewButton(
                     childButton.getText(),
-                    childButton.getBackgroundImageUrl(),
                     childButton.getPressedImageUrl(),
                     childButton.isEnable(),
                     childButton.getNextView()
                 );
+
+                button.setPreferredSize(childButton.getPreferredSize());//new Dimension(150, 40));
+                button.setBackgroundImage(childButton.getBackgroundImageUrl());
 
                 // Refactor
                 if(childButton.hasLayoutConstraint()) {
