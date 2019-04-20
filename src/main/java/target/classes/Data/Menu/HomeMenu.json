@@ -1,0 +1,192 @@
+{
+  "name": "homeMenu",
+  "view": {
+    "type": "Panel",
+    "background": {
+      "imageUrl": "Sprites/UI/Backgrounds/background_menu.png",
+      "startingCoordinate": {
+        "x": 0,
+        "y": 0
+      },
+      "displayOptions": "Single"
+    },
+    "options": [
+      {"isOpaque": true},
+      {"layout": "BorderLayout"}
+    ],
+    "components": [
+      {
+        "type": "Panel",
+        "background": {
+          "imageUrl": "Sprites/UI/bandeau_menu.png",
+          "startingCoordinate": {
+            "x": 0,
+            "y": 0
+          },
+          "PreferredSize": {
+            "width": 400,
+            "height": 250
+          },
+          "displayOptions": "Tiled"
+        },
+        "options": [
+          {"isOpaque": false},
+          {"layout": "WrapLayout"}
+        ],
+        "borderLayoutConstraints": "SOUTH",
+        "components": [
+          {
+            "type": "Button",
+            "background": {
+              "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+              "startingCoordinate": {
+                "x": 0,
+                "y": 0
+              },
+              "PreferredSize": {
+                "width": 400,
+                "height": 250
+              },
+              "displayOptions": "Tiled"
+            },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  },
+                  {
+                    "name": "onPressed"
+                  },
+                  {
+                    "name": "onReleased"
+                  },
+                  {
+                    "name": "onEntered",
+                    "imageUrl": "Sprites/UI/Buttons/Selected/bouton_solo2.png"
+                  },
+                  {
+                    "name": "onExited"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"PreferredSize": {
+                "width": 150,
+                "height": 50
+              }}
+            ]
+          },
+          {
+            "type": "Button",
+            "background": {
+              "imageUrl": "Sprites/UI/Buttons/bouton_coop1.png",
+              "startingCoordinate": {
+                "x": 0,
+                "y": 0
+              },
+              "PreferredSize": {
+                "width": 400,
+                "height": 250
+              },
+              "displayOptions": "Tiled"
+            },
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_coop2.png"},
+              {"PreferredSize": {
+                "width": 150,
+                "height": 50
+              }},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "background": {
+              "imageUrl": "Sprites/UI/Buttons/bouton_options1.png",
+              "startingCoordinate": {
+                "x": 0,
+                "y": 0
+              },
+              "PreferredSize": {
+                "width": 400,
+                "height": 250
+              },
+              "displayOptions": "Tiled"
+            },
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_options2.png"},
+              {"PreferredSize": {
+                "width": 150,
+                "height": 50
+              }},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "background": {
+              "imageUrl": "Sprites/UI/Buttons/bouton_editeur1.png",
+              "startingCoordinate": {
+                "x": 0,
+                "y": 0
+              },
+              "PreferredSize": {
+                "width": 400,
+                "height": 250
+              },
+              "displayOptions": "Tiled"
+            },
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_editeur2.png"},
+              {"PreferredSize": {
+                "width": 150,
+                "height": 50
+              }},
+              {"nextView": "Options"}
+            ]
+          },
+          {
+            "type": "Button",
+            "background": {
+              "imageUrl": "Sprites/UI/Buttons/bouton_credits1.png",
+              "startingCoordinate": {
+                "x": 0,
+                "y": 0
+              },
+              "PreferredSize": {
+                "width": 400,
+                "height": 250
+              },
+              "displayOptions": "Tiled"
+            },
+            "options": [
+              {"text": "Solo"},
+              {"isEnable": true},
+              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_credits2.png"},
+              {"PreferredSize": {
+                "width": 150,
+                "height": 50
+              }},
+              {"nextView": "Options"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

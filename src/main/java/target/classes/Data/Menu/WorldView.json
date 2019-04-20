@@ -1,0 +1,19 @@
+{
+  "name": "WorldView",
+  "view": {
+    "type": "Panel",
+    "background": {
+      "imageUrl": "Sprites/UI/Backgrounds/background_custom.png",
+      "startingCoordinate": {
+        "x": 0,
+        "y": 0
+      },
+      "displayOptions": "Single"
+    },
+    "options": [
+      {"isOpaque": true},
+      {"layout": "BorderLayout"}
+    ],
+    "components": []
+  }
+}
