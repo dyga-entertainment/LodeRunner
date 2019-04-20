@@ -2,8 +2,8 @@
   "name": "homeMenu",
   "view": {
     "type": "Panel",
-    "backgroundImage": {
-      "url": "Images/Sprites/Backgrounds/background_menu.png",
+    "background": {
+      "imageUrl": "Images/Sprites/Backgrounds/background_menu.png",
       "startingCoordinate": {
         "x": 0,
         "y": 0
@@ -17,8 +17,8 @@
     "components": [
       {
         "type": "Panel",
-        "backgroundImage": {
-          "url": "Images/Sprites/UI/bandeau_menu.png",
+        "background": {
+          "imageUrl": "Images/Sprites/UI/bandeau_menu.png",
           "startingCoordinate": {
             "x": 0,
             "y": 0
@@ -37,8 +37,8 @@
         "components": [
           {
             "type": "Button",
-            "backgroundImage": {
-              "url": "bouton_solo1.png",
+            "background": {
+              "imageUrl": "bouton_solo1.png",
               "startingCoordinate": {
                 "x": 0,
                 "y": 0
@@ -49,21 +49,46 @@
               },
               "displayOptions": "Tiled"
             },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "GameCode.Inputs.Test.dummy",
+                    "imageUrl": "bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  },
+                  {
+                    "name": "onPressed"
+                  },
+                  {
+                    "name": "onReleased"
+                  },
+                  {
+                    "name": "onEntered",
+                    "imageUrl": "bouton_solo2.png"
+                  },
+                  {
+                    "name": "onExited"
+                  }
+                ]
+              }
+            ],
             "options": [
               {"text": "Solo"},
               {"isEnable": true},
-              {"pressedImage": "bouton_solo2.png"},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
-              }},
-              {"nextView": "WorldSelection"}
+              }}
             ]
           },
           {
             "type": "Button",
-            "backgroundImage": {
-              "url": "bouton_coop1.png",
+            "background": {
+              "imageUrl": "bouton_coop1.png",
               "startingCoordinate": {
                 "x": 0,
                 "y": 0
@@ -87,8 +112,8 @@
           },
           {
             "type": "Button",
-            "backgroundImage": {
-              "url": "bouton_options1.png",
+            "background": {
+              "imageUrl": "bouton_options1.png",
               "startingCoordinate": {
                 "x": 0,
                 "y": 0
@@ -112,8 +137,8 @@
           },
           {
             "type": "Button",
-            "backgroundImage": {
-              "url": "bouton_editeur1.png",
+            "background": {
+              "imageUrl": "bouton_editeur1.png",
               "startingCoordinate": {
                 "x": 0,
                 "y": 0
@@ -137,8 +162,8 @@
           },
           {
             "type": "Button",
-            "backgroundImage": {
-              "url": "bouton_credits1.png",
+            "background": {
+              "imageUrl": "bouton_credits1.png",
               "startingCoordinate": {
                 "x": 0,
                 "y": 0

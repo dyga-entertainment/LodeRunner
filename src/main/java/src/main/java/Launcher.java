@@ -1,10 +1,13 @@
+import Controler.ControleurJeu;
 import Utils.helper.MenuLoader;
-import View.FenetrePrincipale;
 
 public class Launcher {
 
 	public static void main(String[] args) {
 		//new FenetrePrincipale();
+
+
+		ControleurJeu.LoadGameScripts();
 
 		try {
 			MenuLoader.LoadMenuesModels();

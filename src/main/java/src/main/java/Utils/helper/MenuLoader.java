@@ -19,11 +19,11 @@ import org.json.simple.parser.ParseException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Enumeration;
 
 public class MenuLoader {
 
@@ -95,6 +95,11 @@ public class MenuLoader {
                 if(contentArray.containsKey("options"))
                     addOptions((ModelButton)component, (JSONArray) contentArray.get("options"));
 
+                // Listeners
+                if(contentArray.containsKey("listeners"))
+                    addListeners((ModelButton)component, (JSONArray) contentArray.get("listeners"));
+
+
                 break;
             default:
                 component = null;
@@ -113,11 +118,11 @@ public class MenuLoader {
 
     private static void InitComponent(ModelComponent component, JSONObject contentArray) {
         // Background image
-        if(contentArray.containsKey("backgroundImage")) {
-            JSONObject jsonImage = (JSONObject)contentArray.get("backgroundImage");
+        if(contentArray.containsKey("background")) {
+            JSONObject jsonImage = (JSONObject)contentArray.get("background");
 
             // Get the url
-            component.addBackgroundImageUrl((String) jsonImage.get("url"));
+            component.addBackgroundImageUrl((String) jsonImage.get("imageUrl"));
 
             // Get the origin point
             JSONObject originPtsJson = (JSONObject)jsonImage.get("startingCoordinate");
@@ -198,6 +203,40 @@ public class MenuLoader {
         }
     }
 
+    private static void addListeners(ModelButton component, JSONArray listeners) {
+        if(listeners  != null) {
+            for (Object listener : listeners) {
+                CreateListener(component, listener);
+            }
+        }
+    }
+
+    private static void CreateListener(ModelButton component, Object listener) {
+        JSONObject jsonListener = (JSONObject) listener;
+        switch((String)jsonListener.get("name")) {
+            case "mouse":
+                for (Object method : (JSONArray)jsonListener.get("methods")) {
+                    addMethods(component, (JSONObject)method);
+                }
+                break;
+            case "onPressed":
+                // todo
+                break;
+            case "onReleased":
+                // todo
+                break;
+        }
+    }
+
+    private static void addMethods(ModelButton component, JSONObject method) {
+        String name = (String)method.get("name");
+        String functionName = (String)method.get("functionName");
+
+        if(name != null && functionName != null) {
+            component.addListenerMethod(name, functionName);
+        }
+    }
+
     private static void paintView(ModelView menuView) {
         JFrame j = new JFrame("Test");
         j.setSize(800, 800);
@@ -217,7 +256,7 @@ public class MenuLoader {
         // Dummy Controller
         ControleurJeu c = new ControleurJeu(null);
         //View mainView = new View(mainComponent.getBackgroundImageUrl(), c);
-        ImagePanel mainView = createView(mainComponent);
+        ImagePanel mainView = createView(mainComponent, c);
 
 
 
@@ -231,7 +270,7 @@ public class MenuLoader {
 
     }
 
-    private static ImagePanel createView(ModelPanel mainComponent) {
+    private static ImagePanel createView(ModelPanel mainComponent, ControleurJeu c) {
         ImagePanel currentView = new ImagePanel(mainComponent.getBackgroundImageUrl());
         if(mainComponent.getBackgroundPreferredSize() != null)
             currentView.setPreferredSize(mainComponent.getBackgroundPreferredSize().width, mainComponent.getBackgroundPreferredSize().height);
@@ -257,7 +296,7 @@ public class MenuLoader {
             if(child instanceof ModelPanel) {
                 System.out.println("A panel !");
                 ModelPanel childPanel = (ModelPanel) child;
-                ImagePanel subChildPanel = createView((ModelPanel)child);
+                ImagePanel subChildPanel = createView((ModelPanel)child, c);
 
                 // Refactor
                 if(childPanel.hasLayoutConstraint()) {
@@ -284,6 +323,13 @@ public class MenuLoader {
 
                 button.setPreferredSize(childButton.getPreferredSize());//new Dimension(150, 40));
                 button.setBackgroundImage(childButton.getBackgroundImageUrl());
+
+                button.addActionListener(c);
+                button.addMouseListener(c);
+                button.addKeyListener(c);
+
+                // Listeners
+                button.setListenerMethodsDict(childButton.getListenersMap());
 
                 // Refactor
                 if(childButton.hasLayoutConstraint()) {

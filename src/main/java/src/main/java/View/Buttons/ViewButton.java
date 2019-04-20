@@ -6,6 +6,8 @@ import View.MenuViews.View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 import static Utils.helper.Images.getImageFromPath;
 
@@ -22,7 +24,7 @@ public class ViewButton extends JButton {
 
     /** Interaction field */
     private ViewType nextView;
-
+    private Dictionary<String, String> listeners = new Hashtable<>();
 
     public ViewButton() {
         this("",
@@ -83,6 +85,14 @@ public class ViewButton extends JButton {
 
     public void setTransparency(float alpha) {
         this.alpha = alpha;
+    }
+
+    public void setListenerMethodsDict(Dictionary<String, String> dict) {
+        this.listeners = dict;
+    }
+
+    public Dictionary<String, String> getListenersMap() {
+        return this.listeners;
     }
 
     @Override

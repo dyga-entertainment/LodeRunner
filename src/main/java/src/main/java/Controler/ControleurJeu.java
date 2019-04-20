@@ -4,16 +4,25 @@ import Model.MainModel;
 import Model.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.helper.ResourcesPaths;
+import Utils.helper.Tuple;
 import View.Buttons.ContextTransitionButton;
 import View.Buttons.StandardButton;
+import View.Buttons.ViewButton;
 import View.ViewManager;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static Utils.helper.ResourcesPaths.INPUTS_FOLDER_NAME;
 
 public class ControleurJeu implements KeyListener, MouseListener, ActionListener  {
 
@@ -169,7 +178,34 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Called the action Performed of the Controler " + e.toString());
-		test.get(((ContextTransitionButton)e.getSource()).getButtonName()).actionPerformed(e);
+
+		System.out.println("[DEBUG] menu = " + ((ViewButton)e.getSource()).getListenersMap().toString());
+
+		Enumeration<String> enumaration = ((ViewButton)e.getSource()).getListenersMap().elements();
+		while(enumaration.hasMoreElements()) {
+			String key = enumaration.nextElement();
+			System.out.println(key);
+
+			if(this.controlerMethods.get(key) != null) {
+				System.out.println(((Method)this.controlerMethods.get(key).second).getName());
+				try {
+					System.out.println(((Method)this.controlerMethods.get(key).second).getName());
+					System.out.println(((Class)this.controlerMethods.get(key).first).getDeclaredConstructor().newInstance());
+					((Method)this.controlerMethods.get(key).second).invoke(((Class)this.controlerMethods.get(key).first).getDeclaredConstructor().newInstance());
+				} catch (InstantiationException ex) {
+					ex.printStackTrace();
+				} catch (IllegalAccessException ex) {
+					ex.printStackTrace();
+				} catch (InvocationTargetException ex) {
+					ex.printStackTrace();
+				} catch (NoSuchMethodException ex) {
+					ex.printStackTrace();
+				}
+			}
+		}
+
+		// OLD VERSION
+		//test.get(((ContextTransitionButton)e.getSource()).getButtonName()).actionPerformed(e);
 	}
 
 	/**####################### Menu Function #######################*/
@@ -225,6 +261,89 @@ public class ControleurJeu implements KeyListener, MouseListener, ActionListener
 		button.getStandardImage();
 
 	}
+
+
+	public static Dictionary<String, Tuple<Class, Method>> controlerMethods = new Hashtable<>();
+
+
+	public static void LoadGameScripts() {
+		//ClassLoader classLoader = ControleurJeu.class.getClassLoader();
+		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+
+		/*
+		try {
+			Class aClass = classLoader.loadClass("GameCode");
+			System.out.println("aClass.getName() = " + aClass.getName());
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		}*/
+
+		assert classLoader != null;
+		String path = new String(INPUTS_FOLDER_NAME).replace('.', '/');
+		Enumeration resources = null;
+		try {
+			resources = classLoader.getResources(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		List<File> dirs = new ArrayList();
+		while (resources.hasMoreElements()) {
+			URL resource = (URL) resources.nextElement();
+			dirs.add(new File(resource.getFile()));
+		}
+
+		ArrayList<Class> classes = new ArrayList();
+		for (File directory : dirs) {
+			try {
+				classes.addAll(findClasses(directory, INPUTS_FOLDER_NAME));
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+
+		for(Class currentClass : classes.toArray(new Class[classes.size()])) {
+			System.out.println(currentClass.getName());
+
+			/*Method m = aClass.getDeclaredMethod("dummy");
+			m.invoke(aClass.getDeclaredConstructor().newInstance());*/
+
+			// Add all the methods for that class
+			for (Method method : currentClass.getDeclaredMethods()) {
+				System.out.println(method.getName());
+				String key = currentClass.getName() + "." + method.getName();
+				controlerMethods.put(key, new Tuple<>(currentClass, method));
+			}
+		}
+	}
+
+
+	// Based on https://dzone.com/articles/get-all-classes-within-package
+	private static List findClasses(File directory, String packageName) throws ClassNotFoundException {
+		List classes = new ArrayList();
+		if (!directory.exists()) {
+			return classes;
+		}
+		File[] files = directory.listFiles();
+		for (File file : files) {
+			if (file.isDirectory()) {
+				assert !file.getName().contains(".");
+				classes.addAll(findClasses(file, packageName + "." + file.getName()));
+			} else if (file.getName().endsWith(".class")) {
+				classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+			}
+		}
+		return classes;
+	}
+
 
 	/**####################### End Menu Function #######################*/
 }

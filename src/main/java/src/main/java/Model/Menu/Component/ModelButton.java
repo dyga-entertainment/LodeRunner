@@ -4,6 +4,8 @@ import Model.Menu.ModelComponent;
 import Model.ViewType;
 
 import java.awt.*;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 /**
  * This class is used to make a model representation of a JButton.
@@ -17,6 +19,7 @@ public class ModelButton extends ModelComponent {
     private String mouseOverImageUrl;
     private Dimension dimension;
 
+    private Dictionary<String, String> listeners = new Hashtable<>();
     private ViewType nextView;
 
     public ModelButton() {
@@ -96,6 +99,14 @@ public class ModelButton extends ModelComponent {
 
     public Dimension getPreferredSize() {
         return this.dimension;
+    }
+
+    public void addListenerMethod(String listenerName, String callbackName) {
+        this.listeners.put(listenerName, callbackName);
+    }
+
+    public Dictionary<String, String> getListenersMap() {
+        return this.listeners;
     }
 
     @Override

@@ -55,4 +55,16 @@ public class ResourcesPaths {
     // SONGS SECTION
     //======================
     public static String SONGS_ROOT_PATH = "Songs/";
+
+
+    //======================
+    // CODE SECTION
+    //======================
+    /**
+     *  Variables related to code written to make the game
+     **/
+
+    // This url has to start from the folder tag with source (intellij).
+    public static String INPUTS_FOLDER_NAME = "GameCode.Inputs";
+
 }
