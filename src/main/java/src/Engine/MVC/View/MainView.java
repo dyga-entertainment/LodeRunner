@@ -69,7 +69,7 @@ public class MainView {
         ModelView menuView = this.mainModel.getCurrentView();
 
         if(menuView != null) {
-            if(this.activeGameView == null || !menuView.getName().equals(this.activeGameView.getName())) {
+            if(this.activeGameView == null || !menuView.getName().equals(this.activeGameView.getName()) || this.mainModel.isDirty()) {
                 // Remove previous panel it
                 this.gameFrame.getContentPane().removeAll();
                 this.gameFrame.getContentPane().validate();

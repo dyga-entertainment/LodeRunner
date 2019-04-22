@@ -210,6 +210,8 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 					Class callbackClass = this.controlerMethods.get(key).first;
 					// Call it !
 					callbackMethod.invoke(callbackClass.getDeclaredConstructor().newInstance(), (ViewButton)e.getSource());
+
+					break;
 				} catch (InstantiationException ex) {
 					ex.printStackTrace();
 				} catch (IllegalAccessException ex) {
@@ -221,6 +223,10 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 				}
 			}
 		}
+
+		// Notify the view that it needs to repaint.
+		this.mainView.paint();
+
 
 		// OLD VERSION
 		//test.get(((ContextTransitionButton)e.getSource()).getButtonName()).actionPerformed(e);

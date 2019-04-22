@@ -9,27 +9,36 @@ public class ButtonsCallback {
         System.out.println("This is a constructor");
     }
 
-    public void dummy() {
-        System.out.println("i'm a dummy");
-    }
-
-    public static void changeView(ViewButton sourceButton) {
+    public void changeView(ViewButton sourceButton) {
         System.out.println("[Debug] React to button = " + sourceButton.getButtonName());
+        System.out.println("[Debug] Next view " + sourceButton.getNextView());
 
+        Game.changeView(sourceButton.getNextView());
+
+        /*
         switch (sourceButton.getButtonName()) {
+            // Wrong because we use button name... which sucks
             case "Solo":
                 System.out.println("[Debug] ChangeView to WorldView");
-                Game.changeView("WorldView");
+                Game.changeView("worldView");
                 break;
-            case "Back":
-                System.out.println("[Debug] Back to the previous view");
-                Game.backLastView();
+            case "Credits":
+                Game.changeView("credits");
+                break;
             default:
                 break;
-        }
+        }*/
     }
 
-    public static void onClick() {
-        System.out.println("i'm a dummy");
+    public void back(ViewButton sourceButton) {
+        System.out.println("[Debug] Back to the previous view");
+        Game.backLastView();
+    }
+
+    public void changeWorld(ViewButton sourceButton) {
+        System.out.println("[Debug] React to button = " + sourceButton.getButtonName());
+
+        String buttonImageUrl = sourceButton.getImageUrl();
+        Game.getCurrentView().getModelComponent().setBackgroundImageUrl(buttonImageUrl);
     }
 }

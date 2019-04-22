@@ -70,7 +70,6 @@ public class MenuLoader {
                 if(contentArray.containsKey("font"))
                     addFont(component, (JSONObject) contentArray.get("font"));
 
-
                 break;
             default:
                 component = null;

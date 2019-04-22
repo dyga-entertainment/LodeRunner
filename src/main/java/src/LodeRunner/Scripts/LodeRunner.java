@@ -1,6 +1,6 @@
 import Main.Game;
 
-public class Launcher {
+public class LodeRunner {
 
 	public static void main(String[] args) {
 
@@ -11,14 +11,17 @@ public class Launcher {
 		// Or give the right folder to do that ?
 		/*
 		lodeRunner.addJsonViews(new String[] {
-			"Data/Menu/HomeMenu.json",
-			"Data/Menu/WorldView.json",
+			"Data/Menu/HomeView.json",
+			"Data/Menu/WorldSelectionView.json",
 			"Data/Menu/Test2.json",
 		});*/
 
 		lodeRunner.addJsonViews(new String[] {
-			//"Data/Menu/HomeMenu.json",
-			"Data/Menu/WorldView.json",
+			"Data/Menu/HomeView.json",
+			"Data/Menu/WorldSelectionView.json",
+			"Data/Menu/CreditsView.json",
+			//"Data/Menu/SettingsView.json",	// TODO : sliders & co.
+			"Data/Menu/LevelSelectionView.json",
 		});
 
 		// TODO : Should add more stuffs here

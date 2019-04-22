@@ -59,26 +59,26 @@ public class ModelButton extends ModelComponent {
     @Override
     public void setNextView(String viewType) {
         switch (viewType) {
-            case "WorldSelection":
-                this.nextView = ViewType.WorldSelection;
+            case "WorldSelectionView":
+                this.nextView = ViewType.WorldSelectionView;
                 break;
-            case "HomeMenu":
-                this.nextView = ViewType.HomeMenu;
+            case "HomeView":
+                this.nextView = ViewType.HomeView;
                 break;
-            case "Credits":
-                this.nextView = ViewType.Credits;
+            case "CreditsView":
+                this.nextView = ViewType.CreditsView;
                 break;
-            case "LevelSelection":
-                this.nextView = ViewType.LevelSelection;
+            case "LevelSelectionView":
+                this.nextView = ViewType.LevelSelectionView;
                 break;
             case "Loading":
-                this.nextView = ViewType.Loading;
+                this.nextView = ViewType.LoadingView;
                 break;
             case "Settings":
-                this.nextView = ViewType.Settings;
+                this.nextView = ViewType.SettingsView;
                 break;
             case "Profils":
-                this.nextView = ViewType.Profils;
+                this.nextView = ViewType.ProfilsView;
                 break;
         }
     }

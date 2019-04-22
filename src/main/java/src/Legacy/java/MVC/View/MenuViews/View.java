@@ -80,7 +80,7 @@ public class View extends ImagePanel implements EventListener {
         this.buttonsPanel.setLayout(new BorderLayout());
 
         // Back button by default
-        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", ViewType.HomeMenu, true);
+        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", ViewType.HomeView, true);
         this.buttonsPanel.add(backButton, BorderLayout.WEST);
     }
 

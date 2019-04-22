@@ -17,12 +17,12 @@ public class ModelView {
     }
 
     public ModelView(String name, ModelComponent viewContent) {
-        this.name = name;
+        this.name = name.toLowerCase();
         this.viewContent = viewContent;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.toLowerCase();
     }
 
     public String getName() {

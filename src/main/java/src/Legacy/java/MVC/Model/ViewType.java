@@ -1,3 +1,12 @@
 package MVC.Model;
 
-public enum ViewType { None, HomeMenu, Credits, Profils, Settings, WorldSelection, LevelSelection, Loading }
+public enum ViewType {
+    None,
+    HomeView,
+    CreditsView,
+    ProfilsView,
+    SettingsView,
+    WorldSelectionView,
+    LevelSelectionView,
+    LoadingView,
+}

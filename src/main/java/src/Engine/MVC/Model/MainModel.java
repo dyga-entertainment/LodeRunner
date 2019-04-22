@@ -35,9 +35,10 @@ public class MainModel {
         this.menuViews = new Hashtable<>();
         this.lastVisitedViews = new Stack<>();
 
+        /*
         List<String> list = Arrays.asList(views);
         Collections.reverse(list);
-        views = list.toArray(views);
+        views = list.toArray(views);*/
 
         for (int i = 0; i < views.length; i++) {
             try {
@@ -45,18 +46,19 @@ public class MainModel {
                 FileReader fileReader = new FileReader(url.getPath());
                 // Create the view
                 ModelView view = CreateNewView(fileReader);
+                String keyName = view.getName().toLowerCase();
+
                 // Add the view to the data struct
-                menuViews.put(view.getName(), view);
+                menuViews.put(keyName, view);
+
+                // Set the default active modelView
+                if(this.activeModelView == null) {
+                    this.activeModelView = menuViews.get(keyName);
+                }
             } catch (ParseException | IOException e) {
                 System.out.println("Cannot load the following json file = " + views[i]);
                 e.printStackTrace();
             }
-        }
-
-        // Set the default active modelView
-        Enumeration<String> enumeration = menuViews.keys();
-        if(enumeration.hasMoreElements()) {
-            this.activeModelView = menuViews.get(enumeration.nextElement());
         }
     }
 
@@ -80,5 +82,10 @@ public class MainModel {
         if(!this.lastVisitedViews.isEmpty()) {
             this.activeModelView = menuViews.get(this.lastVisitedViews.pop());
         }
+    }
+
+    // TODO
+    public boolean isDirty() {
+        return true;
     }
 }

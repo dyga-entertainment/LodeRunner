@@ -114,6 +114,10 @@ public abstract class ModelComponent {
         return this.option;
     }
 
+    public void setBackgroundImageUrl(String newUrl) {
+        this.backgroundImageUrl = newUrl;
+    }
+
     /** Abstract methods */
     public abstract void setLayout(Layout layout);
     public abstract void addText(String text);

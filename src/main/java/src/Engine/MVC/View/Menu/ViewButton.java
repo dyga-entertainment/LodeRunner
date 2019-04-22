@@ -19,10 +19,9 @@ public class ViewButton extends JButton {
     private Dimension dimension;
 
     private Background background;
+    private DisplayOption option;
 
     /** Control the transparancy of the button */
-    private ImageIcon imageIcon;
-    private DisplayOption option;
     private float alpha = 1.0f;
 
     /** Interaction field */
@@ -34,7 +33,6 @@ public class ViewButton extends JButton {
             "",
             true,
             ViewType.None);
-        this.imageIcon = new ImageIcon("");
     }
 
     public ViewButton(String text, String standardImage, boolean isEnable, ViewType nextView) {
@@ -52,6 +50,7 @@ public class ViewButton extends JButton {
 
     public void setBackgroundImage(String standardImage, Point startingPoint, Dimension preferredSize) {
         //this.selectedImage = selectedImage;
+        this.standardImage = standardImage;
         if(!standardImage.isEmpty()) {
             // Create the new image
             //ImageIcon image = new ImageIcon(getImageFromPath(ResourcesPaths.SPRITE_UI_BUTTONS_PATH + standardImage));
@@ -65,10 +64,17 @@ public class ViewButton extends JButton {
             }
             //scaledImage = image.getImage();
             // Finally add it to the button
-            this.imageIcon = new ImageIcon(scaledImage);
             this.background.backgroundImage = new ImageIcon(scaledImage).getImage();
             //this.setIcon(new ImageIcon(scaledImage));
         }
+    }
+
+    public Image getImage() {
+        return this.background.backgroundImage;
+    }
+
+    public String getImageUrl() {
+        return this.standardImage;
     }
 
     public void setDisplayOption(DisplayOption option) {
@@ -79,6 +85,40 @@ public class ViewButton extends JButton {
     public void setPreferredSize(Dimension desiredDimension) {
         super.setPreferredSize(desiredDimension);
         this.dimension = desiredDimension;
+    }
+
+    public void setNextView(String nextViewName) {
+        switch (nextViewName) {
+            case "HomeMenu":
+                this.nextView = ViewType.HomeView;
+                break;
+            case "Credits":
+                this.nextView = ViewType.CreditsView;
+                break;
+            case "LevelSelection":
+                this.nextView = ViewType.LevelSelectionView;
+                break;
+            case "Loading":
+                this.nextView = ViewType.LoadingView;
+                break;
+            case "Settings":
+                this.nextView = ViewType.SettingsView;
+                break;
+            case "WorldSelectionView":
+                this.nextView = ViewType.WorldSelectionView;
+                break;
+            case "Profils":
+                this.nextView = ViewType.ProfilsView;
+                break;
+            default:
+                this.nextView = ViewType.None;
+                break;
+        }
+
+    }
+
+    public String getNextView() {
+        return this.nextView.name();
     }
 
     public String getButtonName() {

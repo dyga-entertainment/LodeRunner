@@ -33,7 +33,7 @@ public class MenuModel {
     private static String selectedWorld = "";
 
     public MenuModel() {
-        this.currentView = ViewType.HomeMenu;
+        this.currentView = ViewType.HomeView;
         this.lastVisitedViews = new Stack<ViewType>();
     }
 

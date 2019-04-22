@@ -138,8 +138,8 @@ public class WorldSelectionView extends View {
     public void setupButtonsPanel() {
         super.setupButtonsPanel();
 
-        JButton acceptButton = NewContextTransitionButton("Accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.LevelSelection, false);
-        this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
+        //JButton acceptButton = NewContextTransitionButton("Accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.LevelSelection, false);
+        //this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 
     @Override

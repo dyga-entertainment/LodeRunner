@@ -81,7 +81,7 @@ public class LevelSelectionView extends View {
         this.buttonsPanel.add(selectionButtons, BorderLayout.CENTER);
 
         // Accept button
-        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.Loading);
+        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.LoadingView);
         this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 

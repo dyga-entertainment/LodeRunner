@@ -19,15 +19,15 @@ public class HomeMenuView extends View {
         this.buttonsPanel.removeAll();
         this.buttonsPanel.validate();
 
-        JButton playButton = NewContextTransitionButton("Solo", "bouton_solo1.png", "bouton_solo2.png", ViewType.WorldSelection);
+        JButton playButton = NewContextTransitionButton("Solo", "bouton_solo1.png", "bouton_solo2.png", ViewType.WorldSelectionView);
         JButton multiplayerButton = NewContextTransitionButton("Coop", "bouton_coop1.png", "bouton_coop2.png", ViewType.None, false, false);
-        JButton settingsButton = NewContextTransitionButton("Options", "bouton_options1.png", "bouton_options2.png", ViewType.Settings);
+        JButton settingsButton = NewContextTransitionButton("Options", "bouton_options1.png", "bouton_options2.png", ViewType.SettingsView);
         JButton editorButton = NewContextTransitionButton("Editeur", "bouton_editeur1.png", "bouton_editeur2.png", ViewType.None, false, false);
-        JButton creditsButton = NewContextTransitionButton("Credits", "bouton_credits1.png", "bouton_credits2.png", ViewType.Credits);
+        JButton creditsButton = NewContextTransitionButton("Credits", "bouton_credits1.png", "bouton_credits2.png", ViewType.CreditsView);
 
         // Assign all the previously created buttons to the structure
         this.buttons = new JButton[] {
-                playButton,
+                //playButton,
                 multiplayerButton,
                 settingsButton,
                 editorButton,

@@ -2,6 +2,8 @@ package Main;
 
 import MVC.Controler.MainControler;
 import MVC.Model.MainModel;
+import MVC.Model.Menu.ModelView;
+import MVC.Model.MenuModel;
 import MVC.View.MainView;
 
 /**
@@ -26,8 +28,6 @@ public class Game {
     public Game(String gameName) {
         gameName = gameName;
     }
-
-
 
     public void addJsonViews(String[] strings) {
         views = strings.clone();
@@ -56,15 +56,21 @@ public class Game {
         mainView.show();
     }
 
+    /** Method useful in order to help the programmer script his desire behavior */
+    public static ModelView getCurrentView() {
+        return mainModel.getCurrentView();
+    }
 
     /** Method that should be included in the controler
      * Should update the model and notify changes might happened **/
     public static void changeView(String nextView) {
-        mainControler.changeView(nextView);
+        mainControler.changeView(nextView.toLowerCase());
     }
 
     public static void backLastView() {
         mainControler.returnLastView();
     }
+
+
 
 }

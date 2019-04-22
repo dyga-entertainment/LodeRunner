@@ -1,5 +1,5 @@
 {
-  "name": "homeMenu",
+  "name": "HomeView",
   "view": {
     "type": "Panel",
     "background": {
@@ -90,7 +90,8 @@
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
-              }}
+              }},
+              {"nextView": "WorldSelectionView"}
             ]
           },
           {
@@ -107,14 +108,28 @@
               },
               "displayOptions": "Tiled"
             },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  }
+                ]
+              }
+            ],
             "options": [
-              {"text": "Solo"},
-              {"isEnable": true},
+              {"text": "Coop"},
+              {"isEnable": false},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
               }},
-              {"nextView": "Options"}
+              {"nextView": "CoopView"}
             ]
           },
           {
@@ -131,14 +146,28 @@
               },
               "displayOptions": "Tiled"
             },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  }
+                ]
+              }
+            ],
             "options": [
-              {"text": "Solo"},
-              {"isEnable": true},
+              {"text": "Options"},
+              {"isEnable": false},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
               }},
-              {"nextView": "Options"}
+              {"nextView": "SettingsView"}
             ]
           },
           {
@@ -155,14 +184,28 @@
               },
               "displayOptions": "Tiled"
             },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  }
+                ]
+              }
+            ],
             "options": [
-              {"text": "Solo"},
-              {"isEnable": true},
+              {"text": "Editeur"},
+              {"isEnable": false},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
               }},
-              {"nextView": "Options"}
+              {"nextView": "Editeur"}
             ]
           },
           {
@@ -179,14 +222,28 @@
               },
               "displayOptions": "Tiled"
             },
+            "listeners": [
+              {
+                "name": "mouse",
+                "methods": [
+                  {
+                    "name": "onPressed",
+                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "imageUrl": "Sprites/UI/Buttons/bouton_solo1.png",
+                    "songUrl": "todo.wav",
+                    "nextView": "WorldSelection"
+                  }
+                ]
+              }
+            ],
             "options": [
-              {"text": "Solo"},
+              {"text": "Credits"},
               {"isEnable": true},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
               }},
-              {"nextView": "Options"}
+              {"nextView": "CreditsView"}
             ]
           }
         ]
