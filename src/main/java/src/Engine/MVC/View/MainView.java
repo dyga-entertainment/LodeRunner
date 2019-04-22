@@ -5,8 +5,10 @@ import MVC.Model.MainModel;
 import MVC.Model.Menu.Component.ModelButton;
 import MVC.Model.Menu.Component.ModelLabel;
 import MVC.Model.Menu.Component.ModelPanel;
+import MVC.Model.Menu.Enums.ModelLayout;
 import MVC.Model.Menu.ModelComponent;
 import MVC.Model.Menu.ModelView;
+import MVC.Model.Menu.Structs.Layout;
 import Utils.WrapLayout;
 import MVC.View.Menu.ViewButton;
 import MVC.View.Menu.ImagePanel;
@@ -103,39 +105,43 @@ public class MainView {
         if(mainComponent.getBackgroundStartingPoint() != null)
             currentView.setStartingCoordinate(mainComponent.getBackgroundStartingPoint().x, mainComponent.getBackgroundStartingPoint().y);
 
-        switch (mainComponent.getLayout()) {
+        Layout layout = mainComponent.getLayout();
+        switch (layout.name) {
             case BorderLayout:
                 currentView.setLayout(new BorderLayout());
                 break;
             case GridLayout:
-                currentView.setLayout(new GridLayout(1,1));
+                currentView.setLayout(new GridLayout(layout.rows,layout.cols, layout.hgap, layout.vgap));
                 break;
             case WrapLayout:
                 currentView.setLayout(new WrapLayout());
                 break;
             default:
+                currentView.setLayout(new FlowLayout());
                 break;
         }
 
         // Children
         for(ModelComponent child : mainComponent.getChildrenComponents()) {
-            if(child instanceof ModelPanel) {       /** Panel section */
+            JComponent childComponent = null;
+            /** Panel section */
+            if(child instanceof ModelPanel) {
                 ModelPanel childPanel = (ModelPanel) child;
-                ImagePanel subChildPanel = createView((ModelPanel)child, c);
+                childComponent = createView((ModelPanel)child, c);
+            /** Label section */
+            } else if (child instanceof ModelLabel) {
+                ModelLabel childLabel = (ModelLabel)child;
+                JLabel label = new JLabel(childLabel.getText());
+                MVC.Model.Menu.Structs.Font font = childLabel.getFont();
+                label.setFont(new Font(font.name, font.style, font.size));
+                label.setForeground(new Color(font.color.red, font.color.green, font.color.blue));
 
-                // Refactor
-                if(childPanel.hasLayoutConstraint()) {
-                    if(childPanel.hasBorderLayoutLayoutConstraint()) {
-                        currentView.add(subChildPanel, childPanel.getBorderLayoutContraints());
-                    } else {
-                        currentView.add(subChildPanel, childPanel.getIndexLayout());
-                    }
-                } else {
-                    currentView.add(subChildPanel);
-                }
+                //this.title.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
+                //this.title.setBackground(Color.BLACK);
 
-            } else if (child instanceof ModelLabel) {   /** Label section */
-            } else if (child instanceof ModelButton) {  /** Button section */
+                childComponent = label;
+            /** Button section */
+            } else if (child instanceof ModelButton) {
                 ModelButton childButton = (ModelButton)child;
                 ViewButton button = new ViewButton(
                     childButton.getText(),
@@ -145,7 +151,13 @@ public class MainView {
                 );
 
                 button.setPreferredSize(childButton.getPreferredSize());//new Dimension(150, 40));
-                button.setBackgroundImage(childButton.getBackgroundImageUrl());
+                // Does the image need to be scaled , tiled, etc.
+                button.setDisplayOption(childButton.getBackgroundOptions());
+                // Set the background image
+                button.setBackgroundImage(childButton.getBackgroundImageUrl(),
+                    childButton.getBackgroundStartingPoint(),
+                    childButton.getBackgroundPreferredSize()
+                );
 
                 button.addActionListener(c);
                 button.addMouseListener(c);
@@ -154,17 +166,23 @@ public class MainView {
                 // Listeners
                 button.setListenerMethodsDict(childButton.getListenersMap());
 
-                // Refactor
-                if(childButton.hasLayoutConstraint()) {
-                    if(childButton.hasBorderLayoutLayoutConstraint()) {
-                        currentView.add(button, childButton.getBorderLayoutContraints());
-                    } else {
-                        currentView.add(button, childButton.getIndexLayout());
-                    }
-                } else {
-                    currentView.add(button);
-                }
+                childComponent = button;
+            } else {
+                childComponent = null; // Unknown
             }
+
+            childComponent.setOpaque(child.isOpaque());
+
+            if(child.hasLayoutConstraint()) {
+                if(child.hasBorderLayoutLayoutConstraint()) {
+                    currentView.add(childComponent, child.getBorderLayoutContraints());
+                } else {
+                    currentView.add(childComponent, child.getIndexLayout());
+                }
+            } else {
+                currentView.add(childComponent);
+            }
+
         }
         return currentView;
     }

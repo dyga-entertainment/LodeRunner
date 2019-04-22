@@ -21,6 +21,9 @@ public class ButtonsCallback {
                 System.out.println("[Debug] ChangeView to WorldView");
                 Game.changeView("WorldView");
                 break;
+            case "Back":
+                System.out.println("[Debug] Back to the previous view");
+                Game.backLastView();
             default:
                 break;
         }

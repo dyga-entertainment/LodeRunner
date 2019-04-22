@@ -105,7 +105,7 @@ public class ProfilsView extends View {
 	public void paint(Graphics g) {
 		super.paint(g);
 
-		g.drawImage(this.backgroundImage,0,0,getSize().width, getSize().height, this);
+		//g.drawImage(this.backgroundImage,0,0,getSize().width, getSize().height, this);
 		for(int i = 0; i < buttons.length; i++) {
 			this.buttons[i].repaint();
 		}

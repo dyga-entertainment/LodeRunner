@@ -5,454 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b905c38-f4a3-4e09-a84f-4fbf3b2812fd" name="Default" comment="//">
-      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Engine/Main/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/CreditView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/DisplayOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Font.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Layout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/Background.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G32.iml" beforeDir="false" afterPath="$PROJECT_DIR$/G32.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Destruction/bloc_terre_destruction1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Destruction/bloc_terre_destruction1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Destruction/bloc_terre_destruction2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Destruction/bloc_terre_destruction2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Destruction/bloc_terre_destruction3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Destruction/bloc_terre_destruction3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Destruction/bloc_terre_destruction4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Destruction/bloc_terre_destruction4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Destruction/bloc_terre_destruction5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Destruction/bloc_terre_destruction5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Special/bloc_portail1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Special/bloc_portail1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Special/bloc_portail2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Special/bloc_portail2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Special/bloc_portail3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Special/bloc_portail3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/Special/bloc_portail4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Special/bloc_portail4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Blocs/test_portail.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/test_portail.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Falls/mad_monk_fall1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Falls/mad_monk_fall1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Falls/mad_monk_fall2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Falls/mad_monk_fall2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Idle/mad_monk_stop_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Idle/mad_monk_stop_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Idle/mad_monk_stop_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Idle/mad_monk_stop_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Climb/mad_monk_ladder1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Climb/mad_monk_ladder1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Climb/mad_monk_ladder2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Climb/mad_monk_ladder2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk1_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk1_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk1_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk1_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk2_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk2_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk2_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk2_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk3_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk3_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Enemy/Steering/Walk/mad_monk_walk3_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Enemy/Steering/Walk/mad_monk_walk3_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/BigBomb/gadget_grosse_bombe_allumee1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/BigBomb/gadget_grosse_bombe_allumee2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/BigBomb/gadget_grosse_bombe_allumee3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Explosion/explosion1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Explosion/explosion1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Explosion/explosion2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Explosion/explosion2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Explosion/explosion3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Explosion/explosion3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Explosion/explosion4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Explosion/explosion4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Explosion/explosion5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Explosion/explosion5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Gaz/bloc_gaz1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Gaz/bloc_gaz1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Gaz/bloc_gaz2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Gaz/bloc_gaz2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Gaz/bloc_gaz3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Gaz/bloc_gaz3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/Gaz/bloc_gaz4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/VFX/Gaz/bloc_gaz4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/GazWeapon/hero_fry_gaz1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/GazGun/hero_fry_gaz1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/GazWeapon/hero_fry_gaz2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/GazGun/hero_fry_gaz2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/GazWeapon/hero_fry_gaz3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/GazGun/hero_fry_gaz3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/GazWeapon/hero_fry_gaz4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/GazGun/hero_fry_gaz4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/SmallBomb/gadget_petite_bombe_allumee1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/SmallBomb/gadget_petite_bombe_allumee2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/SmallBomb/gadget_petite_bombe_allumee3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Left/animation_mort_gauche8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/DeathEnding/Right/animation_mort_droite8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/DeathEnding/Right/animation_mort_droite8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Falls/hero_fry32x32_fall.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Falls/hero_fry32x32_fall.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Falls/hero_fry32x32_fall1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Falls/hero_fry32x32_fall1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Falls/hero_fry32x32_fall2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Falls/hero_fry32x32_fall2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Falls/hero_fry_fall1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Falls/hero_fry_fall1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Falls/hero_fry_fall2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Falls/hero_fry_fall2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Idle/hero_fry_stop_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Idle/hero_fry_stop_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Idle/hero_fry_stop_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Idle/hero_fry_stop_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Idle/hero_fry_walk_left.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Idle/hero_fry_walk_left.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Idle/hero_fry_walk_right.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Idle/hero_fry_walk_right.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Climb/hero_fry_ladder.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Climb/hero_fry_ladder.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Climb/hero_fry_ladder1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Climb/hero_fry_ladder1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Climb/hero_fry_ladder2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Climb/hero_fry_ladder2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_left4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_left4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Hang/hero_fry_barre_right4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Hang/hero_fry_barre_right4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk1_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk1_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk1_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk1_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk2_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk2_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk2_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk2_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk3_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk3_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/Steering/Walk/hero_fry_walk3_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Steering/Walk/hero_fry_walk3_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Animations/Player/SuccessEnding/animation_fin_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_hell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_hell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_jungle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_jungle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Backgrounds/background_snow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Backgrounds/background_snow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Glue/bloc_glu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Glue/bloc_glu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Glue/bloc_glu_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Glue/bloc_glu_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Glue/bloc_glu_hell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Glue/bloc_glu_hell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Glue/bloc_glu_snow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Glue/bloc_glu_snow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Ground/bloc_pierre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Ground/bloc_pierre.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Ground/bloc_terre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Ground/bloc_terre.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Ground/bloc_terre_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Ground/bloc_terre_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Ground/bloc_terre_hell.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Ground/bloc_terre_hell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Ground/bloc_terre_snow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Ground/bloc_terre_snow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Specials/bloc_cachette.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Specials/bloc_cachette.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/Specials/bloc_cachette_fry.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/Specials/bloc_cachette_fry.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/bloc_barre_traversee.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/bloc_barre_traversee.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/bloc_echelle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/bloc_echelle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Blocs/bloc_vide.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Blocs/bloc_vide.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot_amethyste.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot_amethyste.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot_diamant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot_diamant.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot_emeraude.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot_emeraude.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot_rubis.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot_rubis.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Gold/lingot_saphir.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Gold/lingot_saphir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Weapons/gadget_grosse_bombe.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/BigBomb/gadget_grosse_bombe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Weapons/gadget_petite_bombe.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/SmallBomb/gadget_petite_bombe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Items/Weapons/gaz.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Items/Weapons/GazGun/gaz.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Player/6c3ed3f21757a8b75c404275752ef068.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/6c3ed3f21757a8b75c404275752ef068.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Player/hero_fry_dig_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Dig/hero_fry_dig_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/Player/hero_fry_dig_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/Player/Dig/hero_fry_dig_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_appliquer2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_appliquer2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_config2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_config2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_coop2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_coop2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_credits2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_credits2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_creer_profil2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_creer_profil2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_editeur2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_editeur2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_jouer2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_jouer2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_options2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_options2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_profil12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_profil12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_profil22.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_profil22.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_profil32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_profil32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_retour2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_retour2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_solo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_solo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_supprimer_profil2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_supprimer_profil2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/Selected/bouton_valider2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/Selected/bouton_valider2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_appliquer1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_appliquer1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_config1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_config1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_coop1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_coop1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_credits1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_credits1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_creer_profil1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_creer_profil1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_editeur1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_editeur1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_jouer1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_jouer1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_options1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_options1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_profil11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_profil11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_profil21.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_profil21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_profil31.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_profil31.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_retour1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_retour1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_solo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_solo1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_supprimer_profil1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_supprimer_profil1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_valider1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_valider1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Buttons/bouton_vide.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Buttons/bouton_vide.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_axel.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_axel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_axel32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_axel32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_damien.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_damien.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_damien32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_damien32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_greg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_greg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_greg32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_greg32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_yann.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_yann.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/Icons/avatar_yann32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/Icons/avatar_yann32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/bandeau_menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/bandeau_menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/credits.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/credits.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Images/Sprites/UI/monde_verrouille.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Sprites/UI/monde_verrouille.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Menu/HomeMenu.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Menu/Test1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Menu/Test2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/Test2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Songs/song.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Songs/song.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/gamedata/Profils.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/PlayersProfils/Profils.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controler/ControleurJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/audio/SoundSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/audio/SoundSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/audio/TestAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/audio/TestAudio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/audio/ThreadPiste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/audio/ThreadPiste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/levels/MondeDemonstration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/levels/MondeDemonstration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/levels/MondeJungle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/levels/MondeJungle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/levels/MondeSnow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/levels/MondeSnow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/levels/ProfilData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Data/levels/ProfilData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameCode/Inputs/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameCode/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/GameCode/Test2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Actions/PlayerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/Actions/PlayerInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Actions/ThreadAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/Actions/ThreadAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Actions/ThreadCreuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/Actions/ThreadCreuser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Actions/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/Actions/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/MainModelLegacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/Component/ModelButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/Component/ModelLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/Component/ModelPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/ModelComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/ModelLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Menu/ModelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/MenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ViewType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/ViewType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/Bloc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/Bloc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocBarreTraversee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocBarreTraversee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocBrique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocBrique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocEchelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocEchelle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocGlu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocGlu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocPortailFinNiveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocPortailFinNiveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/BlocTerre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocTerre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/bloc/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/C.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/Gadget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Gadget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/Gaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Gaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/GrosseBombe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/GrosseBombe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/Lingot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Lingot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/PetiteBombe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/PetiteBombe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/Pioche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Pioche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/item/PotDeGlu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/PotDeGlu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Coordonnees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Coordonnees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Monde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Monde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Niveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Positionnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Positionnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/jeu/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/Heros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/Heros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/IAMadMonk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/IAMadMonk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/IANaive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/IANaive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/MadMonk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/MadMonk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/personnage/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/personnage/Personnage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/WrapLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/WrapLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/exceptions/AnimationNonReconnueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/exceptions/AnimationNonReconnueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/exceptions/BlocNonCreusableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/exceptions/BlocNonCreusableException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/exceptions/CasePriseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/exceptions/CasePriseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/exceptions/ErreurGadgetException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/exceptions/ErreurGadgetException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/exceptions/InventaireVideException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/exceptions/InventaireVideException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/helper/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/helper/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/helper/ImagesMadMonk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/Utils/helper/ImagesMadMonk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/helper/MenuLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/helper/ResourcesPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Scripts/ResourcesPaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/helper/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Utils/Tuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Bandeau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/Bandeau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Buttons/ContextTransitionButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/Buttons/ContextTransitionButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Buttons/StandardButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/Buttons/StandardButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Buttons/ViewButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/FenetrePrincipale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/FenetrePrincipale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/GameViews/GameContentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameContentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/GameViews/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/GameViews/HeadUpDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/HeadUpDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHM2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHM2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHM6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHM6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHM9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHM9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/IHMB9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/IHMB9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/JPButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/JPButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/CreditView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/HomeMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/HomeMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/LevelSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/LevelSelectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/LoadingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/LoadingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/ProfilsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/SettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/SettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuViews/WorldSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ViewManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Destruction/bloc_terre_destruction1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Destruction/bloc_terre_destruction2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Destruction/bloc_terre_destruction3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Destruction/bloc_terre_destruction4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Destruction/bloc_terre_destruction5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Special/bloc_portail1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Special/bloc_portail2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Special/bloc_portail3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/Special/bloc_portail4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Blocs/test_portail.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Falls/mad_monk_fall1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Falls/mad_monk_fall2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Idle/mad_monk_stop_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Idle/mad_monk_stop_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Climb/mad_monk_ladder1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Climb/mad_monk_ladder2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk1_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk1_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk2_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk2_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk3_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Enemy/Steering/Walk/mad_monk_walk3_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/BigBomb/gadget_grosse_bombe_allumee3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Explosion/explosion1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Explosion/explosion2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Explosion/explosion3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Explosion/explosion4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Explosion/explosion5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Gaz/bloc_gaz1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Gaz/bloc_gaz2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Gaz/bloc_gaz3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/Gaz/bloc_gaz4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/GazWeapon/hero_fry_gaz1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/GazWeapon/hero_fry_gaz2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/GazWeapon/hero_fry_gaz3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/GazWeapon/hero_fry_gaz4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Items/SmallBomb/gadget_petite_bombe_allumee3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Left/animation_mort_gauche8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/DeathEnding/Right/animation_mort_droite8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Falls/hero_fry32x32_fall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Falls/hero_fry32x32_fall1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Falls/hero_fry32x32_fall2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Falls/hero_fry_fall1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Falls/hero_fry_fall2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Idle/hero_fry_stop_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Idle/hero_fry_stop_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Idle/hero_fry_walk_left.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Idle/hero_fry_walk_right.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Climb/hero_fry_ladder.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Climb/hero_fry_ladder1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Climb/hero_fry_ladder2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_left1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_left2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_left3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_right1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_right2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_right3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Hang/hero_fry_barre_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk1_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk1_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk2_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk2_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk3_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/Steering/Walk/hero_fry_walk3_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Animations/Player/SuccessEnding/animation_fin_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_custom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_hell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_jungle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Backgrounds/background_snow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Glue/bloc_glu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Glue/bloc_glu_fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Glue/bloc_glu_hell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Glue/bloc_glu_snow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Ground/bloc_pierre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Ground/bloc_terre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Ground/bloc_terre_fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Ground/bloc_terre_hell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Ground/bloc_terre_snow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Specials/bloc_cachette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/Specials/bloc_cachette_fry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/bloc_barre_traversee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/bloc_echelle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Blocs/bloc_vide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot_amethyste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot_diamant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot_emeraude.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot_rubis.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Gold/lingot_saphir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Weapons/gadget_grosse_bombe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Weapons/gadget_petite_bombe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Items/Weapons/gaz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Player/6c3ed3f21757a8b75c404275752ef068.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Player/hero_fry_dig_left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/Player/hero_fry_dig_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_appliquer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_config2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_coop2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_credits2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_creer_profil2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_editeur2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_jouer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_options2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_profil12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_profil22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_profil32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_retour2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_solo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_supprimer_profil2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/Selected/bouton_valider2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_appliquer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_config1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_coop1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_credits1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_creer_profil1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_editeur1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_jouer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_options1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_profil11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_profil21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_profil31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_retour1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_solo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_supprimer_profil1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_valider1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Buttons/bouton_vide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_axel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_axel32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_damien.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_damien32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_greg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_greg32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_yann.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/Icons/avatar_yann32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/bandeau_menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/credits.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/Sprites/UI/monde_verrouille.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Menu/HomeMenu.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Menu/Test1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Menu/Test2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gamedata/Profils.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/NiveauAxel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/NiveauAxel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/NiveauDamien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/NiveauDamien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/NiveauDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/NiveauDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/NiveauGregoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/NiveauGregoire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/NiveauYann.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/NiveauYann.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestModeleJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/tests/TestModeleJeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/ModelLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/View/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/View/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Menu/HomeMenu.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Menu/HomeMenu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Menu/WorldView.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Menu/WorldView.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -488,62 +68,62 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6879371">
+    <splitter split-orientation="horizontal" split-proportion="0.46288574">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine/Main/Game.java">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="158">
-                  <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+                <state relative-caret-position="306">
+                  <caret line="26" selection-start-line="26" selection-end-line="26" />
                   <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#640#641#0" expanded="true" />
-                    <element signature="e#676#677#0" expanded="true" />
-                    <element signature="e#617#618#0" expanded="true" />
-                    <element signature="e#648#649#0" expanded="true" />
-                    <element signature="e#1867#1868#0" expanded="true" />
-                    <element signature="e#1917#1918#0" expanded="true" />
+                    <element signature="e#2503#2504#0" expanded="true" />
+                    <element signature="e#2540#2541#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java">
+            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+                <state relative-caret-position="297">
+                  <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1560#1701#0" expanded="true" />
-                    <element signature="e#1700#1701#0" expanded="true" />
-                    <element signature="e#6548#6549#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/ResourcesPaths.java">
+            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+                <state relative-caret-position="195">
+                  <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java">
+            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+                <state relative-caret-position="1187">
+                  <caret line="174" column="21" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1125">
+                  <caret line="150" selection-start-line="150" selection-end-line="150" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1318#1319#0" expanded="true" />
-                    <element signature="e#1360#1361#0" expanded="true" />
-                    <element signature="e#1762#1763#0" expanded="true" />
-                    <element signature="e#1811#1812#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -552,22 +132,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-229">
-                  <caret line="287" selection-start-line="287" selection-end-line="287" />
+                <state relative-caret-position="447">
+                  <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1240#1241#0" expanded="true" />
-                    <element signature="e#1263#1264#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/FenetrePrincipale.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-88">
-                  <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -575,32 +144,42 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="32" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="32" />
+                <state relative-caret-position="221">
+                  <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+                <state relative-caret-position="149">
+                  <caret line="80" selection-start-line="80" selection-end-line="80" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#141#142#0" expanded="true" />
-                    <element signature="e#190#191#0" expanded="true" />
-                    <element signature="e#774#775#0" expanded="true" />
+                    <element signature="e#1530#1531#0" expanded="true" />
+                    <element signature="e#1591#1592#0" expanded="true" />
+                    <element signature="e#3278#3279#0" expanded="true" />
+                    <element signature="e#3299#3300#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="714">
+                  <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="248">
+                  <caret line="37" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="37" />
                 </state>
               </provider>
             </entry>
@@ -610,70 +189,72 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+                <state relative-caret-position="345">
+                  <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="201">
+                  <caret line="159" column="18" lean-forward="true" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#3574#3575#0" expanded="true" />
-                    <element signature="e#3602#3603#0" expanded="true" />
-                    <element signature="e#3639#3640#0" expanded="true" />
-                    <element signature="e#3688#3689#0" expanded="true" />
-                    <element signature="e#3721#3722#0" expanded="true" />
-                    <element signature="e#3751#3752#0" expanded="true" />
+                    <element signature="e#1560#1701#0" expanded="true" />
+                    <element signature="e#1700#1701#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/Utils/helper/Images.java">
+            <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="260">
+                  <caret line="233" column="16" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
+                  <folding>
+                    <element signature="n#!!block;n#background#0;n#!!block;n#view#0;n#!!top" />
+                    <element signature="e#269#381#0" />
+                    <element signature="e#363#1363#0" />
+                    <element signature="e#568#1345#0" />
+                    <element signature="e#1378#1519#0" />
+                    <element signature="e#3282#4519#0" />
+                    <element signature="e#1420#1700#0" />
+                    <element signature="e#1721#1800#0" />
+                    <element signature="e#1880#2970#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameContentView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/MainModelLegacy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="98" column="49" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="69" selection-start-line="69" selection-end-line="69" />
+                <state relative-caret-position="279">
+                  <caret line="42" selection-start-line="42" selection-end-line="42" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#2559#2560#0" expanded="true" />
+                    <element signature="e#2805#2806#0" expanded="true" />
+                    <element signature="e#2886#2887#0" expanded="true" />
+                    <element signature="e#2967#2968#0" expanded="true" />
+                    <element signature="e#3049#3050#0" expanded="true" />
+                    <element signature="e#3161#3162#0" expanded="true" />
+                    <element signature="e#3257#3258#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -682,44 +263,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java">
+            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/Background.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
-                  <folding>
-                    <element signature="e#245#246#0" expanded="true" />
-                    <element signature="e#277#278#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/HeadUpDisplay.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+                <state relative-caret-position="195">
+                  <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -736,6 +283,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -765,6 +313,10 @@
       <find>getDeclaredConstructor</find>
       <find>controlerMethods</find>
       <find>mainCOntr</find>
+      <find>SCALE</find>
+      <find>layout</find>
+      <find>setPrefer</find>
+      <find>setOpaque</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -773,26 +325,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Engine/Model/Game/ViewManager.java" />
-        <option value="$PROJECT_DIR$/src/Engine/View/ViewManager.java" />
-        <option value="$PROJECT_DIR$/src/Engine/Controler/ControleurJeu.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/MainModel.java" />
-        <option value="$PROJECT_DIR$/src/Engine/Model/MainModel.java" />
-        <option value="$PROJECT_DIR$/src/Engine/Model/Menu/ModelView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Data/levels/MondeDemonstration.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/LoadingView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/item/Gaz.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/SettingsView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/HomeMenuView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/item/PetiteBombe.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocBrique.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/Buttons/StandardButton.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocGlu.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/CreditView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocPortailFinNiveau.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocEchelle.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/LevelSelectionView.java" />
-        <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocBarreTraversee.java" />
         <option value="$PROJECT_DIR$/src/Legacy/java/Data/audio/TestAudio.java" />
         <option value="$PROJECT_DIR$/src/Legacy/java/Model/bloc/BlocTerre.java" />
         <option value="$PROJECT_DIR$/src/Legacy/java/View/Bandeau.java" />
@@ -809,21 +341,41 @@
         <option value="$PROJECT_DIR$/src/Legacy/java/View/MenuViews/ProfilsView.java" />
         <option value="$PROJECT_DIR$/src/Legacy/java/View/GameViews/HeadUpDisplay.java" />
         <option value="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/Test2.json" />
-        <option value="$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java" />
         <option value="$PROJECT_DIR$/src/Engine/View/MainView.java" />
         <option value="$PROJECT_DIR$/src/Legacy/java/View/FenetrePrincipale.java" />
         <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/Test.java" />
         <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/ResourcesPaths.java" />
-        <option value="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json" />
         <option value="$PROJECT_DIR$/src/Engine/Controler/MainControler.java" />
         <option value="$PROJECT_DIR$/src/Engine/Game.java" />
-        <option value="$PROJECT_DIR$/src/Engine/Main/Game.java" />
-        <option value="$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java" />
-        <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java" />
         <option value="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/Test1.json" />
-        <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java" />
+        <option value="$PROJECT_DIR$/src/Engine/Main/Game.java" />
+        <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java" />
         <option value="$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/Color.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/Font.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Font.java" />
+        <option value="$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/ModelLayout.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Layout.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/DisplayOptions.java" />
+        <option value="$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/DisplayOption.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelPanel.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java" />
+        <option value="$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json" />
+        <option value="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java" />
+        <option value="$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java" />
         <option value="$PROJECT_DIR$/src/Engine/MVC/View/MainView.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/View/Menu/BackgroundComponent.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/View/Menu/Background.java" />
+        <option value="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java" />
+        <option value="$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java" />
+        <option value="$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java" />
       </list>
     </option>
   </component>
@@ -846,7 +398,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="325" />
+    <option name="x" value="331" />
     <option name="width" value="1600" />
     <option name="height" value="880" />
   </component>
@@ -856,6 +408,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -902,6 +455,99 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Engine" type="462c0819:PsiDirectoryNode" />
               <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+              <item name="Component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+              <item name="Enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+              <item name="Structs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Legacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Legacy" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Legacy" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Legacy" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -909,13 +555,10 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Legacy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Legacy" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="MenuViews" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java" type="b2602c69:ProjectViewProjectNode" />
@@ -960,14 +603,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="LodeRunner" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Sprites" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="LodeRunner" type="462c0819:PsiDirectoryNode" />
               <item name="Scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -982,7 +617,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1258,11 +892,14 @@
       <workItem from="1555630023340" duration="9490000" />
       <workItem from="1555712881449" duration="12995000" />
       <workItem from="1555772172835" duration="15149000" />
+      <workItem from="1555807186238" duration="7289000" />
+      <workItem from="1555817351284" duration="6584000" />
+      <workItem from="1555861766091" duration="16630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186676000" />
+    <option name="totallyTimeSpent" value="217179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1276,7 +913,7 @@
   <component name="ToolWindowManager">
     <frame x="55" y="-7" width="1488" height="878" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19887955" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21358544" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1284,11 +921,10 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Nl-Palette" order="7" />
-      <window_info anchor="bottom" id="Thumbnails" weight="0.3297587" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.35656837" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32841823" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29088473" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37935656" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33512065" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.21715818" />
       <window_info anchor="bottom" id="Floobits" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
@@ -1299,6 +935,7 @@
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Maven Projects" order="2" />
@@ -1346,13 +983,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java</url>
-          <line>94</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -1370,268 +1001,69 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java</url>
-          <line>48</line>
+          <line>80</line>
           <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java</url>
-          <line>56</line>
+          <url>file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java</url>
+          <line>150</line>
           <properties />
-          <option name="timeStamp" value="58" />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java</url>
-          <line>68</line>
+          <line>179</line>
           <properties />
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java</url>
+          <line>176</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java</url>
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="contentArray" />
+        <watch expression="((String)((HashMap.Node)contentArray.entrySet().toArray()[3]).getKey()).value" custom="java.util.HashMap.Node,java.lang.String" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/java$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1555194703021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>jeu.*</FILTER>
+    <SUITE FILE_PATH="coverage/java$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1555827000335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MVC.Model.*</FILTER>
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/tests/NiveauDamien.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/Data/levels/MondeDemonstration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="168" column="10" lean-forward="true" selection-start-line="168" selection-start-column="10" selection-end-line="168" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/LoadingView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Gaz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/SettingsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/HomeMenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/PetiteBombe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocBrique.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/Buttons/StandardButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocGlu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/CreditView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocPortailFinNiveau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocEchelle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/LevelSelectionView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocBarreTraversee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/Data/audio/TestAudio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/bloc/BlocTerre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/Bandeau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/item/Lingot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ViewManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="131" column="55" selection-start-line="131" selection-start-column="55" selection-end-line="131" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/JPButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3574#3575#0" expanded="true" />
-            <element signature="e#3602#3603#0" expanded="true" />
-            <element signature="e#3639#3640#0" expanded="true" />
-            <element signature="e#3688#3689#0" expanded="true" />
-            <element signature="e#3721#3722#0" expanded="true" />
-            <element signature="e#3751#3752#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Legacy/java/Utils/helper/ImagesMadMonk.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/HeadUpDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1642,79 +1074,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/MainModelLegacy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="98" column="49" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameContentView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/Utils/helper/Images.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/Inputs/Test.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#378#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/Controler/MainControler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#10276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/Inputs/Test.class" />
+    <entry file="file://$PROJECT_DIR$/target/classes/Controler/MainControler.class" />
     <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.base/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1733,41 +1094,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/FenetrePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1778,15 +1108,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java">
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/GameContentView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="510">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1798,64 +1125,386 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java">
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/FenetrePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Main/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        <state relative-caret-position="160">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
             <element signature="e#1867#1868#0" expanded="true" />
             <element signature="e#1917#1918#0" expanded="true" />
+            <element signature="e#2015#2016#0" expanded="true" />
+            <element signature="e#2061#2062#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json">
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/GameViews/HeadUpDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/MenuModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="83" selection-start-line="83" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/MainModelLegacy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="492" column="29" selection-start-line="492" selection-start-column="29" selection-end-line="492" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15148#15149#0" expanded="true" />
+            <element signature="e#15186#15187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/Utils/helper/Images.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Inputs/ButtonsCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="1899" column="13" lean-forward="true" selection-start-line="1899" selection-start-column="13" selection-end-line="1899" selection-end-column="13" />
+          <folding>
+            <element signature="e#65216#65217#0" expanded="true" />
+            <element signature="e#65261#65262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/Font.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="331" column="28" selection-start-line="331" selection-start-column="28" selection-end-line="331" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Font.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Utils/Tuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/javax/swing/JLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="101" column="32" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Scripts/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Structs/Layout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="1656" column="16" selection-start-line="1656" selection-start-column="16" selection-end-line="1656" selection-end-column="16" />
+          <folding>
+            <element signature="e#63127#63128#0" expanded="true" />
+            <element signature="e#63180#63181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/DisplayMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="181" column="47" lean-forward="true" selection-start-line="181" selection-start-column="47" selection-end-line="181" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/DisplayOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.base/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/MainModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Controler/MainControler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
+        <state relative-caret-position="447">
+          <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1263#1264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Enums/ModelLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/HomeMenu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="15" />
+          <folding>
+            <element signature="e#867#2360#0" />
+            <element signature="e#2372#3029#0" />
+            <element signature="e#3041#3701#0" />
+            <element signature="e#3713#4373#0" />
+            <element signature="e#4385#5045#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/ModelComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1591#1592#0" expanded="true" />
+            <element signature="e#3278#3279#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/Model/Menu/Component/ModelButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Utils/MenuLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1125">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/Java/lib/src.zip!/java.desktop/java/awt/Graphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="923" column="60" lean-forward="true" selection-start-line="923" selection-start-column="38" selection-end-line="923" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/Model/jeu/Niveau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1187">
+          <caret line="174" column="21" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LodeRunner/Resources/Data/Menu/WorldView.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="233" column="16" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!block;n#background#0;n#!!block;n#view#0;n#!!top" />
+            <element signature="e#269#381#0" />
+            <element signature="e#363#1363#0" />
+            <element signature="e#568#1345#0" />
+            <element signature="e#1378#1519#0" />
+            <element signature="e#3282#4519#0" />
+            <element signature="e#1420#1700#0" />
+            <element signature="e#1721#1800#0" />
+            <element signature="e#1880#2970#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="74" column="52" lean-forward="true" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+        <state relative-caret-position="201">
+          <caret line="159" column="18" lean-forward="true" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1560#1701#0" expanded="true" />
             <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#6548#6549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="37" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/WorldSelectionView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Legacy/java/MVC/View/MenuViews/ProfilsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/MVC/View/Menu/ViewButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2559#2560#0" expanded="true" />
+            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#2886#2887#0" expanded="true" />
+            <element signature="e#2967#2968#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
+            <element signature="e#3161#3162#0" expanded="true" />
+            <element signature="e#3257#3258#0" expanded="true" />
           </folding>
         </state>
       </provider>

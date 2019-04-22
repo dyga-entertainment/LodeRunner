@@ -95,7 +95,7 @@ public class WorldSelectionView extends View {
                     selectedWorld = sourceButton.getButtonName();
 
                     // Change the background image to match the selected world
-                    backgroundImage = Images.getImageFromPath(jbutton.getActionCommand());
+                    //backgroundImage = Images.getImageFromPath(jbutton.getActionCommand());
 
                     // Change the transparency of the current button
                     sourceButton.setTransparency(0.2f);

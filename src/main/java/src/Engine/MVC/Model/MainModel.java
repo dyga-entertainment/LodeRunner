@@ -16,13 +16,24 @@ import static Utils.MenuLoader.CreateNewView;
  */
 public class MainModel {
 
-    //private ModelView[] menuViews;
+    /** Data structure holding all the possible views */
     private static Dictionary<String, ModelView> menuViews;
+
+    /** Current view name display to the player */
     private static ModelView activeModelView;
 
+    /** Stack useful to comeback to previous views */
+    private static Stack<String> lastVisitedViews;
+
+    /**
+     * Load, create and store all the UI views needed to navigate through the menu.
+     * Assign the first one to the current active view.
+     * @param views List of resources url of all the UI views.
+     */
     public MainModel(String[] views) {
 
         this.menuViews = new Hashtable<>();
+        this.lastVisitedViews = new Stack<>();
 
         List<String> list = Arrays.asList(views);
         Collections.reverse(list);
@@ -53,7 +64,21 @@ public class MainModel {
         return this.activeModelView;
     }
 
+    /**
+     * This method let you changed the current view to the one identify by his name
+     * @param nextView the name of the view the model will switch to.
+     */
     public void updateView(String nextView) {
+        this.lastVisitedViews.push(this.activeModelView.getName());
         this.activeModelView = menuViews.get(nextView);
+    }
+
+    /**
+     * This method return to the last visited view before the current one
+     */
+    public void returnLastView() {
+        if(!this.lastVisitedViews.isEmpty()) {
+            this.activeModelView = menuViews.get(this.lastVisitedViews.pop());
+        }
     }
 }

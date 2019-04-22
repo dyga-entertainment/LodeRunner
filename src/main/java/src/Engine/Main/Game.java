@@ -2,12 +2,13 @@ package Main;
 
 import MVC.Controler.MainControler;
 import MVC.Model.MainModel;
-import MVC.Model.ViewType;
 import MVC.View.MainView;
 
 /**
  * This class will add all the initialization of the game to the coder.
  * It will instantiate the MVC.Model-MVC.View-MVC.Controler (MVC) pattern back-stage.
+ * --
+ * Those functions can be called by the programmer when building his game.
  */
 public class Game {
 
@@ -25,6 +26,8 @@ public class Game {
     public Game(String gameName) {
         gameName = gameName;
     }
+
+
 
     public void addJsonViews(String[] strings) {
         views = strings.clone();
@@ -53,10 +56,15 @@ public class Game {
         mainView.show();
     }
 
+
     /** Method that should be included in the controler
      * Should update the model and notify changes might happened **/
     public static void changeView(String nextView) {
         mainControler.changeView(nextView);
+    }
+
+    public static void backLastView() {
+        mainControler.returnLastView();
     }
 
 }

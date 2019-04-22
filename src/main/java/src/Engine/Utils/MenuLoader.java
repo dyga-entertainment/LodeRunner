@@ -2,46 +2,20 @@ package Utils;
 
 import MVC.Model.Menu.*;
 import MVC.Model.Menu.Component.ModelButton;
+import MVC.Model.Menu.Component.ModelLabel;
 import MVC.Model.Menu.Component.ModelPanel;
-import MVC.View.Menu.ImagePanel;
+import MVC.Model.Menu.Enums.ModelLayout;
+import MVC.Model.Menu.Structs.Color;
+import MVC.Model.Menu.Structs.Font;
+import MVC.Model.Menu.Structs.Layout;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import javax.swing.*;
-import java.awt.event.*;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 
 public class MenuLoader {
-
-    public static void LoadMenuesModels() throws IOException, ParseException {
-
-        String[] menusJson = new String[] {
-            "Data/Menu/HomeMenu.json",
-            "Data/Menu/WorldView.json",
-            "Data/Menu/Test2.json",
-        };
-
-
-        ModelView[] menuViews = new ModelView[menusJson.length];
-
-
-
-        for (int i = 0; i < menusJson.length; i++) {
-            URL url = Thread.currentThread().getContextClassLoader().getResource(menusJson[0]);
-            FileReader fileReader = new FileReader(url.getPath());
-
-            menuViews[i] = CreateNewView(fileReader);
-        }
-
-
-        /** This is for test purpose */
-        //for (int i = 0; i < menusJson.length; i++) {
-        paintView(menuViews[0]);
-    }
 
     public static ModelView CreateNewView(FileReader fileReader) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
@@ -62,14 +36,11 @@ public class MenuLoader {
 
         // Compute specific parameters
         switch ((String) contentArray.get("type")) {
-            /** Here we add a JPanel to the parent view */
+            /** Add a JPanel to the parent view */
             case "Panel":
                 System.out.println("[DEBUG] Create a Panel");
                 component = new ModelPanel();
 
-                // Options
-                if(contentArray.containsKey("options"))
-                    addOptions((ModelPanel)component, (JSONArray) contentArray.get("options"));
 
                 // children components
                 JSONArray childComponents = (JSONArray)contentArray.get("components");
@@ -80,21 +51,24 @@ public class MenuLoader {
                 }
 
                 break;
-            /** Here we add a JButton to the parent view */
+            /** Add a JButton to the parent view */
             case "Button":
                 System.out.println("[DEBUG] Create a button");
                 component = new ModelButton();
 
-                // ActionListener
-                if(contentArray.containsKey("onclick"))
-                    component.addActionListener((String)contentArray.get("onclick"));
-                // Options
-                if(contentArray.containsKey("options"))
-                    addOptions((ModelButton)component, (JSONArray) contentArray.get("options"));
-
                 // Listeners
                 if(contentArray.containsKey("listeners"))
                     addListeners((ModelButton)component, (JSONArray) contentArray.get("listeners"));
+
+                break;
+            /** Add a JButton to the parent view */
+            case "Label":
+                System.out.println("[DEBUG] Create a Label");
+                component = new ModelLabel();
+
+                // Font
+                if(contentArray.containsKey("font"))
+                    addFont(component, (JSONObject) contentArray.get("font"));
 
 
                 break;
@@ -106,11 +80,41 @@ public class MenuLoader {
         // Basic setup
         InitComponent(component, contentArray);
 
-        //if(contentArray.containsKey("borderLayoutConstraints"))
-        //    component.addBorderLayoutConstraints((String) contentArray.get("borderLayoutConstraints"));
+        // Options
+        if(contentArray.containsKey("options"))
+            addOptions(component, (JSONArray) contentArray.get("options"));
 
         System.out.println("[DEBUG] Component = " + component.toString());
         return component;
+    }
+
+    private static void addFont(ModelComponent component, JSONObject jsonFont) {
+        Font font = new Font();
+
+        // Get the name
+        font.name = (String) jsonFont.get("name");
+        // Get the size
+        font.size = Math.toIntExact((long)jsonFont.get("size"));
+        // Get the style (Bold, Italic, etc.)
+        switch ((String)jsonFont.get("style")) {
+            case "Bold":
+                font.style = java.awt.Font.BOLD;
+                break;
+            case "Italic":
+                font.style = java.awt.Font.ITALIC;
+                break;
+            default:
+                font.style = java.awt.Font.PLAIN;
+                break;
+        }
+        // Get the color
+        JSONObject fontColor = (JSONObject) jsonFont.get("color");
+        font.color = new Color();
+        font.color.red = Math.toIntExact((long)fontColor.get("r"));
+        font.color.green = Math.toIntExact((long)fontColor.get("g"));
+        font.color.blue = Math.toIntExact((long)fontColor.get("b"));
+
+        component.addFont(font);
     }
 
     private static void InitComponent(ModelComponent component, JSONObject contentArray) {
@@ -133,6 +137,11 @@ public class MenuLoader {
                 component.setBackgroundPreferredSize(Math.toIntExact((long)dimensionJson.get("width")), Math.toIntExact((long)dimensionJson.get("height")));
             }
 
+            // Get special option
+            if((String)jsonImage.get("displayOptions") != null) {
+                component.setBackgroundOptions((String)jsonImage.get("displayOptions"));
+            }
+
             // Get additionnal information
             // TODO ?
         }
@@ -143,51 +152,17 @@ public class MenuLoader {
 
     }
 
-    private static void addOptions(ModelPanel component, JSONArray options) {
+    private static void addOptions(ModelComponent component, JSONArray options) {
         if(options  != null) {
             for (Object option : options) {
                 JSONObject jsonOption = (JSONObject) option;
                 switch(jsonOption.keySet().toArray()[0].toString()) {
-                    case "isOpaque":
-                        component.setOpaque((boolean)jsonOption.get("isOpaque"));
-                        break;
-                    case "layout":
-                        component.setLayout((String)jsonOption.get("layout"));
-                        break;
-                    case "isEnable":
-                        component.setEnable((boolean)jsonOption.get("isEnable"));
-                        break;
-                }
-                //finalModelView.add(constructComponent((JSONObject) component));
-                //JSONObject jsonComponent = (JSONObject) component;
-                //System.out.println(jsonComponent.keySet());
-            }
-        }
-    }
-
-    private static void addOptions(ModelButton component, JSONArray options) {
-        if(options  != null) {
-            for (Object option : options) {
-                JSONObject jsonOption = (JSONObject) option;
-                switch(jsonOption.keySet().toArray()[0].toString()) {
-                    case "isOpaque":
-                        component.setOpaque((boolean)jsonOption.get("isOpaque"));
-                        break;
-                    case "layout":
-                        component.setLayout((String)jsonOption.get("layout"));
-                        break;
-                    case "text":
-                        component.addText((String)jsonOption.get("text"));
-                        break;
-                    case "isEnable":
-                        component.setEnable((boolean)jsonOption.get("isEnable"));
-                        break;
-                    case "pressedImage":
-                        component.addPressedImageUrl((String)jsonOption.get("pressedImage"));
-                        break;
-                    case "nextView":
-                        component.setNextView((String)jsonOption.get("nextView"));
-                        break;
+                    case "isOpaque": component.setOpaque((boolean)jsonOption.get("isOpaque")); break;
+                    case "layout": createLayout(component,(JSONObject)jsonOption.get("layout")); break;
+                    case "text": component.addText((String)jsonOption.get("text")); break;
+                    case "isEnable": component.setEnable((boolean)jsonOption.get("isEnable")); break;
+                    case "pressedImage": component.addPressedImageUrl((String)jsonOption.get("pressedImage"));break;
+                    case "nextView": component.setNextView((String)jsonOption.get("nextView")); break;
                     case "PreferredSize":
                         JSONObject dimensionJson = (JSONObject)jsonOption.get("PreferredSize");
                         component.setPreferredSize(Math.toIntExact((long)dimensionJson.get("width")), Math.toIntExact((long)dimensionJson.get("height")));
@@ -197,6 +172,32 @@ public class MenuLoader {
                 //JSONObject jsonComponent = (JSONObject) component;
                 //System.out.println(jsonComponent.keySet());
             }
+        }
+    }
+
+    private static void createLayout(ModelComponent component, JSONObject jsonLayout) {
+        Layout layout = new Layout();
+        layout.name = getLayoutName((String)jsonLayout.get("name"));
+        if(layout.name.equals(ModelLayout.GridLayout)) {
+            System.out.println(jsonLayout.get("rows").getClass());
+            layout.rows = Math.toIntExact((long)jsonLayout.get("rows"));
+            layout.cols = Math.toIntExact((long)jsonLayout.get("cols"));
+            layout.hgap = Math.toIntExact((long)jsonLayout.get("hgap"));
+            layout.vgap = Math.toIntExact((long)jsonLayout.get("vgap"));
+        }
+        component.setLayout(layout);
+    }
+
+    private static ModelLayout getLayoutName(String layoutName) {
+        switch (layoutName) {
+            case "BorderLayout":
+                return ModelLayout.BorderLayout;
+            case "WrapLayout":
+                return ModelLayout.WrapLayout;
+            case "GridLayout":
+                return ModelLayout.GridLayout;
+            default:
+                return ModelLayout.FlowLayout;
         }
     }
 
@@ -217,10 +218,10 @@ public class MenuLoader {
                 }
                 break;
             case "onPressed":
-                // todo
+                // TODO
                 break;
             case "onReleased":
-                // todo
+                // TODO
                 break;
         }
     }
@@ -232,42 +233,5 @@ public class MenuLoader {
         if(name != null && functionName != null) {
             component.addListenerMethod(name, functionName);
         }
-    }
-
-    private static void paintView(ModelView menuView) {
-        JFrame j = new JFrame("ButtonsCallback");
-        j.setSize(800, 800);
-        j.addWindowListener(new WindowAdapter() {
-            public void windowOpened(WindowEvent e) {
-                j.requestFocus();
-            }
-        });
-        j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        /** TODO use menuView to add Swing parameters and see what it looks like */
-
-        ModelPanel mainComponent = menuView.getModelComponent();
-        // Create the associated Panel
-        //MVC.View MainView = new MVC.View(mainComponent.getBackgroundImageUrl(), c);
-
-        // Dummy Controller
-        /*MainControler c = new MainControler(null);
-        //MVC.View MainView = new MVC.View(mainComponent.getBackgroundImageUrl(), c);
-        ImagePanel mainView = createView(mainComponent, c);
-
-
-
-        j.getContentPane().add(mainView);
-        mainView.repaint();
-        j.repaint();
-
-        //j.pack();
-        j.setVisible(true);*/
-
-
-    }
-
-    private static void AddComponent(ImagePanel currentView, ModelComponent childPanel) {
-
     }
 }

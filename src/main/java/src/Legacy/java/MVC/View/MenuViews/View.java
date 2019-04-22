@@ -76,7 +76,7 @@ public class View extends ImagePanel implements EventListener {
 
     public void setupButtonsPanel() {
         //this.buttonsPanel = new ImagePanel(ResourcesPaths.SPRITE_UI_PATH + "bandeau_menu.png");
-        this.buttonsPanel = new ImagePanel("bandeau_menu.png");
+        //this.buttonsPanel = new ImagePanel("bandeau_menu.png");
         this.buttonsPanel.setLayout(new BorderLayout());
 
         // Back button by default

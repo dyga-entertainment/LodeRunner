@@ -237,7 +237,7 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 
 	public void addReturnContextActionListener(StandardButton button) {
 		// Add it in a dict
-		test.put(button.getButtonName(), actionEvent -> ReturnLastView());
+		//test.put(button.getButtonName(), actionEvent -> ReturnLastView());
 	}
 
 	public void addActionParamActionListener(StandardButton button) {
@@ -263,14 +263,15 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 		//this.view.refreshView();
 	}
 
-	public void ReturnLastView() {
+	/*
+	public void returnLastView() {
 		System.out.println("[Controller function] Context transition : Return to last view");
 		// Update the model
 		this.model.ReturnLastView();
 
 		// Notify the view that it needs to update
 		//this.view.refreshView();
-	}
+	}*/
 
 	public void HandleActionParams(StandardButton button) {
 		System.out.println("[Controller function] Action with parameters");
@@ -281,10 +282,22 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 	}
 
 	public void changeView(String nextView) {
+		System.out.println("[Controller function] Context transition : Return to last view");
+
 		// Update the model
 		this.mainModel.updateView(nextView);
 
-		// notify the view
+		// Notify the view
+		this.mainView.paint();
+	}
+
+	public void returnLastView() {
+		System.out.println("[Controller function] Context transition : Return to last view");
+
+		// Update the model
+		this.mainModel.returnLastView();
+
+		// Notify the view
 		this.mainView.paint();
 	}
 

@@ -1,13 +1,18 @@
 package MVC.Model.Menu;
 
+import MVC.Model.Menu.Enums.DisplayOption;
+import MVC.Model.Menu.Structs.Font;
+import MVC.Model.Menu.Structs.Layout;
+
 import java.awt.*;
 
 public abstract class ModelComponent {
 
     /** Background image related info **/
     protected String backgroundImageUrl;
-    private Point backgroundImageStartingPoint;
-    private Dimension backgroundImagePreferredSize;
+    protected Point backgroundImageStartingPoint;
+    protected Dimension backgroundImagePreferredSize;
+    private DisplayOption option;
 
     /** Others settings info **/
     protected boolean opaque;
@@ -55,15 +60,6 @@ public abstract class ModelComponent {
             ", enable = " + enable;
     }
 
-    public void setLayout(String layout) { }
-
-    public void addText(String text){ }
-
-    public abstract void addActionListener(String actionName);
-
-    public void setNextView(String nextView) {
-    }
-
     public boolean hasLayoutConstraint() {
         return !this.borderLayoutConstraint.isEmpty() || this.layoutIndex != -1;
     }
@@ -78,21 +74,11 @@ public abstract class ModelComponent {
 
     public void addBorderLayoutConstraints(String borderLayoutConstraints) {
         switch (borderLayoutConstraints) {
-            case "NORTH":
-                this.borderLayoutConstraint = BorderLayout.NORTH;
-                break;
-            case "WEST":
-                this.borderLayoutConstraint = BorderLayout.WEST;
-                break;
-            case "EAST":
-                this.borderLayoutConstraint = BorderLayout.EAST;
-                break;
-            case "SOUTH":
-                this.borderLayoutConstraint = BorderLayout.SOUTH;
-                break;
-            default:
-                this.borderLayoutConstraint = BorderLayout.CENTER;
-                break;
+            case "NORTH": this.borderLayoutConstraint = BorderLayout.NORTH; break;
+            case "WEST": this.borderLayoutConstraint = BorderLayout.WEST; break;
+            case "EAST": this.borderLayoutConstraint = BorderLayout.EAST; break;
+            case "SOUTH": this.borderLayoutConstraint = BorderLayout.SOUTH; break;
+            default: this.borderLayoutConstraint = BorderLayout.CENTER; break;
         }
     }
 
@@ -116,5 +102,23 @@ public abstract class ModelComponent {
         return this.borderLayoutConstraint;
     }
 
-    public void addPressedImageUrl(String pressedImage) { }
+    public void setBackgroundOptions(String displayOptions) {
+        switch (displayOptions) {
+            case "Scale": this.option = DisplayOption.Scale; break;
+            case "Tile": this.option = DisplayOption.Tile; break;
+            default: this.option = DisplayOption.Plain; break;
+        }
+    }
+
+    public DisplayOption getBackgroundOptions() {
+        return this.option;
+    }
+
+    /** Abstract methods */
+    public abstract void setLayout(Layout layout);
+    public abstract void addText(String text);
+    public abstract void setNextView(String nextView);
+    public abstract void setPreferredSize(int width, int height);
+    public abstract void addPressedImageUrl(String pressedImage);
+    public abstract void addFont(Font font);
 }

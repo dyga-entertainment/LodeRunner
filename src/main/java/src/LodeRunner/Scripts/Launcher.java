@@ -17,7 +17,7 @@ public class Launcher {
 		});*/
 
 		lodeRunner.addJsonViews(new String[] {
-			"Data/Menu/HomeMenu.json",
+			//"Data/Menu/HomeMenu.json",
 			"Data/Menu/WorldView.json",
 		});
 

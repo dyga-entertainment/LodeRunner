@@ -12,7 +12,11 @@
     },
     "options": [
       {"isOpaque": true},
-      {"layout": "BorderLayout"}
+      {
+        "layout": {
+          "name": "BorderLayout"
+        }
+      }
     ],
     "components": [
       {
@@ -31,7 +35,11 @@
         },
         "options": [
           {"isOpaque": false},
-          {"layout": "WrapLayout"}
+          {
+            "layout": {
+              "name": "WrapLayout"
+            }
+          }
         ],
         "borderLayoutConstraints": "SOUTH",
         "components": [
@@ -102,7 +110,6 @@
             "options": [
               {"text": "Solo"},
               {"isEnable": true},
-              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_coop2.png"},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
@@ -127,7 +134,6 @@
             "options": [
               {"text": "Solo"},
               {"isEnable": true},
-              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_options2.png"},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
@@ -152,7 +158,6 @@
             "options": [
               {"text": "Solo"},
               {"isEnable": true},
-              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_editeur2.png"},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50
@@ -177,7 +182,6 @@
             "options": [
               {"text": "Solo"},
               {"isEnable": true},
-              {"pressedImage": "Sprites/UI/Buttons/Selected/bouton_credits2.png"},
               {"PreferredSize": {
                 "width": 150,
                 "height": 50

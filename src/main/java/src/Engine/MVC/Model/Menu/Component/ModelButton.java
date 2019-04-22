@@ -1,6 +1,9 @@
 package MVC.Model.Menu.Component;
 
+import MVC.Model.Menu.Enums.DisplayOption;
 import MVC.Model.Menu.ModelComponent;
+import MVC.Model.Menu.Structs.Font;
+import MVC.Model.Menu.Structs.Layout;
 import MVC.Model.ViewType;
 
 import java.awt.*;
@@ -21,6 +24,7 @@ public class ModelButton extends ModelComponent {
 
     private Dictionary<String, String> listeners = new Hashtable<>();
     private ViewType nextView;
+
 
     public ModelButton() {
         super();
@@ -84,11 +88,6 @@ public class ModelButton extends ModelComponent {
     }
 
     @Override
-    public void addActionListener(String actionName) {
-        // TODO
-    }
-
-    @Override
     public void addPressedImageUrl(String pressedImage) {
         this.pressedImageUrl = pressedImageUrl;
     }
@@ -115,4 +114,9 @@ public class ModelButton extends ModelComponent {
             + ", mouseOverImage = " + mouseOverImageUrl + ", text = " + text;
     }
 
+    /** Empty implementation */
+    @Override
+    public void setLayout(Layout layout) { }
+    @Override
+    public void addFont(Font font) { }
 }

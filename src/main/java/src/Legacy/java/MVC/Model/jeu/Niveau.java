@@ -172,7 +172,7 @@ public class Niveau {
 		this.items.add(item);
 	}
 
-    public JPanel getApercu() {
+    public ImagePanel getApercu() {
 		// Should return a image of the world ?
 		//return new ImagePanel(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_custom.png");
 		return new ImagePanel(this.imageUrlPreview);
