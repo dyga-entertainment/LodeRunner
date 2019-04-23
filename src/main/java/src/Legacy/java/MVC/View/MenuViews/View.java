@@ -1,7 +1,7 @@
 package MVC.View.MenuViews;
 
 import MVC.Controler.MainControler;
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 import MVC.View.Buttons.ContextTransitionButton;
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +10,9 @@ import java.util.EventListener;
 import java.util.Hashtable;
 
 import MVC.View.Buttons.StandardButton;
-import MVC.View.Menu.ImagePanel;
+import MVC.View.Menu.Component.ViewPanel;
 
-public class View extends ImagePanel implements EventListener {
+public class View extends ViewPanel implements EventListener {
 
     protected ViewManager vueManager;
 
@@ -75,8 +75,8 @@ public class View extends ImagePanel implements EventListener {
     }
 
     public void setupButtonsPanel() {
-        //this.buttonsPanel = new ImagePanel(ResourcesPaths.SPRITE_UI_PATH + "bandeau_menu.png");
-        //this.buttonsPanel = new ImagePanel("bandeau_menu.png");
+        //this.buttonsPanel = new ViewPanel(ResourcesPaths.SPRITE_UI_PATH + "bandeau_menu.png");
+        //this.buttonsPanel = new ViewPanel("bandeau_menu.png");
         this.buttonsPanel.setLayout(new BorderLayout());
 
         // Back button by default

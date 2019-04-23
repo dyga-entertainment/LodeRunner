@@ -2,9 +2,19 @@ package Main;
 
 import MVC.Controler.MainControler;
 import MVC.Model.MainModel;
+import MVC.Model.Menu.Component.ModelComponent;
+import MVC.Model.Menu.Component.ModelPanel;
+import MVC.Model.Menu.Enums.ModelLayout;
 import MVC.Model.Menu.ModelView;
 import MVC.Model.MenuModel;
 import MVC.View.MainView;
+import MVC.View.Menu.Component.ViewPanel;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * This class will add all the initialization of the game to the coder.
@@ -59,6 +69,51 @@ public class Game {
     /** Method useful in order to help the programmer script his desire behavior */
     public static ModelView getCurrentView() {
         return mainModel.getCurrentView();
+    }
+
+    public static void setSelectedWorld(String selectedWorldName) {
+        mainModel.setSelectedWorld(selectedWorldName);
+    }
+
+    public static void setSelectedLevel(String selectedLevelName) {
+        mainModel.setSelectedLevel(selectedLevelName);
+    }
+
+    /**
+     * Find all the panels that contains a specific layout.
+     * @param layoutType the layout type we want to find
+     * @return a list of panel with the layout layoutType, null if there is none.
+     */
+    public static List<ModelPanel> FindPanelByLayout(ModelLayout layoutType) {
+        return FindPanelByLayout(layoutType, getCurrentView().getModelComponent().getChildrenComponents());
+    }
+
+    private static List<ModelPanel> FindPanelByLayout(ModelLayout layoutType, List<ModelComponent> components) {
+        List<ModelPanel> panels = new LinkedList<>();
+
+        for(ModelComponent currentComponent : components) {
+            if (currentComponent instanceof ModelPanel) {
+                // Cast
+                ModelPanel currentModelPanel = (ModelPanel) currentComponent;
+                if (currentModelPanel.getLayout().name == layoutType){
+                    panels.add(currentModelPanel);
+                }
+                // See if it also contains cardlayout as children
+                List<ModelPanel> childrenPanels = FindPanelByLayout(layoutType, currentModelPanel.getChildrenComponents());
+                if(childrenPanels != null) {
+                    panels.addAll(childrenPanels);
+                }
+            }
+        }
+        return panels.size() > 0 ? panels : null;
+    }
+
+    public static JComponent getViewComponentByUuid(UUID uuid) {
+        return mainView.getViewComponentByUuid(uuid);
+    }
+
+    public static void forceViewRepaint() {
+        mainView.paint();
     }
 
     /** Method that should be included in the controler

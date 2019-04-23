@@ -1,7 +1,7 @@
 package MVC.View.MenuViews;
 
 import MVC.Controler.MainControler;
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 import MVC.View.IHM2;
 import MVC.Model.jeu.Monde;
 import Data.levels.MondeDemonstration;

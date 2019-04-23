@@ -1,6 +1,7 @@
 package MVC.Model;
 
 import MVC.Model.Menu.ModelView;
+import MVC.View.Menu.Enums.ViewType;
 
 import java.awt.*;
 import java.util.Dictionary;

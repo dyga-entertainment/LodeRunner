@@ -5,18 +5,20 @@ import MVC.Model.MainModel;
 import MVC.Model.Menu.Component.ModelButton;
 import MVC.Model.Menu.Component.ModelLabel;
 import MVC.Model.Menu.Component.ModelPanel;
-import MVC.Model.Menu.Enums.ModelLayout;
-import MVC.Model.Menu.ModelComponent;
+import MVC.Model.Menu.Component.ModelComponent;
 import MVC.Model.Menu.ModelView;
-import MVC.Model.Menu.Structs.Layout;
+import MVC.Model.Menu.Structs.Layouts.Layout;
+import MVC.View.Menu.Component.ViewPanel;
 import Utils.WrapLayout;
-import MVC.View.Menu.ViewButton;
-import MVC.View.Menu.ImagePanel;
+import MVC.View.Menu.Component.ViewButton;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.UUID;
 
 /**
  * Main MVC.View - VIEW
@@ -31,8 +33,10 @@ public class MainView {
     private MainControler mainControler;
 
     private JFrame gameFrame;
-    private ImagePanel activeGameView;
-    //private static ImagePanel[] views; hummm....
+    private ViewPanel activeGameView;
+
+    /** This let the user get view component by using UUID from the model components */
+    private static Dictionary<UUID, JComponent> activeViewComponentsByModel;
 
     /**
      * Constructor
@@ -41,9 +45,9 @@ public class MainView {
      * @param mainControler
      */
     public MainView(String gameName, MainModel mainModel, MainControler mainControler) {
+        this.activeViewComponentsByModel = new Hashtable<>();
         this.mainModel = mainModel;
         this.mainControler = mainControler;
-
         this.gameFrame = new JFrame(gameName);
 
         // This info should be getted somewhere else ? Or default ?
@@ -69,21 +73,23 @@ public class MainView {
         ModelView menuView = this.mainModel.getCurrentView();
 
         if(menuView != null) {
-            if(this.activeGameView == null || !menuView.getName().equals(this.activeGameView.getName()) || this.mainModel.isDirty()) {
-                // Remove previous panel it
-                this.gameFrame.getContentPane().removeAll();
-                this.gameFrame.getContentPane().validate();
+            if(this.mainModel.isDirty()) {
+                if(this.activeGameView == null || !menuView.getName().equals(this.activeGameView.getName())) {
+                    // Remove previous panel it
+                    this.gameFrame.getContentPane().removeAll();
+                    this.gameFrame.getContentPane().validate();
 
-                System.out.println("[DEBUG] Build a new ImagePanel to display = " + menuView.getName());
-                ModelPanel mainComponent = menuView.getModelComponent();
+                    System.out.println("[DEBUG] Build a new ViewPanel to display = " + menuView.getName());
+                    ModelPanel mainComponent = menuView.getModelComponent();
 
-                // Create the associated Panel
-                this.activeGameView = createView(mainComponent, this.mainControler);
-                // Useful in order to avoid rebuilding the same windows over and over..
-                this.activeGameView.setName(menuView.getName());
+                    // Create the associated Panel
+                    this.activeGameView = createView(mainComponent, this.mainControler);
+                    // Useful in order to avoid rebuilding the same windows over and over..
+                    this.activeGameView.setName(menuView.getName());
 
-                // Add it
-                this.gameFrame.getContentPane().add(this.activeGameView);
+                    // Add it
+                    this.gameFrame.getContentPane().add(this.activeGameView);
+                }
             }
         }
 
@@ -98,8 +104,8 @@ public class MainView {
      * @param c
      * @return
      */
-    private static ImagePanel createView(ModelPanel mainComponent, MainControler c) {
-        ImagePanel currentView = new ImagePanel(mainComponent.getBackgroundImageUrl());
+    private static ViewPanel createView(ModelPanel mainComponent, MainControler c) {
+        ViewPanel currentView = new ViewPanel(mainComponent.getBackgroundImageUrl());
         if(mainComponent.getBackgroundPreferredSize() != null)
             currentView.setPreferredSize(mainComponent.getBackgroundPreferredSize().width, mainComponent.getBackgroundPreferredSize().height);
         if(mainComponent.getBackgroundStartingPoint() != null)
@@ -107,18 +113,14 @@ public class MainView {
 
         Layout layout = mainComponent.getLayout();
         switch (layout.name) {
-            case BorderLayout:
-                currentView.setLayout(new BorderLayout());
-                break;
+            case BorderLayout: currentView.setLayout(new BorderLayout()); break;
             case GridLayout:
-                currentView.setLayout(new GridLayout(layout.rows,layout.cols, layout.hgap, layout.vgap));
+                MVC.Model.Menu.Structs.Layouts.GridLayout gridLayout = (MVC.Model.Menu.Structs.Layouts.GridLayout)layout;
+                currentView.setLayout(new GridLayout(gridLayout.rows,gridLayout.cols, gridLayout.hgap, gridLayout.vgap));
                 break;
-            case WrapLayout:
-                currentView.setLayout(new WrapLayout());
-                break;
-            default:
-                currentView.setLayout(new FlowLayout());
-                break;
+            case WrapLayout: currentView.setLayout(new WrapLayout()); break;
+            case CardLayout: currentView.setLayout(new CardLayout()); break;
+            default: currentView.setLayout(new FlowLayout()); break;
         }
 
         // Children
@@ -183,10 +185,16 @@ public class MainView {
                 currentView.add(childComponent);
             }
 
+            // Add a link to have the view Component from the model UUID
+            activeViewComponentsByModel.put(child.getUuid(), childComponent);
+
         }
         return currentView;
     }
 
+    public JComponent getViewComponentByUuid (UUID uuid) {
+        return activeViewComponentsByModel.get(uuid);
+    }
 
     public void show() {
         paint();

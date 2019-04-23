@@ -1,4 +1,4 @@
-package MVC.View.Menu;
+package MVC.View.Menu.Component;
 
 import Utils.helper.Images;
 
@@ -6,11 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class ImagePanel extends JPanel {
+public class ViewPanel extends JPanel {
 
     private Background background;
 
-    public ImagePanel(String urlImage) {
+    public ViewPanel(String urlImage) {
         super();
         this.background = new Background();
         this.background.startingCoordinate = null;

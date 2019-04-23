@@ -16,14 +16,31 @@ import static Utils.MenuLoader.CreateNewView;
  */
 public class MainModel {
 
+    ///=================
+    /// MENU Fields
+    ///=================
     /** Data structure holding all the possible views */
     private static Dictionary<String, ModelView> menuViews;
-
     /** Current view name display to the player */
     private static ModelView activeModelView;
-
     /** Stack useful to comeback to previous views */
     private static Stack<String> lastVisitedViews;
+
+    ///=================
+    /// GAME Fields
+    ///=================
+    /** Data structure holding all the possible world the player can play */
+    private static Dictionary<String, ModelView> gameWorlds;
+    //private static Dictionary<String, World> gameWorlds;
+    /** The name of the world currently being play */
+    private static String currentWorldName;
+
+    // Hummm... ?
+    private static String currentLevelNumber;
+
+    ///=================
+    /// MENU Methods
+    ///=================
 
     /**
      * Load, create and store all the UI views needed to navigate through the menu.
@@ -87,5 +104,13 @@ public class MainModel {
     // TODO
     public boolean isDirty() {
         return true;
+    }
+
+    public void setSelectedWorld(String selectedWorldName) {
+        currentWorldName = selectedWorldName;
+    }
+
+    public void setSelectedLevel(String selectedLevelName) {
+        currentLevelNumber = selectedLevelName;
     }
 }

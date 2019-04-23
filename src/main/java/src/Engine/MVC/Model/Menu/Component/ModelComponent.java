@@ -1,12 +1,15 @@
-package MVC.Model.Menu;
+package MVC.Model.Menu.Component;
 
 import MVC.Model.Menu.Enums.DisplayOption;
 import MVC.Model.Menu.Structs.Font;
-import MVC.Model.Menu.Structs.Layout;
+import MVC.Model.Menu.Structs.Layouts.Layout;
 
 import java.awt.*;
+import java.util.UUID;
 
 public abstract class ModelComponent {
+
+    protected UUID uuid;
 
     /** Background image related info **/
     protected String backgroundImageUrl;
@@ -28,6 +31,15 @@ public abstract class ModelComponent {
         this.enable = true;
         this.layoutIndex = -1;
         this.borderLayoutConstraint = "";
+        this.uuid = java.util.UUID.randomUUID();
+    }
+
+    public UUID getUuid() {
+        return this.uuid;
+    }
+
+    public void generateRandomUuid() {
+        this.uuid = java.util.UUID.randomUUID();
     }
 
     public void addBackgroundImageUrl(String backgroundImage) {

@@ -2,13 +2,13 @@ package MVC.Controler;
 
 import MVC.Model.MainModel;
 import MVC.Model.MainModelLegacy;
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.Tuple;
 import MVC.View.Buttons.ContextTransitionButton;
 import MVC.View.Buttons.StandardButton;
 import MVC.View.MainView;
-import MVC.View.Menu.ViewButton;
+import MVC.View.Menu.Component.ViewButton;
 
 import java.awt.event.*;
 import java.lang.reflect.InvocationTargetException;

@@ -8,7 +8,6 @@ import javax.swing.*;
 
 import MVC.Controler.MainControler;
 import MVC.Model.MainModelLegacy;
-import MVC.Model.ViewType;
 import MVC.View.Buttons.StandardButton;
 import Utils.helper.Images;
 import MVC.Model.jeu.Joueur;

@@ -20,7 +20,7 @@ public class Sprite extends Observable {
     public int width, height ;
     public BufferedImage image ;
 
-    // ImagePanel ou se trouve le sprite
+    // ViewPanel ou se trouve le sprite
     //private GameContentView vue;
 
     // Animation du robot : sequence d'images

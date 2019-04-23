@@ -1,10 +1,10 @@
 package MVC.Model.Menu.Component;
 
 import MVC.Model.Menu.Enums.DisplayOption;
-import MVC.Model.Menu.ModelComponent;
 import MVC.Model.Menu.Enums.ModelLayout;
 import MVC.Model.Menu.Structs.Font;
-import MVC.Model.Menu.Structs.Layout;
+import MVC.Model.Menu.Structs.Layouts.CardLayout;
+import MVC.Model.Menu.Structs.Layouts.Layout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,8 @@ public class ModelPanel extends ModelComponent {
     private Layout layout;
     private List<ModelComponent> components;
     private DisplayOption option;
+
+    /** Value only useful for CardLayout */
 
     // ♥
     public ModelPanel() {
@@ -44,6 +46,22 @@ public class ModelPanel extends ModelComponent {
     public String toString() {
         return super.toString() + ", Background image = " + this.backgroundImageUrl + ", layout = " + layout +
             "Children = " + components.toString();
+    }
+
+    public void previousCardView() {
+        changeCardView(-1);
+    }
+
+    public void nextCardView() {
+        changeCardView(1);
+    }
+
+    public void changeCardView(int value) {
+        // If the layout is CardLayout then apply the next operation
+        if(this.layout instanceof CardLayout) {
+            ((CardLayout)this.layout).currentActiveView += value;
+        }
+        System.out.println("[DEBUG] Final view in card layout = " + ((CardLayout)this.layout).currentActiveView);
     }
 
     /** Empty implementations */

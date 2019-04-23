@@ -1,7 +1,7 @@
-package MVC.View.Menu;
+package MVC.View.Menu.Component;
 
 import MVC.Model.Menu.Enums.DisplayOption;
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 
 import javax.swing.*;
 import java.awt.*;

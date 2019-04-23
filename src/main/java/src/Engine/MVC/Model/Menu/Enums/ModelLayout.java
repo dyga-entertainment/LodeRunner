@@ -5,4 +5,6 @@ public enum ModelLayout {
     BorderLayout,
     FlowLayout,
     WrapLayout,
+    CardLayout,
+    // More ?
 }

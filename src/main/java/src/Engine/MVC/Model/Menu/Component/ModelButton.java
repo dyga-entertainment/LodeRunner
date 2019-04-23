@@ -1,10 +1,8 @@
 package MVC.Model.Menu.Component;
 
-import MVC.Model.Menu.Enums.DisplayOption;
-import MVC.Model.Menu.ModelComponent;
 import MVC.Model.Menu.Structs.Font;
-import MVC.Model.Menu.Structs.Layout;
-import MVC.Model.ViewType;
+import MVC.Model.Menu.Structs.Layouts.Layout;
+import MVC.View.Menu.Enums.ViewType;
 
 import java.awt.*;
 import java.util.Dictionary;

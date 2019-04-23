@@ -2,12 +2,11 @@ package MVC.Model.jeu;
 
 import MVC.Model.bloc.*;
 import MVC.Model.item.*;
-import MVC.View.Menu.ImagePanel;
+import MVC.View.Menu.Component.ViewPanel;
 import MVC.Model.bloc.Bloc;
 import MVC.Model.bloc.BlocTerre;
 import MVC.Model.bloc.C;
 
-import javax.swing.*;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
@@ -172,9 +171,9 @@ public class Niveau {
 		this.items.add(item);
 	}
 
-    public ImagePanel getApercu() {
+    public ViewPanel getApercu() {
 		// Should return a image of the world ?
-		//return new ImagePanel(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_custom.png");
-		return new ImagePanel(this.imageUrlPreview);
+		//return new ViewPanel(ResourcesPaths.SPRITE_BACKGROUND_PATH + "background_custom.png");
+		return new ViewPanel(this.imageUrlPreview);
     }
 }

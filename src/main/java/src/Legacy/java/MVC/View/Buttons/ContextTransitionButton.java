@@ -1,6 +1,6 @@
 package MVC.View.Buttons;
 
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 
 import java.util.Dictionary;
 

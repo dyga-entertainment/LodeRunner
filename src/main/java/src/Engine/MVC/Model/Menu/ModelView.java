@@ -1,5 +1,6 @@
 package MVC.Model.Menu;
 
+import MVC.Model.Menu.Component.ModelComponent;
 import MVC.Model.Menu.Component.ModelPanel;
 
 public class ModelView {

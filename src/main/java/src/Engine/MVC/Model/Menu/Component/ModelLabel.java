@@ -1,9 +1,8 @@
 package MVC.Model.Menu.Component;
 
-import MVC.Model.Menu.ModelComponent;
 import MVC.Model.Menu.Structs.Color;
 import MVC.Model.Menu.Structs.Font;
-import MVC.Model.Menu.Structs.Layout;
+import MVC.Model.Menu.Structs.Layouts.Layout;
 
 public class ModelLabel extends ModelComponent {
 

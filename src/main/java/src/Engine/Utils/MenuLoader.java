@@ -2,12 +2,15 @@ package Utils;
 
 import MVC.Model.Menu.*;
 import MVC.Model.Menu.Component.ModelButton;
+import MVC.Model.Menu.Component.ModelComponent;
 import MVC.Model.Menu.Component.ModelLabel;
 import MVC.Model.Menu.Component.ModelPanel;
 import MVC.Model.Menu.Enums.ModelLayout;
 import MVC.Model.Menu.Structs.Color;
 import MVC.Model.Menu.Structs.Font;
-import MVC.Model.Menu.Structs.Layout;
+import MVC.Model.Menu.Structs.Layouts.CardLayout;
+import MVC.Model.Menu.Structs.Layouts.GridLayout;
+import MVC.Model.Menu.Structs.Layouts.Layout;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -167,24 +170,30 @@ public class MenuLoader {
                         component.setPreferredSize(Math.toIntExact((long)dimensionJson.get("width")), Math.toIntExact((long)dimensionJson.get("height")));
                         break;
                 }
-                //finalModelView.add(constructComponent((JSONObject) component));
-                //JSONObject jsonComponent = (JSONObject) component;
-                //System.out.println(jsonComponent.keySet());
             }
         }
     }
 
     private static void createLayout(ModelComponent component, JSONObject jsonLayout) {
-        Layout layout = new Layout();
-        layout.name = getLayoutName((String)jsonLayout.get("name"));
-        if(layout.name.equals(ModelLayout.GridLayout)) {
-            System.out.println(jsonLayout.get("rows").getClass());
-            layout.rows = Math.toIntExact((long)jsonLayout.get("rows"));
-            layout.cols = Math.toIntExact((long)jsonLayout.get("cols"));
-            layout.hgap = Math.toIntExact((long)jsonLayout.get("hgap"));
-            layout.vgap = Math.toIntExact((long)jsonLayout.get("vgap"));
+        String layoutName = (String)jsonLayout.get("name");
+        if(layoutName.equals(ModelLayout.GridLayout.name())) {
+            GridLayout gridLayout = new GridLayout();
+            gridLayout.name = getLayoutName((String)jsonLayout.get("name"));
+            gridLayout.rows = Math.toIntExact((long)jsonLayout.get("rows"));
+            gridLayout.cols = Math.toIntExact((long)jsonLayout.get("cols"));
+            gridLayout.hgap = Math.toIntExact((long)jsonLayout.get("hgap"));
+            gridLayout.vgap = Math.toIntExact((long)jsonLayout.get("vgap"));
+            component.setLayout(gridLayout);
+        } else if(layoutName.equals(ModelLayout.CardLayout.name())) {
+            CardLayout cardLayout = new CardLayout();
+            cardLayout.name = getLayoutName((String)jsonLayout.get("name"));
+            cardLayout.currentActiveView = 0;
+            component.setLayout(cardLayout);
+        } else {
+            Layout layout = new Layout();
+            layout.name = getLayoutName((String)jsonLayout.get("name"));
+            component.setLayout(layout);
         }
-        component.setLayout(layout);
     }
 
     private static ModelLayout getLayoutName(String layoutName) {
@@ -195,6 +204,8 @@ public class MenuLoader {
                 return ModelLayout.WrapLayout;
             case "GridLayout":
                 return ModelLayout.GridLayout;
+            case "CardLayout":
+                return ModelLayout.CardLayout;
             default:
                 return ModelLayout.FlowLayout;
         }

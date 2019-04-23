@@ -3,6 +3,7 @@ package MVC.Model;
 import Data.audio.SoundSystem;
 import MVC.Model.bloc.*;
 import MVC.Model.item.*;
+import MVC.View.Menu.Enums.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.exceptions.InventaireVideException;
 import MVC.Model.Actions.ThreadAnimation;

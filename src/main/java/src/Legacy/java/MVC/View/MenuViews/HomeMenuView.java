@@ -1,7 +1,7 @@
 package MVC.View.MenuViews;
 
 import MVC.Controler.MainControler;
-import MVC.Model.ViewType;
+import MVC.View.Menu.Enums.ViewType;
 import Utils.WrapLayout;
 import javax.swing.*;
 

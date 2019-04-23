@@ -1,4 +1,4 @@
-package MVC.Model;
+package MVC.View.Menu.Enums;
 
 public enum ViewType {
     None,
@@ -9,4 +9,6 @@ public enum ViewType {
     WorldSelectionView,
     LevelSelectionView,
     LoadingView,
+
+    GameView,
 }

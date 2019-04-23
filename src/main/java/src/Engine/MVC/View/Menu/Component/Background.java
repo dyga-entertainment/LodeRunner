@@ -1,4 +1,4 @@
-package MVC.View.Menu;
+package MVC.View.Menu.Component;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
@@ -22,7 +22,7 @@ public class Background {
      * @param observer
      */
     public void paintComponent(Graphics g, int width, int height, ImageObserver observer) {
-        //System.out.println("[Rendering] PaintComponent call from ImagePanel");
+        //System.out.println("[Rendering] PaintComponent call from ViewPanel");
         if(startingCoordinate == null || preferredSize == null) {
             g.drawImage(
                 backgroundImage,
