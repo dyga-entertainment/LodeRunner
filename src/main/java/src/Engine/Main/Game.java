@@ -31,25 +31,43 @@ public class Game {
     /** MVC.Controler **/
     private static MainControler mainControler;
 
+    // Should be here ??
+
     /** Others **/
     private static String gameName;
     private static String[] views;
 
+    /** Game **/
+    private static String[] levels;
+    private static String[] gameEntities;
+
     public Game(String gameName) {
-        gameName = gameName;
+        Game.gameName = gameName;
+
+        Game.mainModel = new MainModel();
+        Game.mainControler = new MainControler();
+        Game.mainView = new MainView(gameName);
     }
 
-    public void addJsonViews(String[] strings) {
-        views = strings.clone();
+    public void addJsonViews(String[] views) {
+        Game.views = views.clone();
+    }
+
+    public void addJsonLevels(String[] levels) {
+        Game.levels = levels.clone();
+    }
+
+    public void addJsonEntities(String[] gameEntities) {
+        Game.gameEntities = gameEntities.clone();
     }
 
     public void Run() {
         // Init the modele of the game
-        mainModel = new MainModel(views);
+        mainModel.init(views);
 
         // Init the controller of the game
         // Init the link Controller -> MVC.Model in order to update the model if an input has been made.
-        mainControler = new MainControler(mainModel);
+        mainControler.init(mainModel);
 
         // Add the link MVC.View -> Controller when the user use inputs.
         //this.addKeyListener(gameControler);
@@ -58,7 +76,7 @@ public class Game {
 
         // Init the view of the game with the windows (??)
         // and the controller to be able to add him on buttons for example
-        mainView = new MainView(gameName, mainModel, mainControler);
+        mainView.init(mainModel, mainControler);
 
         // Add the link MVC.Controler -> MVC.View to notify the view an input as been made and that, maybe the model changed.
         mainControler.addView(mainView);
@@ -77,6 +95,17 @@ public class Game {
 
     public static void setSelectedLevel(String selectedLevelName) {
         mainModel.setSelectedLevel(selectedLevelName);
+    }
+
+    /** Method that should be included in the controler
+     * Should update the model and notify changes might happened
+     * Maybe not... **/
+    public static void changeView(String nextView) {
+        mainControler.changeView(nextView.toLowerCase());
+    }
+
+    public static void backLastView() {
+        mainControler.returnLastView();
     }
 
     /**
@@ -116,16 +145,13 @@ public class Game {
         mainView.paint();
     }
 
-    /** Method that should be included in the controler
-     * Should update the model and notify changes might happened **/
-    public static void changeView(String nextView) {
-        mainControler.changeView(nextView.toLowerCase());
+    public static void launchGame() {
+        mainModel.loadGame(gameEntities);
+        mainView.paint();
+
+        startGameLoop();
     }
 
-    public static void backLastView() {
-        mainControler.returnLastView();
+    private static void startGameLoop() {
     }
-
-
-
 }

@@ -1,6 +1,7 @@
 package MVC.View;
 
 import MVC.Controler.MainControler;
+import MVC.Model.Game.EntityModel;
 import MVC.Model.MainModel;
 import MVC.Model.Menu.Component.ModelButton;
 import MVC.Model.Menu.Component.ModelLabel;
@@ -8,6 +9,7 @@ import MVC.Model.Menu.Component.ModelPanel;
 import MVC.Model.Menu.Component.ModelComponent;
 import MVC.Model.Menu.ModelView;
 import MVC.Model.Menu.Structs.Layouts.Layout;
+import MVC.View.Game.EntityView;
 import MVC.View.Menu.Component.ViewPanel;
 import Utils.WrapLayout;
 import MVC.View.Menu.Component.ViewButton;
@@ -16,8 +18,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.ImageObserver;
+import java.text.AttributedCharacterIterator;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -38,18 +43,16 @@ public class MainView {
     /** This let the user get view component by using UUID from the model components */
     private static Dictionary<UUID, JComponent> activeViewComponentsByModel;
 
-    /**
-     * Constructor
-     * @param gameName
-     * @param mainModel
-     * @param mainControler
-     */
-    public MainView(String gameName, MainModel mainModel, MainControler mainControler) {
-        this.activeViewComponentsByModel = new Hashtable<>();
-        this.mainModel = mainModel;
-        this.mainControler = mainControler;
-        this.gameFrame = new JFrame(gameName);
+    private Dictionary<UUID, EntityView> activeEntitiesByModel;
 
+    /**
+     * Basic contructor
+     */
+    public MainView(String gameName) {
+        this.activeViewComponentsByModel = new Hashtable<>();
+        activeEntitiesByModel = new Hashtable<>();
+
+        this.gameFrame = new JFrame(gameName);
         // This info should be getted somewhere else ? Or default ?
         this.gameFrame.setSize(800, 800);
 
@@ -60,6 +63,16 @@ public class MainView {
             }
         });
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    /**
+     * Init the game view
+     * @param mainModel
+     * @param mainControler
+     */
+    public void init(MainModel mainModel, MainControler mainControler) {
+        this.mainModel = mainModel;
+        this.mainControler = mainControler;
     }
 
     /**
@@ -93,8 +106,27 @@ public class MainView {
             }
         }
 
-        this.activeGameView.repaint();
-        this.gameFrame.repaint();
+        // Paint entities here ?
+        List<EntityModel> entities = this.mainModel.getCurrentEntities();
+        if(entities != null) {
+            for(EntityModel entity : entities) {
+                // Create a EntityView
+                EntityView entityView = new EntityView(entity);
+
+                // Add it
+                activeEntitiesByModel.put(entity.getUuid(), entityView);
+
+                // Add it to the view and should be paint there
+                this.activeGameView.addEntity(entityView);
+
+                //entityView.paint(this.gameFrame.getContentPane().getGraphics(), this.gameFrame.getContentPane());
+                //entityView.paint(this.activeGameView.getGraphics(), this.activeGameView);
+                entityView.paint(this.activeGameView.getGraphics(), this.activeGameView);
+            }
+        }
+
+        //this.activeGameView.repaint();
+        //this.gameFrame.repaint();
         this.gameFrame.setVisible(true);
     }
 

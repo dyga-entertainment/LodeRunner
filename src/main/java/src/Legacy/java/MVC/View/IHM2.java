@@ -20,7 +20,7 @@ public class IHM2 extends JPanel {
 		//this.pa.setIcon(new ImageIcon("doge.jpg"));
 		this.add(this.pa, BorderLayout.CENTER);
 
-		//this.bg = Images.getImageFromPath(ResourcesPaths.SPRITE_UI_PATH + "Menu.png");
+		//this.bg = Images.getImageFromPath(ResourcesPaths.SPRITE_UI_PATH + "Views.png");
 	}
 
 }

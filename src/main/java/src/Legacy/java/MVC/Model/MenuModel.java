@@ -1,14 +1,13 @@
 package MVC.Model;
 
 import MVC.Model.Menu.ModelView;
-import MVC.View.Menu.Enums.ViewType;
 
 import java.awt.*;
 import java.util.Dictionary;
 import java.util.Stack;
 
 /**
- *  Sub-MVC.Model in charge of all the Menu.
+ *  Sub-MVC.Model in charge of all the Views.
  */
 public class MenuModel {
 
@@ -26,16 +25,16 @@ public class MenuModel {
     /**##############################**/
 
     /** Current view name display to the player */
-    private static ViewType currentView;
+    private static String currentView;
 
     /** Stack useful to comeback to previous views */
-    private static Stack<ViewType> lastVisitedViews;
+    private static Stack<String> lastVisitedViews;
 
     private static String selectedWorld = "";
 
     public MenuModel() {
-        this.currentView = ViewType.HomeView;
-        this.lastVisitedViews = new Stack<ViewType>();
+        this.currentView = "HomeView";
+        this.lastVisitedViews = new Stack<String>();
     }
 
     public Image getBackgroundImage() {
@@ -46,7 +45,7 @@ public class MenuModel {
         this.currentBackgroundImage = backgroundImage;
     }
 
-    public void ChangeView(ViewType newView, boolean isBackButton) {
+    public void ChangeView(String newView, boolean isBackButton) {
         System.out.println("ICICICI" + newView + "" + isBackButton);
         //System.out.println("[Context Changement] from " + currentView.toString() + " to " + newView.toString());
 
@@ -86,22 +85,22 @@ public class MenuModel {
     }
 
     public void ReturnLastView() {
-        ViewType view = null;
+        String view = null;
         if(!this.lastVisitedViews.isEmpty()) {
             view = this.lastVisitedViews.pop();
         }
         ChangeView(view, true);
     }
 
-    public ViewType GetLastVisitedView() {
-        ViewType view = null;
+    public String GetLastVisitedView() {
+        String view = null;
         if(!this.lastVisitedViews.isEmpty()){
             view = this.lastVisitedViews.peek();
         }
         return view;
     }
 
-    public ViewType GetCurrentView() {
+    public String GetCurrentView() {
         return this.currentView;
     }
 

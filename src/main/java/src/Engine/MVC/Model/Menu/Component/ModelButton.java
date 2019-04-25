@@ -2,7 +2,6 @@ package MVC.Model.Menu.Component;
 
 import MVC.Model.Menu.Structs.Font;
 import MVC.Model.Menu.Structs.Layouts.Layout;
-import MVC.View.Menu.Enums.ViewType;
 
 import java.awt.*;
 import java.util.Dictionary;
@@ -21,7 +20,7 @@ public class ModelButton extends ModelComponent {
     private Dimension dimension;
 
     private Dictionary<String, String> listeners = new Hashtable<>();
-    private ViewType nextView;
+    private String nextView;
 
 
     public ModelButton() {
@@ -31,7 +30,7 @@ public class ModelButton extends ModelComponent {
         this.pressedImageUrl = "";
         this.mouseOverImageUrl = "";
 
-        this.nextView = ViewType.None;
+        this.nextView = "None";
     }
 
     public void addText(String text) {
@@ -56,32 +55,10 @@ public class ModelButton extends ModelComponent {
 
     @Override
     public void setNextView(String viewType) {
-        switch (viewType) {
-            case "WorldSelectionView":
-                this.nextView = ViewType.WorldSelectionView;
-                break;
-            case "HomeView":
-                this.nextView = ViewType.HomeView;
-                break;
-            case "CreditsView":
-                this.nextView = ViewType.CreditsView;
-                break;
-            case "LevelSelectionView":
-                this.nextView = ViewType.LevelSelectionView;
-                break;
-            case "Loading":
-                this.nextView = ViewType.LoadingView;
-                break;
-            case "Settings":
-                this.nextView = ViewType.SettingsView;
-                break;
-            case "Profils":
-                this.nextView = ViewType.ProfilsView;
-                break;
-        }
+        this.nextView = viewType;
     }
 
-    public ViewType getNextView() {
+    public String getNextView() {
         return this.nextView;
     }
 

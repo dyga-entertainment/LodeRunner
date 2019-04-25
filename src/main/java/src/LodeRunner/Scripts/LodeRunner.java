@@ -11,17 +11,26 @@ public class LodeRunner {
 		// Or give the right folder to do that ?
 		/*
 		lodeRunner.addJsonViews(new String[] {
-			"Data/Menu/HomeView.json",
-			"Data/Menu/WorldSelectionView.json",
-			"Data/Menu/Test2.json",
+			"Data/Views/HomeView.json",
+			"Data/Views/WorldSelectionView.json",
+			"Data/Views/Test2.json",
 		});*/
 
 		lodeRunner.addJsonViews(new String[] {
-			"Data/Menu/HomeView.json",
-			"Data/Menu/WorldSelectionView.json",
-			"Data/Menu/CreditsView.json",
-			//"Data/Menu/SettingsView.json",	// TODO : sliders & co.
-			"Data/Menu/LevelSelectionView.json",
+			"Data/Views/HomeView.json",
+			"Data/Views/WorldSelectionView.json",
+			"Data/Views/CreditsView.json",
+			//"Data/Views/SettingsView.json",	// TODO : sliders & co.
+			"Data/Views/LevelSelectionView.json",
+			"Data/Views/GameView.json",
+		});
+
+		lodeRunner.addJsonLevels(new String[] {
+			"Data/Levels/Level_1-1.json",
+		});
+
+		lodeRunner.addJsonEntities(new String[] {
+			"Data/Gameplay/Enemy/DogeMasque.json",
 		});
 
 		// TODO : Should add more stuffs here

@@ -1,5 +1,6 @@
 package MVC.View.Menu.Component;
 
+import MVC.View.Game.EntityView;
 import Utils.helper.Images;
 
 import javax.swing.*;
@@ -9,6 +10,10 @@ import java.awt.image.BufferedImage;
 public class ViewPanel extends JPanel {
 
     private Background background;
+
+    // TEST
+    private EntityView entity;
+    // END TEST
 
     public ViewPanel(String urlImage) {
         super();
@@ -30,6 +35,10 @@ public class ViewPanel extends JPanel {
         this.background.preferredSize = new Dimension(width, height);
     }
 
+    public void addEntity(EntityView entityView) {
+        this.entity = entityView;
+    }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -37,5 +46,7 @@ public class ViewPanel extends JPanel {
         background.paintComponent(g, getWidth(), getHeight(), this);
 
         /** Additional painting here ? */
+        if(entity != null)
+            entity.paint(g, this);
     }
 }

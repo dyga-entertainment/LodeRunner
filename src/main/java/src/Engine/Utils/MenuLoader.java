@@ -11,16 +11,38 @@ import MVC.Model.Menu.Structs.Font;
 import MVC.Model.Menu.Structs.Layouts.CardLayout;
 import MVC.Model.Menu.Structs.Layouts.GridLayout;
 import MVC.Model.Menu.Structs.Layouts.Layout;
+import MVC.View.MenuViews.View;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 
-public class MenuLoader {
+public class MenuLoader extends JsonLoader<ModelView> {
 
-    public static ModelView CreateNewView(FileReader fileReader) throws IOException, ParseException {
+    @Override
+    public ModelView parse(String path) {
+        ModelView finalView = null;
+        URL url = Thread.currentThread().getContextClassLoader().getResource(path);
+        try {
+            FileReader fileReader = new FileReader(url.getPath());
+            finalView = CreateNewView(fileReader);
+        } catch (IOException | ParseException e) {
+            System.out.println("Cannot load the following json file = " + path);
+            finalView = null;
+        }
+        return finalView;
+    }
+
+    ///====================================
+    /// HELPERS FUNCTIONS
+    ///====================================
+
+    private static ModelView CreateNewView(FileReader fileReader) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
 
         JSONObject menuObject = (JSONObject) parser.parse(fileReader);
@@ -244,4 +266,6 @@ public class MenuLoader {
             component.addListenerMethod(name, functionName);
         }
     }
+
+
 }

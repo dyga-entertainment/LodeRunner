@@ -2,7 +2,6 @@ package MVC.Controler;
 
 import MVC.Model.MainModel;
 import MVC.Model.MainModelLegacy;
-import MVC.View.Menu.Enums.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.Tuple;
 import MVC.View.Buttons.ContextTransitionButton;
@@ -26,25 +25,24 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 
 	private static String INPUT_PATH = "Inputs.ButtonsCallback"; // Temporary
 
-	public static Dictionary<String, Tuple<Class, Method>> controlerMethods = new Hashtable<>();
+	public static Dictionary<String, Tuple<Class, Method>> controlerMethods;
 
 	// END NEW META
 
 	private MainModelLegacy model;
 	private boolean actionCreuser;
+	private List<ActionListener> actionsListener;
 
-	private List<ActionListener> actionsListener = new LinkedList<>();
+	/**
+	 * Basic constructor
+	 */
+	public MainControler() {
+		controlerMethods = new Hashtable<>();
+		actionsListener = new LinkedList<>();
+	}
 
-	/*
-	public MainControler(MainModelLegacy m) {
-		this.model = m;
-
-		LoadGameScripts();
-	}*/
-
-	public MainControler(MainModel mainModel) {
+	public void init(MainModel mainModel) {
 		this.mainModel = mainModel;
-
 		LoadGameScripts();
 	}
 
@@ -232,7 +230,7 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 		//test.get(((ContextTransitionButton)e.getSource()).getButtonName()).actionPerformed(e);
 	}
 
-	/**####################### Menu Function #######################*/
+	/**####################### Views Function #######################*/
 
 	private Dictionary<String, ActionListener> test = new Hashtable<>();
 
@@ -253,14 +251,14 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 
 
 	public void ChangeView(ContextTransitionButton button) {
-		ChangeView(ViewType.values()[button.getNextView().ordinal()]);
+		ChangeView(button.getNextView());
 	}
 
-	public void ChangeView(ViewType newView) {
+	public void ChangeView(String newView) {
 		ChangeView(newView, false);
 	}
 
-	public void ChangeView(ViewType newView, boolean isBackButton) {
+	public void ChangeView(String newView, boolean isBackButton) {
 		System.out.println("[Controller function] Context transition : NewView = " + newView);
 		// Update the model
 		this.model.ChangeView(newView, isBackButton);
@@ -397,5 +395,5 @@ public class MainControler implements KeyListener, MouseListener, ActionListener
 		return classes;
 	}*/
 
-	/**####################### End Menu Function #######################*/
+	/**####################### End Views Function #######################*/
 }

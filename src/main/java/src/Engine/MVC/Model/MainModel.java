@@ -1,13 +1,11 @@
 package MVC.Model;
 
+import MVC.Model.Game.EntityModel;
 import MVC.Model.Menu.ModelView;
-import org.json.simple.parser.ParseException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URL;
-import java.util.*;
+import Utils.EntityLoader;
+import Utils.MenuLoader;
 
-import static Utils.MenuLoader.CreateNewView;
+import java.util.*;
 
 /**
  * Main MVC.Model - MODEL
@@ -29,40 +27,44 @@ public class MainModel {
     ///=================
     /// GAME Fields
     ///=================
-    /** Data structure holding all the possible world the player can play */
-    private static Dictionary<String, ModelView> gameWorlds;
+    /** Data structure holding all the current loaded levels the player can play */
+    private static Dictionary<String, ModelView> levelsView;
     //private static Dictionary<String, World> gameWorlds;
     /** The name of the world currently being play */
     private static String currentWorldName;
-
-    // Hummm... ?
     private static String currentLevelNumber;
+
+    private static Dictionary<String, List<EntityModel>> teams;
 
     ///=================
     /// MENU Methods
     ///=================
 
     /**
+     * Basic contructor
+     */
+    public MainModel() {
+        this.menuViews = new Hashtable<>();
+        this.lastVisitedViews = new Stack<>();
+
+        this.teams = new Hashtable<>();
+    }
+
+    /**
+     * Init the model
      * Load, create and store all the UI views needed to navigate through the menu.
      * Assign the first one to the current active view.
      * @param views List of resources url of all the UI views.
      */
-    public MainModel(String[] views) {
-
-        this.menuViews = new Hashtable<>();
-        this.lastVisitedViews = new Stack<>();
-
-        /*
-        List<String> list = Arrays.asList(views);
-        Collections.reverse(list);
-        views = list.toArray(views);*/
+    public void init(String[] views) {
+        // Right now we can't really tell if a menu is connected to another.
+        // So we load them all at the start.
+        MenuLoader menuLoader = new MenuLoader();
 
         for (int i = 0; i < views.length; i++) {
-            try {
-                URL url = Thread.currentThread().getContextClassLoader().getResource(views[i]);
-                FileReader fileReader = new FileReader(url.getPath());
-                // Create the view
-                ModelView view = CreateNewView(fileReader);
+            ModelView view = menuLoader.parse(views[i]);
+
+            if(view != null) {
                 String keyName = view.getName().toLowerCase();
 
                 // Add the view to the data struct
@@ -72,13 +74,14 @@ public class MainModel {
                 if(this.activeModelView == null) {
                     this.activeModelView = menuViews.get(keyName);
                 }
-            } catch (ParseException | IOException e) {
-                System.out.println("Cannot load the following json file = " + views[i]);
-                e.printStackTrace();
             }
         }
     }
 
+    /**
+     * This method allow to retrieve the model of the current view display.
+     * @return
+     */
     public ModelView getCurrentView() {
         return this.activeModelView;
     }
@@ -112,5 +115,65 @@ public class MainModel {
 
     public void setSelectedLevel(String selectedLevelName) {
         currentLevelNumber = selectedLevelName;
+    }
+
+    public void launchGame() {
+
+
+        InitGame();
+
+
+    }
+
+    // Maybe later ?
+    private void InitGame() {
+        this.levelsView = new Hashtable<>();
+        this.teams = new Hashtable<>();
+
+        // Add both team. So they can target each other.
+    }
+
+    public void loadGame(String[] gameEntities) {
+        System.out.println(currentWorldName);
+        System.out.println(currentLevelNumber);
+
+        // We will load the level after experimentation !
+        //LevelLoader.loadLevel();
+
+        List<EntityModel> team1 = new ArrayList<>();
+        team1.addAll(loadEntity(gameEntities));
+        this.teams.put("team1", team1);
+
+        System.out.println(this.teams.toString());
+    }
+
+    private  List<EntityModel> loadEntity(String[] gameEntities) {
+        EntityLoader entityLoader = new EntityLoader();
+
+        List<EntityModel> team1 = new ArrayList<>();
+        for (int i = 0; i < gameEntities.length; i++) {
+            EntityModel entity = entityLoader.parse(gameEntities[i]);
+
+            if(entity != null) {
+
+                team1.add(entity);
+                System.out.println(entity);
+                /*
+                String keyName = view.getName().toLowerCase();
+
+                // Add the view to the data struct
+                menuViews.put(keyName, view);
+
+                // Set the default active modelView
+                if(this.activeModelView == null) {
+                    this.activeModelView = menuViews.get(keyName);
+                }*/
+            }
+        }
+        return team1;
+    }
+
+    public List<EntityModel> getCurrentEntities() {
+        return this.teams.get("team1");
     }
 }

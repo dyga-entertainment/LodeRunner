@@ -68,4 +68,11 @@ public class ButtonsCallback {
         ViewPanel viewPanel = (ViewPanel)Game.getViewComponentByUuid(panel.getUuid());
         ((CardLayout)viewPanel.getLayout()).next(viewPanel);
     }
+
+    public void launchGame(ViewButton sourceButton) {
+        changeView(sourceButton);
+
+        // TODO
+        Game.launchGame();
+    }
 }

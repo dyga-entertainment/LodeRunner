@@ -11,7 +11,7 @@ public class ResourcesPaths {
     // ...
     //==================================================================
 
-    /** Blocs sprites **/
+    /** Bloc sprites **/
     public static String SPRITE_BLOCS_PATH = "Sprites/Blocs/";
     public static String SPRITE_BLOCS_GLUE_PATH = "Sprites/Blocs/Glue/";
     public static String SPRITE_BLOCS_GROUND_PATH = "Sprites/Blocs/Ground/";

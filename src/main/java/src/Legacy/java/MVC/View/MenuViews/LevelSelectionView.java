@@ -1,7 +1,6 @@
 package MVC.View.MenuViews;
 
 import MVC.Controler.MainControler;
-import MVC.View.Menu.Enums.ViewType;
 import MVC.View.IHM2;
 import MVC.Model.jeu.Monde;
 import Data.levels.MondeDemonstration;
@@ -81,7 +80,7 @@ public class LevelSelectionView extends View {
         this.buttonsPanel.add(selectionButtons, BorderLayout.CENTER);
 
         // Accept button
-        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", ViewType.LoadingView);
+        JButton acceptButton = NewContextTransitionButton("accept", "bouton_valider1.png", "bouton_valider2.png", "LoadingView");
         this.buttonsPanel.add(acceptButton, BorderLayout.EAST);
     }
 

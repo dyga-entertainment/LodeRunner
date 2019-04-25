@@ -3,7 +3,6 @@ package MVC.Model;
 import Data.audio.SoundSystem;
 import MVC.Model.bloc.*;
 import MVC.Model.item.*;
-import MVC.View.Menu.Enums.ViewType;
 import Utils.exceptions.BlocNonCreusableException;
 import Utils.exceptions.InventaireVideException;
 import MVC.Model.Actions.ThreadAnimation;
@@ -482,11 +481,11 @@ public class MainModelLegacy extends Observable {
 
 	/** Maybe use a pattern here to know which MVC.Model is targetted ?? */
 
-	public ViewType GetCurrentView() {
+	public String GetCurrentView() {
 		return this.menuModel.GetCurrentView();
 	}
 
-	public void ChangeView(ViewType newView, boolean isBackButton) {
+	public void ChangeView(String newView, boolean isBackButton) {
 		this.menuModel.ChangeView(newView, isBackButton);
 	}
 

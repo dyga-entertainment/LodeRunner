@@ -2,7 +2,7 @@
   "name": "test2",
   "view": {
     "type": "Panel",
-    "backgroundImage": "Images/Sprites/Backgrounds/background_custom.png",
+    "backgroundImage": "Sprites/UI/Backgrounds/background_custom.png",
     "options": [
       {"isOpaque": true},
       {"layout": "BorderLayout"}
@@ -10,7 +10,7 @@
     "components": [
       {
         "type": "Panel",
-        "backgroundImage": "Images/Sprites/UI/bandeau_menu.png",
+        "backgroundImage": "Sprites/UI/bandeau_menu.png",
         "options": [
           {"isOpaque": true},
           {"layout": "GridLayout"}

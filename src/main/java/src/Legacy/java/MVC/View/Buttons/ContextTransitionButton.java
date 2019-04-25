@@ -1,32 +1,30 @@
 package MVC.View.Buttons;
 
-import MVC.View.Menu.Enums.ViewType;
-
 import java.util.Dictionary;
 
 public class ContextTransitionButton extends StandardButton {
 
     /** Interaction field */
-    private ViewType nextView;
+    private String nextView;
 
     /** Fields that will contains useful informations when changing views */
     private Dictionary<String, Object> parameters;
 
     public ContextTransitionButton(String text, String standardImage, String selectedImage) {
-        this(text, standardImage, selectedImage, true, ViewType.None);
+        this(text, standardImage, selectedImage, true, "None");
     }
 
-    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable, ViewType nextView) {
+    public ContextTransitionButton(String text, String standardImage, String selectedImage, boolean isEnable, String nextView) {
         super(null, text, standardImage, selectedImage, isEnable);
 
         this.nextView = nextView;
     }
 
-    public ViewType getNextView() {
+    public String getNextView() {
         return this.nextView;
     }
 
-    public void setNextView(ViewType nextView) {
+    public void setNextView(String nextView) {
         this.nextView = nextView;
     }
 

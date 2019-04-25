@@ -1,7 +1,6 @@
 package MVC.View.MenuViews;
 
 import MVC.Controler.MainControler;
-import MVC.View.Menu.Enums.ViewType;
 import MVC.View.Buttons.ContextTransitionButton;
 import javax.swing.*;
 import java.awt.*;
@@ -46,7 +45,7 @@ public class View extends ViewPanel implements EventListener {
 
         controler = gameControler;
 
-        // Default Settings for most of the Menu
+        // Default Settings for most of the Views
         this.setLayout(new BorderLayout());
 
         // Default initialization
@@ -80,20 +79,20 @@ public class View extends ViewPanel implements EventListener {
         this.buttonsPanel.setLayout(new BorderLayout());
 
         // Back button by default
-        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", ViewType.HomeView, true);
+        JButton backButton = NewContextTransitionButton("Back", "bouton_retour1.png", "bouton_retour2.png", "HomeView", true);
         this.buttonsPanel.add(backButton, BorderLayout.WEST);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewType nextView) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, String nextView) {
         System.out.println(text);
         return NewContextTransitionButton(text, standardImage, selectedImage, nextView, true, false);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewType nextView, boolean isBackButton) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, String nextView, boolean isBackButton) {
         return NewContextTransitionButton(text, standardImage, selectedImage, nextView, true, isBackButton);
     }
 
-    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, ViewType nextView, boolean isEnable, boolean isBackButton) {
+    protected JButton NewContextTransitionButton(String text, String standardImage, String selectedImage, String nextView, boolean isEnable, boolean isBackButton) {
         ContextTransitionButton button = new ContextTransitionButton(text, standardImage, selectedImage, isEnable, nextView);
         System.out.println("isBackButton = " + isBackButton + " button = " + text);
         if(isBackButton) {

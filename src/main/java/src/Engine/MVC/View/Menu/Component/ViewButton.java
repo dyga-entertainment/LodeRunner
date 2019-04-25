@@ -1,7 +1,6 @@
 package MVC.View.Menu.Component;
 
 import MVC.Model.Menu.Enums.DisplayOption;
-import MVC.View.Menu.Enums.ViewType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,17 +24,17 @@ public class ViewButton extends JButton {
     private float alpha = 1.0f;
 
     /** Interaction field */
-    private ViewType nextView;
+    private String nextView;
     private Dictionary<String, String> listeners = new Hashtable<>();
 
     public ViewButton() {
         this("",
             "",
             true,
-            ViewType.None);
+            "");
     }
 
-    public ViewButton(String text, String standardImage, boolean isEnable, ViewType nextView) {
+    public ViewButton(String text, String standardImage, boolean isEnable, String nextView) {
         super();
         this.background = new Background();
 
@@ -88,37 +87,11 @@ public class ViewButton extends JButton {
     }
 
     public void setNextView(String nextViewName) {
-        switch (nextViewName) {
-            case "HomeMenu":
-                this.nextView = ViewType.HomeView;
-                break;
-            case "Credits":
-                this.nextView = ViewType.CreditsView;
-                break;
-            case "LevelSelection":
-                this.nextView = ViewType.LevelSelectionView;
-                break;
-            case "Loading":
-                this.nextView = ViewType.LoadingView;
-                break;
-            case "Settings":
-                this.nextView = ViewType.SettingsView;
-                break;
-            case "WorldSelectionView":
-                this.nextView = ViewType.WorldSelectionView;
-                break;
-            case "Profils":
-                this.nextView = ViewType.ProfilsView;
-                break;
-            default:
-                this.nextView = ViewType.None;
-                break;
-        }
-
+        this.nextView = nextViewName;
     }
 
     public String getNextView() {
-        return this.nextView.name();
+        return this.nextView;
     }
 
     public String getButtonName() {

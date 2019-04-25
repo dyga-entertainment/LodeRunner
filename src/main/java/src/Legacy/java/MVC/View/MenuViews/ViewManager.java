@@ -122,7 +122,7 @@ public class ViewManager {
         this.windowFrame.getContentPane().removeAll();
 
         // Prepare the next view to be printed
-        View nextView = this.views[model.GetCurrentView().ordinal()];
+        View nextView = null;// = this.views[model.GetCurrentView()];
 
         // Give the parameters to the next view if needed.
         //nextView.setParameters(parameters);

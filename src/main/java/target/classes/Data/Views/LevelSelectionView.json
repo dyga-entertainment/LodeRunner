@@ -309,7 +309,7 @@
                 "methods": [
                   {
                     "name": "onPressed",
-                    "functionName": "Inputs.ButtonsCallback.changeView",
+                    "functionName": "Inputs.ButtonsCallback.launchGame",
                     "imageUrl": "Sprites/UI/Buttons/bouton_valider2.png",
                     "songUrl": "todo.wav"
                   }
