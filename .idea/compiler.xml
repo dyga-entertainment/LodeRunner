@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="LodeRunner" target="8" />
+      <module name="LodeRunner" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
